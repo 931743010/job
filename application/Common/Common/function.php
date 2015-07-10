@@ -1735,7 +1735,7 @@ function setCurrentCity($cityId){
             return false;
         }
         $city = $json['city'];
-        $res = M("Region")->where("name='{$city}'");
+        $res = M("Region")->where("name='{$city}'")->select();
         $json['cityId'] = $_SESSION['wiki']['cityId'] = $res[0]['id'];
         return $json;
     }
