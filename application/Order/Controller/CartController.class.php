@@ -1,0 +1,289 @@
+<?php
+
+/**
+ * 搜索结果页面
+ */
+namespace Order\Controller;
+use Common\Controller\HomeBaseController;
+class CartController extends HomeBaseController {
+	private $user;
+	public function _initialize(){
+		if( $_SESSION['user'] ) $this->user = $_SESSION['user'];
+		$cart = $this->cart();
+		$this->assign( 'cartNum' , count($cart['cart']) );
+	}
+
+    public function index() {//session_destroy();die;
+		//var_dump(unserialize($_COOKIE['cart']));die;
+		$this->assign('cart' , $this->cart());
+		$this->display();
+    }
+	
+	public function addCart(){
+		$id = I('get.id');
+		if( empty($id) ) $this->error('请选择要加入购物车的商品');
+		$num = I('get.num')?I('get.num'):1;
+		$attr = I('get.attr_ids');
+		$goods = M('Goods')->field('id,stock')->where( array('id'=>$id,'isdown'=>1) )->find();
+		//var_dump($goods);die;
+		if( !is_array($goods) ) $this->error("商品不存在或已下架");
+		if( $goods['stock']<$num ) $this->error("库存不足,本商品仅剩{$goods['stock']}个");
+		if( !$this->user['user_login'] ){//未登陆的购物车
+			$cart = unserialize($_COOKIE['cart']);//var_dump($cart);die;
+			$cookie = '';
+			if( !empty($cart) ){
+				$if_change = false;
+				foreach($cart as $k=> $v){
+					$cookie[$k] = $v;
+					if( $v['id'] == $id ){
+						$cookie[$k]['num'] = $num; 
+						$cookie[$k]['attr'] = $attr;
+						$if_change = true;
+					}
+					if( $if_change == false ){
+						$cookie[]=array(
+							'id' => $id,
+							'num' => $num,
+							'attr' => $attr,
+						);
+					}
+				}
+				setcookie('cart' , serialize($cookie) , time()+3600 , '/');
+				$this->success("加入购物车成功");
+			}else{
+				$cookie[] = array(
+					'id' => $id,
+					'num' => $num,
+					'attr' => $attr,
+				);
+				setcookie('cart' , serialize($cookie) , time()+3600 , '/');
+				$this->success("加入购物车成功");
+			}
+		}else{//已登陆的购物车
+			$origin = M('Cart')->field('id,gid')->where( array('uid'=>$this->user['id']) )->select();//var_dump($origin);die;
+			if( !$origin[0]['id'] ){//购物车中无商品
+				$data = array(
+					'uid' => $this->user['id'],
+					'gid' => $id,
+					'add_time' => time(),
+					'num' => $num,
+					'attr' => json_encode($attr),
+				);
+				if( M('Cart')->add($data) ){
+					$this->success('添加购物车成功');
+					exit;
+				}else{
+					$this->error('添加购物车失败');
+					exit;
+				}
+			}else{
+				foreach( $origin as $k => $v ){
+					if( $v['gid'] == $id ){//数据库中已加入过购物车
+						$data = array(
+							'id' => $v['id'],
+							'num' => $num,
+							'attr' => json_encode($attr),
+						);
+						if( M('Cart')->save($data) ){
+							$this->success('添加购物车成功');
+							exit;
+						}else{
+							$this->error('此商品已经在购物车了');
+							exit;
+						}
+					}
+				}
+				$data = array(
+					'uid' => $this->user['id'],
+					'gid' => $id,
+					'add_time' => time(),
+					'num' => $num,
+					'attr' => json_encode($attr),
+				);
+				if( M('Cart')->add($data) ){
+					$this->success('添加购物车成功');
+				}else{
+					$this->error('添加购物车失败');
+				}
+				
+			}
+		}
+	}
+	
+	public function delCart(){
+		$id = I('get.id');
+		$ids = I('get.ids');//批量删除
+		if( !$this->user['user_login'] ){
+			$cart = unserialize($_COOKIE['cart']);
+			if( empty( $ids ) ){
+				foreach( $cart as $k => $v ){
+					if( $v['id'] == $id ) unset($cart[$k]);
+				}
+			}else{
+					foreach( $ids as $key => $value ){
+						foreach( $cart as $k => $v ){
+						if( $v['id'] == $value ) unset($cart[$k]);
+					}
+				}
+			}
+			setcookie('cart' , serialize($cart) , time()+3600 , '/');
+			$this->success('移除购物车成功');
+		}else{
+			if( empty( $ids ) ){
+				M('Cart')->where( array('uid'=>$this->user['id'],'gid'=>$id ) )->delete();
+				$this->success('移除购物车成功');
+			}else{
+				$delIds = '';
+				foreach( $ids as $k=> $v ){
+					if( $k == 0 ) $delIds = $v;
+					$delIds .= ','.$v;	
+				}
+				M('Cart')->where( array('uid'=>$this->user['id'],'gid'=>array( 'in' , $delIds ) ) )->delete();
+				$this->success('移除购物车成功');
+			}
+		}
+		
+	}
+	
+	public function confirm(){
+		if( !$this->user['id'] ) $this->redirect("User/login/index");
+		$this->assign('paymentMethod' , getPaymentMethod());
+		$this->assign('expressMethod' , getExpressMethod());
+		$this->assign('cart' , $this->cart());
+		$address = M('Member_address')->where( array('member_id'=>$this->user['id']) )->select();
+		foreach( $address as $k => $v ){
+			$address_ids = $v['country'].','.$v['province'].','.$v['city'].','.$v['district'];
+			$info = '';
+			$info = M('Region')->where( array( 'id'=>array( 'in' , $address_ids ) ) )->select();
+			$addr = '';
+			foreach( $info as $value ){
+				$addr .= ' '.$value['name'];
+			}
+			$address[$k]['addr'] = $addr;
+		}
+		$this->assign('address' , $address);
+		$map['type']=0;
+		$this->country=D('Region')->where($map)->select();
+		$this->assign( 'user' , M('Member')->where( array('id'=>$this->user['id']) )->find() );
+		$this->display();
+	}
+	
+	public function cart(){
+		$ids = '';
+		$cart = array();
+		if( $_SESSION['user']['user_login'] ){//用户已经登录,使用数据库中的购物车
+			$res = M('Cart')->where( array('uid'=>$_SESSION['user']['id']) )->order('id asc')->select();
+			foreach($res as $k => $v){
+				$cart[$k]['id'] = $v['gid'];
+				$cart[$k]['num'] = $v['num'];
+				$cart[$k]['attr'] = json_decode($v['attr']);
+			}
+		}else{
+			$cart = unserialize($_COOKIE['cart']);//var_dump($cart);die;
+		}
+		foreach($cart as $k => $v){
+			if($k == 0){
+				$ids = $v['id'];
+			}else{
+				$ids .= ','.$v['id'];
+			}//var_dump($v);die;
+			if( is_array($v['attr']) ){
+				$attr_ids = '';
+				foreach( $v['attr'] as $attr_key => $attr_val ){
+					if( $attr_key == 0 ){
+						$attr_ids = $attr_val;
+					}else{
+						$attr_ids .= ','.$attr_val;
+					}
+				}
+				$cart[$k]['attr'] = $attr_ids;
+				unset($temp);
+			}else{
+				$cart[$k]['attr'] = 0;
+			}
+		}
+		$goods = M('Goods')->field('id,name,smallimage,price,pricespe,weight')->where( array('id'=>array('in' , $ids)) )->select();
+		//var_dump($goods);die;
+		$cart_new = '';
+		$total_weight = $total_price = 0;
+		foreach($cart as $k => $v){
+			foreach($goods as $key => $val){
+				if($v['id'] == $val['id']){
+					$attr_total_price = 0;
+					if( $v['attr'] ){
+						$val['attrinfo'] = M("Goods_attr")->field('id,attr_price,attr_value')->where( array( 'id'=>array('in' , $v['attr']) ) )->select();
+						foreach( $val['attrinfo'] as $attrinfo_value ){
+							$attr_total_price += $attrinfo_value['attr_price'];
+						}
+					}
+					$val['price_real'] = $val['pricespe']!=0?$val['pricespe']:$val['price'];
+					$val['price_real'] = number_format($val['price_real'] + $attr_total_price , 2);
+					$total_price += $val['price_real'] * $v['num'];
+					$total_weight += $val['weight_real'] = $val['weight']*$v['num'];
+					$cart_new['cart'][$k] = array_merge($v,$val);
+					continue;
+				}
+			}
+		}
+		$cart_new['total_price'] = number_format($total_price , 2);
+		$cart_new['total_weight'] = $total_weight;
+		return $cart_new;
+	}
+	
+	public function getShippingFee(){
+		$express_id = I('get.express_id');
+		$address_id = I('get.address_id');
+		$weight = I('get.weight')?I('get.weight'):0;
+		$address = M('Member_address')->where( array('address_id'=>$address_id) )->find();
+		$express = getShippingFee($address['country'],$address['province'],$address['city'],$weight,$express_id);
+		if( $express['shipping_fee'] )
+			$this->success($express);
+		else
+			$this->error('该快递暂时无法到达您所在的地区,请选择其他快递');
+	}
+
+	public function getPayFee(){
+		$id = I('get.pay_id');
+		$pay = getPaymentMethod($id);
+		if( $pay['name'] )
+			$this->success($pay);
+		else
+			$this->error('不存在的付款方式');
+		
+	}
+	
+	public function checkPointNum(){
+		$points = I('get.points');
+		$points = intval($points);
+		if( !$points || $points <= 0 ) $this->error("只能为大于0的正整数");
+		$result = M("Member")->where( array('id'=>$this->user['id']) )->find();
+		if( $result['pay_points'] < $points ) $this->error("您当前最多只可以使用{$result['pay_points']}个积分");
+		$this->success($points);
+	}
+	
+	public function checkCoupon(){
+		$coupon = M("Coupon")->where( array( 'coupon'=>I('get.coupon') ) )->find();
+		if( is_array($coupon) ){
+			if( $coupon['user'] == '' ){
+				if( $coupon['expire_time']<time() ){
+					$this->success($coupon['amount']);
+				}else{
+					$this->error("已过期");
+				}
+			}else{
+				$this->error("已经使用过了");
+			}
+		}else{
+			$this->error("不存在");
+		}
+		
+	}
+	
+	public function payment(){
+		$this->display();
+	}
+	
+	public function getCartNum(){
+		$this->success( count($this->cart()['cart']) );
+	}
+}
