@@ -141,9 +141,9 @@ class JobsController extends HomeBaseController
 //            $data = M("Jobs")->select();
             if(isset($_GET['keyword']) && $_GET['keyword']!=''){
                 $keyword = I("get.keyword");
-                $where =" j.job_name like '%{$keyword}%' and j.work_city={$cityId} and and j.status=2 ";
+                $where =" j.job_name like '%{$keyword}%' and j.work_city={$cityId} and j.status=2 ";
             }else{
-                $where = "j.work_city={$cityId} and and j.status=2";
+                $where = "j.work_city={$cityId} and j.status=2";
             }
             $sql = "select j.*,c.name,n.nature_name,r.name as cityName from {$prefix}jobs j LEFT JOIN {$prefix}cate c on j.catid=c.id LEFT JOIN ";
             $sql.=" {$prefix}nature n on n.id=j.work_nature left join {$prefix}region r on r.id = j.work_city where {$where} order by j.refreshtime desc limit ".$page->firstRow.','.$page->listRows;
