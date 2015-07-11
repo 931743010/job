@@ -71,7 +71,7 @@ class JobsController extends HomeBaseController
         }
         if(IS_POST){
            // $cityId = $_SESSION['wiki']['cityId'];
-            $where = "j.work_city={$cityId} ";
+            $where = "j.work_city={$cityId} and j.status=2 ";
             $area_id = intval($_POST['area_id']);
             if($area_id!=0) {
                 $where .= " and j.work_area={$area_id} ";
@@ -141,9 +141,9 @@ class JobsController extends HomeBaseController
 //            $data = M("Jobs")->select();
             if(isset($_GET['keyword']) && $_GET['keyword']!=''){
                 $keyword = I("get.keyword");
-                $where =" j.job_name like '%{$keyword}%' and j.work_city={$cityId} ";
+                $where =" j.job_name like '%{$keyword}%' and j.work_city={$cityId} and and j.status=2 ";
             }else{
-                $where = "j.work_city={$cityId}";
+                $where = "j.work_city={$cityId} and and j.status=2";
             }
             $sql = "select j.*,c.name,n.nature_name,r.name as cityName from {$prefix}jobs j LEFT JOIN {$prefix}cate c on j.catid=c.id LEFT JOIN ";
             $sql.=" {$prefix}nature n on n.id=j.work_nature left join {$prefix}region r on r.id = j.work_city where {$where} order by j.refreshtime desc limit ".$page->firstRow.','.$page->listRows;
@@ -187,9 +187,7 @@ class JobsController extends HomeBaseController
         $this->display();
 
     }
-    function test(){
-        $this->display();
-    }
+
 
     //获取子类
     function get_son_cate(){
@@ -205,5 +203,40 @@ class JobsController extends HomeBaseController
 
         }
     }
+    /*
+     * 分类页
+     */
+    function category()
+    {
+        $prefix = C("DB_PREFIX");
 
+        if (!isset($_SESSION['wiki']['cityId'])) {
+            $city = getCurrentCity();
+            $cityId = $city['cityId'];
+        } else {
+            $cityId = $_SESSION['wiki']['cityId'];
+        }
+        if(!isset($_GET['catid'])){
+            $this->error("您查看的页面不存在");
+            exit();
+        }
+        $catid = intval($_GET['catid']);
+        $cate = sp_sql_cate($catid);
+        if($cate){
+            foreach($cate as $v){
+                $catid.=','.$v['id'];
+            }
+        }
+        $count = M("Jobs")->where("catid in ({$catid}) and status=2")->count();
+        $page = page($count, 10);
+
+        $where = "j.work_city={$cityId} and j.catid in ({$catid}) and j.status=2 ";
+
+        $sql = "select j.*,c.name,n.nature_name,r.name as cityName from {$prefix}jobs j LEFT JOIN {$prefix}cate c on j.catid=c.id LEFT JOIN ";
+        $sql .= " {$prefix}nature n on n.id=j.work_nature left join {$prefix}region r on r.id = j.work_city where {$where} order by j.refreshtime desc limit " . $page->firstRow . ',' . $page->listRows;
+//        echo $sql;die();
+        $data = M()->query($sql);
+        $this->assign('jobs', $data);
+        $this->display();
+    }
 }

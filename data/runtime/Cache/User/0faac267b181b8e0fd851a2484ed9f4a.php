@@ -68,14 +68,8 @@
         <!--导航start-->
         <div class="nav">
             <ul class="flul">
-
-
                 <li><a href="" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-
+                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a></li>
             </ul>
         </div>
         <!--导航end-->
@@ -140,8 +134,8 @@
 
                                 <li class="head">推广管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">推广消费</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">发布消费</a></li>
+                                <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
+                                <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
 							</ul>
 						</div>
 					</aside>

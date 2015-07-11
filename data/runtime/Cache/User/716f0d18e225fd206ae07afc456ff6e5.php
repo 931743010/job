@@ -63,14 +63,8 @@
         <!--导航start-->
         <div class="nav">
             <ul class="flul">
-
-
                 <li><a href="" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-                <li><a href="">会员中心</a></li>
-
+                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a></li>
             </ul>
         </div>
         <!--导航end-->

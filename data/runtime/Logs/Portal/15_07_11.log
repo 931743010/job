@@ -1,0 +1,6 @@
+[ 2015-07-11T23:43:13+08:00 ] 127.0.0.1 /index.php?g=portal&m=jobs&a=category&catid=126
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '}) ) LIMIT 1' at line 1
+
+[ 2015-07-11T23:43:35+08:00 ] 127.0.0.1 /index.php?g=portal&m=jobs&a=category&catid=126
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '}) ) LIMIT 1' at line 1
+

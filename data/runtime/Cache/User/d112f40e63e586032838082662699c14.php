@@ -1,11 +1,10 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<title>个人中心</title>
-	
-		<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>推广消费</title>
+    	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/base.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/top.css"/>
@@ -15,13 +14,13 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
 
 </head>
-<body class="theme">	
-	<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+<body class="theme foot-white-bg">
+<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 <div class="header" id="header">
 
@@ -93,11 +92,11 @@
         })
     </script>
 </div>
-	
-	<div class="wrapper order-wrap">
-		<div class="wrap">
-			<div class="grid myhmv-grid">
-				<div class="grid-l order-sidebar">
+
+<div class="wrapper order-wrap">
+    <div class="wrap">
+        <div class="grid address-page">
+            <div class="grid-l order-sidebar">
 					<aside class="sidebar-top">
 						<div class="sidebar-hd">
 							<h4><span class="icon-user"></span>会员中心</h4>
@@ -129,111 +128,57 @@
                                 <li class="head">推广管理</li>
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
-                                <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+                                <li><a href="<?php echo U('order/index/index');?>&type=1">发布消费</a></li>
 							</ul>
 						</div>
 					</aside>
 
 				</div>
-				<div class="grid-r">
-					<div class="order-main">
-						<ul class="user-info">
-							<li class="info-line-1 cate-icon"></li>
-							<li class="base-info">
-								<a href="<?php echo ($user["avatar_origin"]); ?>" target='_blank'>
-									<div class="user-pic">
-										<div class="cate-icon msk">										
-										</div>
-										<img src="<?php echo ($user["avatar_large"]); ?>"/>										
-									</div>
-								</a>
-								<div class="u-info">
-									<div class="u-name">
-										<?php echo ($user["user_login"]); ?>
-									</div>
-									<div class="u-safe">
-										<p>
-											帳戶安全
-										</p>
-										<div class="rank-box">
-											<span class="safe-rank">
-												<i class="rank-1"></i>
-												<!--<i class="rank-2"></i>-->
-												<!--<i class="rank-3"></i>-->
-											</span>
-											<span class="rank-txt">低</span>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="info-line-2 cate-icon"></li>
-							<li class="user-couts">
-								<ul>
-									<li>
-										<div class="counts-item">
-											<i class="cate-icon count-01"></i>
-											<p>余额<em><?php echo ((isset($account['money']) && ($account['money'] !== ""))?($account['money']):0); ?></em></p>
-										</div>										
-									</li>
-
-									<li>
-										<div class="counts-item">
-											<i class="cate-icon count-04"></i>
-											<p>职位<em><?php echo ((isset($jobCount) && ($jobCount !== ""))?($jobCount):0); ?></em></p>
-										</div>										
-									</li>
-									<li>
-										<div class="counts-item">
-											<i class="cate-icon count-05"></i>
-											<p>申请<em><?php echo ((isset($applyCount) && ($applyCount !== ""))?($applyCount):0); ?></em></p>
-										</div>										
-									</li>
-									<li>
-										<div class="counts-item">
-											<i class="cate-icon count-06"></i>
-											<p>简历<em><?php echo ((isset($resumeCount) && ($resumeCount !== ""))?($resumeCount):0); ?></em></p>
-										</div>										
-									</li>									
-								</ul>
-							</li>
-							<li class="info-line-3 cate-icon"></li>
-						</ul>
-					</div>
-                    <div class="order-main" id="user-index">
-                        <hr/>
-                        <div class="myaccount">
-                            <p>注册日期：<span class="red"><?php echo ($_SESSION['user']['create_time']); ?></span></p>
-                            <p>用户类型：<span class="red">
-                                <?php if($_SESSION['user']['utype'] == 2): ?>企业
-                                    <?php else: ?>
-                                    个人<?php endif; ?>
-                            </span></p>
-                            <p>认证状态：<span class="red">
-                                <?php if($account['audit'] == 0): ?>未验证
-                                    <?php elseif($account['audit'] == 1): ?>
-                                    验证中
-                                    <?php elseif($account['audit'] == 2): ?>
-                                    已验证
-                                    <?php else: ?>
-                                    验证不通过<?php endif; ?>
-
-                            </span></p>
-                            <p>发布权限：<span class="red">
-                                <?php if($account['audit'] == 2): ?>有
-                                    <?php else: ?>
-                                    无<?php endif; ?>
-                            </span></p>
-
-                            <p>我的余额：<span class="red"><?php echo ($account["money"]); ?></span></p>
-                            <p><a href="" class="btn btn-primary">现在充值</a></p>
+            <div class="grid-r">
+                <div class="order-main">
+                    <div class="hd">
+                        <div class="tips">
+                            消费记录 <small>推广消费</small>
                         </div>
                     </div>
-				</div>
-			</div>			
-		</div>		
-	</div>
-	
-	<div id="footer" class="footer">
+                    <div class="bd">
+                        <div class="margin-out">
+
+                            <table class="f-table">
+                                <thead>
+                                <tr>
+                                    <td>日期</td>
+                                    <td>消费金额</td>
+                                    <td>消费用途</td>
+                                </tr>
+                                </thead>
+                                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tbody>
+                                    <tr>
+                                        <td><?php echo (date("Y-m-d H:i",$vo["addtime"])); ?></td>
+                                        <td>
+                                            <p><?php echo ($vo["cost"]); ?> 元</p>
+                                        </td>
+                                        <td>
+                                            <?php echo ($vo["alias"]); ?>
+                                        </td>
+
+
+                                    </tr>
+                                    </tbody><?php endforeach; endif; else: echo "" ;endif; ?>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="bd">
+                        <?php echo ($show); ?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -250,5 +195,45 @@
         </div>
     </div>
 </div>
+<script>
+
+    //查看简历
+    $(".viewResume").click(function () {
+        var rid = $(this).attr("data-id");
+        var url = "<?php echo U('user/resume/aeresume?rid=');?>"+rid;
+        location.href = url;
+    })
+
+
+
+    $(".delResume").click(function(){
+        $.ajax({
+            type:"POST",
+            url:"<?php echo U('user/resume/delResume');?>",
+            dataType:'json',
+            data:{rid:$(this).attr('data-id')},
+            success:function(data){
+                alert(data.msg);
+                location.reload();
+            }
+
+        });
+    });
+
+    $(".refreshResume").click(function(){
+        $.ajax({
+            type:"POST",
+            url:"<?php echo U('user/resume/refreshResume');?>",
+            dataType:'json',
+            data:{rid:$(this).attr('data-id')},
+            success:function(data){
+                alert(data.msg);
+                location.reload();
+            }
+
+        });
+    });
+
+</script>
 </body>
 </html>

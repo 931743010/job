@@ -28,8 +28,8 @@
     <div class="top">
         <div class="top-left fl">
             <ul class="flul">
-                <li><span>城市：</span><span id="city">深圳</span> <a href="http://localhost/zp//jobs/change_city.php">[切换城市]</a></li>
-                <li><span>天气：</span> <span id="weather"> °C ~ °C</span></li>
+                <li><span>城市：</span><span id="city"></span> <a href="<?php echo U('Portal/index/change_city');?>">[切换城市]</a></li>
+                <li><span>天气：</span> <span id="weather"> </span></li>
             </ul>
         </div>
         <div class="top-right fr">
@@ -62,34 +62,33 @@
         <!--导航start-->
         <div class="nav">
             <ul class="flul">
-
-                <!--<div class="li"><a href="http://localhost/zp/index.php" target="_self" class="select">首  页</a></div>-->
-                <li><a href="http://localhost/zp/index.php" target="_self">首  页</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/jobs/" target="_blank" >招聘信息</a></div>-->
-                <li><a href="http://localhost/zp/jobs/" target="_blank">招聘信息</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/simple/simple-list.php" target="_self" >微商圈</a></div>-->
-                <li><a href="http://localhost/zp/simple/simple-list.php" target="_self">微商圈</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/resume/" target="_blank" >求职信息</a></div>-->
-                <li><a href="http://localhost/zp/resume/" target="_blank">求职信息</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/hrtools/index.php" target="_self" >HR工具箱</a></div>-->
-                <li><a href="http://localhost/zp/hrtools/index.php" target="_self">HR工具箱</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/company/index.php" target="_self" >黄页</a></div>-->
-                <li><a href="http://localhost/zp/company/index.php" target="_self">黄页</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/news/" target="_self" >新闻资讯</a></div>-->
-                <li><a href="http://localhost/zp/news/" target="_self">新闻资讯</a><span class="shu"></span></li>
-                <!--<div class="li"><a href="http://localhost/zp/user/login.php" target="_self" >会员中心</a></div>-->
-                <li><a href="http://localhost/zp/user/login.php" target="_self">会员中心</a><span class="shu"></span></li>
+                <li><a href="" target="_self">首  页</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a></li>
             </ul>
         </div>
         <!--导航end-->
     </div>
     <script>
+        <?php if($_SESSION['wiki']['cityId']> 0): ?>$(".top span#city").html("<?php echo ($_SESSION['wiki']['city']); ?>");
+            $(".top span#weather").html("<?php echo ($_SESSION['wiki']['weather']); ?>");<?php endif; ?>
+        <?php if($Think.session.wiki.weather): ?>$(".top span#weather").html("<?php echo ($_SESSION['wiki']['weather']); ?>");<?php endif; ?>
+        if( $(".top span#weather").html()==''){
+            $.ajax({
+                url:"<?php echo U('Portal/Index/getWiki');?>",
+                data:{},
+                type:'POST',
+                dataType:'json',
+                success:function(data){
+                    $(".top span#city").html(data.city);
+                    $(".top span#weather").html(data.weather);
+                }
+            });
+        }
 
         $("#search-btn").click(function (e) {
             var keyword = $("#top-search").val();
-            var url = "http://localhost/zp/"+"jobs/jobs-list.php?key="+keyword+"&trade=&jobcategory=&citycategory=&wage=&education=&experience=&nature=&settr=&sort=&page=1";
+            var url = "<?php echo U('jobs/lists');?>&keyword="+keyword;
             location.href = url;
-
             return false;
         })
     </script>

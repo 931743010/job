@@ -1463,52 +1463,8 @@ function sp_sql_cates( $parentid = null ){
 	$tree=$tree->get_tree();
 	return $tree;
 }
-/**
- * @todo googs cate
- */
-function sp_sql_availability(){
-	$arr = array(
-		'1' => '24 Hours',
-		'2' => '1-5 Days',
-		'3' => '5-10 Days',
-		'4' => '10-28 Days',
-		'5' => 'Special Order',
-		'6' => 'Pre-Order',
-	);
-	return $arr;
-}
-/**
- * @todo googs format
- */
-function sp_sql_format(){
-	$arr = array(
-			'1' => 'CD',
-			'2' => 'CD Single',
-			'3' => 'DVD',
-			'4' => 'Blu-ray',
-			'5' => 'Dual Disc',
-			'6' => 'SACD',
-			'7' => 'Games',
-			'8' => 'Accessories',
-			'9' => 'Digital Accessories',
-			'10' => 'Headphones',
-			'11' => 'Speaking & Docking',
-	);
-	return $arr;
-}
-/**
- * @todo googs charge
- */
-function sp_sql_charge(){
-	$arr = array(
-			'1' => 'free shipping',
-			'2' => 'charge shipping',
-			'3' => 'not entitled to free shipping',
-			'4' => 'hk store pickup only',
-			'5' => 'sg store pickup only'
-	);
-	return $arr;
-}
+
+
 /**
  * @处理标签函数
  * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
@@ -1533,130 +1489,7 @@ function sp_sql_ads( $tag ){
 	$ads = M("Ad")->field($field)->where($where)->order($order)->limit($limit)->select();
 	return $ads;
 }
-/**
- * 取得商品最终使用价格
- *
- * @param   string  $goods_id      商品编号
- * @param   string  $goods_num     购买数量
- * @param   boolean $is_spec_price 是否加入规格价格
- * @param   mix     $spec          规格ID的数组或者逗号分隔的字符串
- *
- * @return  商品最终购买价格
- */
-function get_final_price($goods_id, $goods_num = '1', $is_spec_price = false, $spec = array())
-{
-	$final_price   = '0'; //商品最终购买价格
-	$volume_price  = '0'; //商品优惠价格
-	$promote_price = '0'; //商品促销价格
-	$user_price    = '0'; //商品会员价格
 
-	//取得商品优惠价格列表
-	/*$price_list   = get_volume_price_list($goods_id, '1');
-
-	if (!empty($price_list))
-	{
-		foreach ($price_list as $value)
-		{
-			if ($goods_num >= $value['number'])
-			{
-				$volume_price = $value['price'];
-			}
-		}
-	}*/
-
-	//取得商品促销价格列表
-	/* 取得商品信息 */
-	$sql = "SELECT g.promote_price, g.promote_start_date, g.promote_end_date, ".
-			"IFNULL(mp.user_price, g.shop_price * '" . $_SESSION['discount'] . "') AS shop_price ".
-			" FROM " .$GLOBALS['ecs']->table('goods'). " AS g ".
-			" LEFT JOIN " . $GLOBALS['ecs']->table('member_price') . " AS mp ".
-			"ON mp.goods_id = g.goods_id AND mp.user_rank = '" . $_SESSION['user_rank']. "' ".
-			" WHERE g.goods_id = '" . $goods_id . "'" .
-			" AND g.is_delete = 0";
-	$goods = $GLOBALS['db']->getRow($sql);
-
-	/* 计算商品的促销价格 */
-	if ($goods['promote_price'] > 0)
-	{
-		$promote_price = bargain_price($goods['promote_price'], $goods['promote_start_date'], $goods['promote_end_date']);
-	}
-	else
-	{
-		$promote_price = 0;
-	}
-
-	//取得商品会员价格列表
-	$user_price    = $goods['shop_price'];
-
-	//比较商品的促销价格，会员价格，优惠价格
-	if (empty($volume_price) && empty($promote_price))
-	{
-		//如果优惠价格，促销价格都为空则取会员价格
-		$final_price = $user_price;
-	}
-	elseif (!empty($volume_price) && empty($promote_price))
-	{
-		//如果优惠价格为空时不参加这个比较。
-		$final_price = min($volume_price, $user_price);
-	}
-	elseif (empty($volume_price) && !empty($promote_price))
-	{
-		//如果促销价格为空时不参加这个比较。
-		$final_price = min($promote_price, $user_price);
-	}
-	elseif (!empty($volume_price) && !empty($promote_price))
-	{
-		//取促销价格，会员价格，优惠价格最小值
-		$final_price = min($volume_price, $promote_price, $user_price);
-	}
-	else
-	{
-		$final_price = $user_price;
-	}
-
-	//如果需要加入规格价格
-	if ($is_spec_price)
-	{
-		if (!empty($spec))
-		{
-			$spec_price   = spec_price($spec);
-			$final_price += $spec_price;
-		}
-	}
-
-	//返回商品最终购买价格
-	return $final_price;
-}
-/**
- * 取得商品优惠价格列表
- *
- * @param   string  $goods_id    商品编号
- * @param   string  $price_type  价格类别(0为全店优惠比率，1为商品优惠价格，2为分类优惠比率)
- *
- * @return  优惠价格列表
- */
-function get_volume_price_list($goods_id, $price_type = '1')
-{
-	$volume_price = array();
-	$temp_index   = '0';
-
-	$sql = "SELECT `volume_number` , `volume_price`".
-			" FROM " .$GLOBALS['ecs']->table('volume_price'). "".
-			" WHERE `goods_id` = '" . $goods_id . "' AND `price_type` = '" . $price_type . "'".
-			" ORDER BY `volume_number`";
-
-	$res = $GLOBALS['db']->getAll($sql);
-
-	foreach ($res as $k => $v)
-	{
-		$volume_price[$temp_index]                 = array();
-		$volume_price[$temp_index]['number']       = $v['volume_number'];
-		$volume_price[$temp_index]['price']        = $v['volume_price'];
-		$volume_price[$temp_index]['format_price'] = price_format($v['volume_price']);
-		$temp_index ++;
-	}
-	return $volume_price;
-}
 /*
  * @通过用户id获取用户头像url
  * @param int $uid 用户id
@@ -1686,6 +1519,20 @@ function get_point_rule($type){
     $point = M("CostConfig");
     $res = $point->where("name = '{$type}'")->select();
     return $res[0]['value'];
+}
+/*
+ * 获取子分类
+ */
+function sp_sql_cate($parent = '') {
+    $map = array ();
+    if ($parent) {
+        $map ['parent'] = array (
+            'eq',
+            $parent
+        );
+    }
+    $cate = M ( 'Cate' )->where ( $map )->select ();
+    return $cate;
 }
 /*
  * 获取当前城市 id 和名称
@@ -1756,5 +1603,36 @@ function getWeather($city='深圳'){
     $res = json_decode($res,1);
     $weather = $res['HeWeather data service 3.0'][0]['daily_forecast'][0];
     $_SESSION['wiki']['weather'] = $weather['cond']['txt_n']."&nbsp;&nbsp;气温:".$weather['tmp']['min']."℃ ~ ".$weather['tmp']['max']."℃";
+    return $res;
+}
+/*
+ * 取得消费配置
+ */
+function getCostConfig($type){
+    $costM = M("CostConfig");
+    $data = $costM->where("name = '{$type}'")->select();
+    if($data){
+        return $data[0]['value'];
+    }else{
+        return 0;
+    }
+}
+/*消费记录
+* @params $cost float 消费金额
+ * @params $type 消费类型 0 推广消费 1发布消费
+ * @params $alias 备注
+ *
+ */
+function logCost($uid ,$cost,$type,$alias,$job_name = '',$job_id='',$job_catename = ''){
+    $log = M("CostLog");
+    $data['uid'] = $uid;
+    $data['cost'] = $cost;
+    $data['type'] = $type;
+    $data['alias'] = $alias;
+    $data['job_name'] = $job_name;
+    $data['job_id'] = $job_id;
+    $data['job_catename'] = $job_catename;
+    $data['addtime'] = time();
+    $res = $log->add($data);
     return $res;
 }

@@ -156,7 +156,12 @@ class JobsController extends HomeBaseController
                 Utils::resOut('-1','操作失败');
                 exit();
             }else{
-
+                if($up){
+                    $cost = getCostConfig('publish');
+                    if($cost>0) {
+                        logCost($this->user['id'],$cost,1,'发布职位',$data['job_name'],$res,$data['catname']);
+                    }
+                }
                 Utils::resOut(0,'操作成功');
                 exit();
             }
@@ -216,6 +221,10 @@ class JobsController extends HomeBaseController
                 Utils::resOut(-2,'刷新失败');
                 exit();
             }elseif($res==1){
+                $cost = getCostConfig('refresh');
+                if($cost>0){
+                    logCost($this->user['id'],$cost,0,'刷新职位');
+                }
                 Utils::resOut(0,'刷新成功');
                 exit();
             }
@@ -283,6 +292,7 @@ class JobsController extends HomeBaseController
                 Utils::resOut(-1,'开始时间不能大于结束时间');
                 exit();
             }
+            $end_time = $end_time+(24*3600);
             //查询需花费金额
             $cost = M("CostConfig");
             $res = $cost->field("name,value")->where("name='{$type}'")->select();
@@ -323,6 +333,7 @@ class JobsController extends HomeBaseController
                 //扣除钱
                 $up['money'] = $yue-$costMoney;
                 $ac->where("uid=$uid")->save($up);
+                logCost($this->user['id'],$costMoney,1,$type);
                 Utils::resOut(0,'操作成功');
                 exit();
             }else{

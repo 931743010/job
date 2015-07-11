@@ -306,13 +306,28 @@ class MyController extends HomeBaseController {
     }
 
 
-	public function test1(){
-		freezePoints(100 , 111 , $_SESSION['user']['id'] , '冻结积分');
-	}
-	public function test2(){
-		confirmFreezePoints(100 , 111 , $_SESSION['user']['id'] , '退还积分');
-	}
-	public function test3(){
-		confirmFreezePoints(-100 , 111 , $_SESSION['user']['id'] , '确认消费');
-	}
+	/*
+	 *推广记录
+	 */
+    function  cost_log(){
+        if(isset($_GET['type'])){
+            $type = intval($_GET['type']);
+        }else{
+            $type = 0;
+        }
+        $uid = $this->user['id'];
+        $log = M("CostLog");
+        $count = $log->where("uid={$uid} and type = {$type}")->count();
+        $Page = page($count,10);
+        $show = $Page->show();
+        $data = $log->where("uid={$uid} and type = {$type}")->limit($Page->firstRow,$Page->listRows)->select();
+        $this->assign('list',$data);
+        $this->assign('show',$show);
+        if($type == 1){
+            $tmp = 'publish';//发布消费
+        }else{
+            $tmp = 'promotion';//推广消费
+        }
+        $this->display($tmp);
+    }
 }
