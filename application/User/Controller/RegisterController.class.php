@@ -16,6 +16,7 @@ class RegisterController extends HomeBaseController {
             //array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
             //array('terms', 'require', '您未同意服务条款！', 1 ),
             array('password','require','密码不能为空！',1),
+            array('user_realname','require','用户名不能为空！',1),
             array('repassword', 'require', '重复密码不能为空！', 1 ),
             array('repassword','password','确认密码不正确',0,'confirm'),
         );
@@ -59,6 +60,7 @@ class RegisterController extends HomeBaseController {
 
     	$where['user_login']=$username;
     	$where['user_email']=$email;
+//    	$where['user_realname']=$user_realname;
     	$where['_logic'] = 'OR';
     	$ucenter_syn=C("UCENTER_ENABLED");
     	$uc_checkemail=1;
@@ -95,6 +97,7 @@ class RegisterController extends HomeBaseController {
     					'user_login' => $username,
     					'user_email' => $email,
     					'user_nicename' =>$username,
+                        'user_realname' => $user_realname,
     					'user_pass' => sp_password($password),
     					'last_login_ip' => get_client_ip(),
     					'create_time' => date("Y-m-d H:i:s"),

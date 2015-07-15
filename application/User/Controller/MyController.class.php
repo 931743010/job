@@ -37,6 +37,11 @@ class MyController extends HomeBaseController {
         $this->assign("resumeCount",$resumeCount);
         $applyCount =  M("Apply")->where("uid=$uid")->count();
         $this->assign("applyCount",$applyCount);
+        $this->user = M('Member')->where( array( 'id'=>$this->user['id'] ) )->find();
+        $this->user['birth'] = explode('-' , $this->user['birthday']);
+        $this->assign( 'user' , $this->user );
+        //var_dump($this->user);die;
+        $this->display();
         $this->display();
 	}
 	

@@ -21,40 +21,7 @@
 <!--头部end-->
 <!--主体部分-->
 <div id="main" class="main">
-    <div class="common-head">
-        <span>热门推荐</span>
-    </div>
-    <div class="job-list">
-        <volist name="ejob" id="vo">
-            <a href="{:U('Portal/Jobs/detail')}&id={$vo.id}">
-        <div class="item fl">
-            <div class="item-body">
-                <ul>
-                    <li>岗位名称：{$vo.job_name}</li>
-                    <li>工作内容：{$vo.job_desc}</li>
-                    <li>工作时间：{$vo.work_start_date|substr=5,5}</li>
-                    <li>岗位类别：{$vo.catname}</li>
-                </ul>
-            </div>
-            <div class="item-bottom">
-                <ul class="flul">
-                    <li>地点：{$_SESSION['wiki']['city']}</li>
-                    <li>{$vo.work_pay}元/小时</li>
-                    <li>联系</li>
-                    <div class="c"></div>
-                </ul>
 
-            </div>
-
-            <div class="c"></div>
-        </div>
-            </a>
-        </volist>
-        <div class="c"></div>
-    </div>
-    <div class="common-head">
-        <span>最新工作</span>
-    </div>
     <div class="job-list">
         <volist name="newJob" id="vo">
             <a href="{:U('Portal/Jobs/detail')}&id={$vo.id}">
@@ -84,36 +51,6 @@
         </a>
     </div>
 
-    <div class="common-head">
-        <span>优质工作</span>
-    </div>
-    <div class="job-list">
-        <volist name="hjob" id="vo">
-            <a href="{:U('Portal/Jobs/detail')}&id={$vo.id}">
-            <div class="item fl">
-                <div class="item-body">
-                    <ul>
-                        <li>岗位名称：{$vo.job_name}</li>
-                        <li>工作内容：{$vo.job_desc}</li>
-                        <li>工作时间：{$vo.work_start_date|substr=5,5}</li>
-                        <li>岗位类别：{$vo.catname}</li>
-                    </ul>
-                </div>
-                <div class="item-bottom">
-                    <ul class="flul">
-                        <li>地点：{$_SESSION['wiki']['city']}</li>
-                        <li>{$vo.work_pay}元/小时</li>
-                        <li>联系</li>
-                        <div class="c"></div>
-                    </ul>
-
-                </div>
-                <div class="c"></div>
-            </div>
-                </a>
-        </volist>
-        <div class="c"></div>
-    </div>
 
 </div>
 <!--主体部分end-->

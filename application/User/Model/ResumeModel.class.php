@@ -12,7 +12,7 @@ class ResumeModel extends CommonModel{
     //更新或新增
     function aeresume($data,$up = false,$id = ''){
         $uid = $_SESSION['user']['id'];
-        if($up == 1){
+        if($up){
             //更新
             $data['refreshtime'] = time();
             $res = $this->where("uid = $uid and id = $id")->save($data);

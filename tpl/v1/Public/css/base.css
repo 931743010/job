@@ -266,7 +266,8 @@ input[type=text].l-text{
 .btn:hover,
 .btn:focus{
 	color: #fff;
-	background-color: #e5006e;
+	background-color: rgb(239,22,16);
+    opacity: 0.5;
 }
 .btn:hover{
 	background-color: #c4005c;

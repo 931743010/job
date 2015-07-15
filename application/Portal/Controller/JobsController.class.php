@@ -44,6 +44,7 @@ class JobsController extends HomeBaseController
         //浏览量+1
         $up['click'] = $data['click']+1;
         $job->where("id={$id}")->save($up);
+//        dump($userInfo);
         $this->assign('user',$userInfo);
 //        dump($userInfo);
         //简历

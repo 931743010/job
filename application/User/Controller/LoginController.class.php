@@ -161,7 +161,7 @@ hello;
     	if(strpos($username,"@")>0){//邮箱登陆
     		$where['user_email']=$username;
     	}else{
-    		$where['user_login']=$username;
+    		$where['user_realname']=$username;
     	}
     	$users_model=M('Member');
     	$result = $users_model->where($where)->find();

@@ -51,7 +51,7 @@ class ResumeController extends HomeBaseController
                 Utils::resOut(-1,'姓名不能为空，或者超过20个字符');
                 exit();
             }
-            if($data['gender'] != 1 && $data['gender']!=2){
+            if($data['gender'] != 1 && $data['gender']!=0){
                 Utils::resOut(-1,'请选择性别');
                 exit();
             }
@@ -84,20 +84,25 @@ class ResumeController extends HomeBaseController
                 Utils::resOut(-1,'工作经历字数必须在10到300之间');
                 exit();
             }
-            if(isset($_POST['rid'])){
+            if(isset($_POST['rid']) && $_POST['rid']>0){
                 $rid = intval($_POST['rid']);
                 $up = 1;
             }else{
                 $rid = '';
                 $up = 0;
             }
-
+//            print_r($_POST);die();
             $res = $this->resume->aeresume($data,$up,$rid);
+            if($up){
+                $msg = '修改';
+            }else{
+                $msg = '新增';
+            }
             if(!$res){
-                Utils::resOut('-1','操作失败');
+                Utils::resOut('-1',$msg.'简历失败');
                 exit();
             }else{
-                Utils::resOut(0,'操作成功');
+                Utils::resOut(0,$msg.'简历成功');
                 exit();
             }
 
@@ -164,13 +169,33 @@ class ResumeController extends HomeBaseController
         $count = M("Apply")->where("compid={$uid}")->count();
         $Page = page($count , 10);
         $limit = "limit ".$Page->firstRow.','.$Page->listRows;
-        $sql = "select a.*,j.job_name,j.addtime,m.user_login from {$prefix}apply a left join {$prefix}jobs j on j.id = a.job_id  left join {$prefix}member m on  m.id=a.uid where a.compid={$uid} {$limit}";
+        $sql = "select a.*,j.job_name,j.addtime,m.user_login from {$prefix}apply a left join {$prefix}jobs j on j.id = a.job_id  left join {$prefix}member m on  m.id=a.uid where a.compid={$uid} ORDER BY a.apply_time desc {$limit}";
         $data = $resume->query($sql);
-
+//        dump($data);die();
         $this->assign("list",$data);
         $this->assign("show",$Page->show());
-
         $this->display();
+    }
+    //收到的简历按工作分组
+    function receive_group(){
+        $uid = $this->user['id'];
+        if(!isset($_GET['job_id'])){
+            $this->error("页面不存在");
+            exit();
+        }
+        $job_id = intval($_GET['job_id']);
+        $prefix = C("DB_PREFIX");
+        $resume = M("Resume");
+        $count = M("Apply")->where("compid={$uid}")->count();
+        $Page = page($count , 10);
+        $limit = "limit ".$Page->firstRow.','.$Page->listRows;
+        $sql = "select a.*,j.job_name,j.addtime,m.user_login from {$prefix}apply a left join {$prefix}jobs j on j.id = a.job_id  left join {$prefix}member m on  m.id=a.uid where a.compid={$uid} and a.job_id={$job_id} ORDER BY a.apply_time desc {$limit}";
+//        echo $sql;
+        $data = $resume->query($sql);
+//        dump($data);die();
+        $this->assign("list",$data);
+        $this->assign("show",$Page->show());
+        $this->display("receive");
     }
     //查看简历
     function view_resume(){

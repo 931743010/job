@@ -3,25 +3,23 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<title>首頁</title>
+	<title>注册中心</title>
 	<tc_include file='Public:head'/>
 	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/login.css"/>
-
+    <link href="__TMPL__Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="theme page-2">	
-	<header>		
+	<header style="width: 980px;margin: 0 auto">
 		<div class="head-logo">
 			<div class="head-block">
 				<a class="logo" href="/">
-					<img src="__TMPL__Public/images/logo1.png"/>
+					<img src="__TMPL__Public/images/logo.png"/>
 				</a>
 				<div class="top-txt">
 					<div class="wel-txt">
-						歡迎光臨hmv，<a href="{:U('user/login/index')}">請登錄</a>
+						欢迎光临，<a href="{:U('user/login/index')}">请登录</a>
 					</div>
-					<ul class="fr navtop-right">					
-						<li class="lang"><a>English</a><a class="on">繁</a><a href="index.html">簡</a></li>
-					</ul>
 				</div>
 				
 			</div>
@@ -33,8 +31,8 @@
 				<div class="reg-box">
 					<div class="reg-hd">
 						<ul class="reg-block">
-							<li class="active">邮箱注册</li>
-							<li>手机注册</li>
+							<li class="active">注册中心</li>
+
 						</ul>
 					</div>					
 					<div class="reg-bd">
@@ -47,11 +45,17 @@
 										<input type="text" name="username" id="email_username" value="" placeholder="请输入邮箱地址"/>
 									</div>
 								</li>
+                                <li>
+                                    <span class="label-name">用户名</span>
+                                    <div class="input">
+                                        <input type="text" name="user_realname" id="user_realname" value="" placeholder="请输入用户名"/>
+                                    </div>
+                                </li>
 								<li>									
 									<span class="label-name">验&nbsp;&nbsp;证&nbsp;码</span>
 									<div class="pass-ver-btn">
-										<a href="javascript:void(0)">{:sp_verifycode_img('code_len=4&font_size=15&width=100&height=50&charset=1234567890')}</a>
-										<a onclick="$('.verify_img').attr('src' , '/index.php?g=Api&amp;m=Checkcode&amp;a=index&amp;code_len=4&amp;font_size=15&amp;width=100&amp;height=50&amp;charset=1234567890&amp;time='+Math.random())" style="cursor: pointer;">换一张</a>
+										<a href="javascript:void(0)">{:sp_verifycode_img('code_len=4&font_size=15&width=120&height=50&charset=1234567890')}</a>
+										<a onclick="$('.verify_img').attr('src' , '/index.php?g=Api&amp;m=Checkcode&amp;a=index&amp;code_len=4&amp;font_size=15&amp;width=120&amp;height=50&amp;charset=1234567890&amp;time='+Math.random())" style="cursor: pointer;">换一张</a>
 									</div>
 									<div class="input ver-Code">
 										<input type="text" name="verify" id="" value="" />
@@ -70,7 +74,8 @@
 									</div>
 								</li>
 								<li>
-									点击注册，表示您已同意&nbsp;<a href="">《hmv服务协议》</a>
+
+									我已阅读并同意&nbsp;<a href="">《服务协议》</a> <input type="checkbox" name="agree" id="agree" checked="checked" value="1" />
 								</li>
 								<li>
 									<button class="reg-btn btn btn-block btn-block">注册</button>
@@ -120,8 +125,16 @@
 			</section>
 		</div>		
 	</div>
-	
-<tc_include file='Public:footer'/>
+    <div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p>深圳市公安网络备案编号：10000000</p>
+            </div>
+        </div>
+    </div>
 </body>
 	<script type="text/javascript">
 		$('.reg-hd ul li').click(function(){
@@ -140,32 +153,56 @@
                 })
             }
             return false;
-        })
+        });
+        $("#agree").click(function () {
+           var val = $(this).val();
+            if(val ==1){
+                $(this).val(0);
+            }else{
+                $(this).val(1);
+            }
+        });
 		$("button.reg-btn").click(function(){
+            var agree = $("#agree").val();
+//            alert(agree);return false;
+            if(agree!=1){
+                alert("请先同意注册条款");
+                return false;
+            }
 			var type = $(".reg-block li.active").html();
-			if( type=='邮箱注册' ){
-				var reg_type = 1;
+            var realname = $("input[name=user_realname]").val();
+            if(realname==''){
+                alert('请输入用户名');
+                return false;
+            }
+            if(realname.length<4 || realname.length>20){
+                alert('用户名不能低于4位或者超过20位');
+                return false;
+            }
+			//if( type=='邮箱注册' ){
+//				var reg_type = 1;
 				var username = $("input[id=email_username]").val();
 				var password = $("input[id=email_password]").val();
 				var repassword = $("input[id=email_repassword]").val();
 				var verify = $("input[name=verify]").val();
-			}else{
-				var reg_type = 2;
-				var username = $("input[id=mobilePhone]").val();
-				var password = $("input[id=phone_password]").val();
-				var repassword = $("input[id=phone_repassword]").val();
+//			}else{
+//				var reg_type = 2;
+//				var username = $("input[id=mobilePhone]").val();
+//				var password = $("input[id=phone_password]").val();
+//				var repassword = $("input[id=phone_repassword]").val();
 				var code = $("input[name=code]").val();
-			}
+//			}
 			$.ajax({
 				url:"{:U('user/register/doregister')}",
 				type:'post',
 				data:{
-					reg_type:reg_type,
+					reg_type:1,
 					username:username,
 					password:password,
 					repassword:repassword,
 					verify:verify,
 					code:code,
+                    user_realname:realname
 				},
 				success:function(data){
 					if(data.status==1){

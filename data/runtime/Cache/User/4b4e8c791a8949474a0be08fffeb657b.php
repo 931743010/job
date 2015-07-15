@@ -26,24 +26,31 @@
 <div class="header" id="header">
 
     <div class="top">
-        <div class="top-left fl">
-            <ul class="flul">
-                <li><span>城市：</span><span id="city"></span> <a href="<?php echo U('Portal/index/change_city');?>">[切换城市]</a></li>
-                <li><span>天气：</span> <span id="weather"> </span></li>
-            </ul>
-        </div>
-        <div class="top-right fr">
-            <ul class="flul">
+        <div style="width: 980px;margin: 0 auto;">
+            <div class="cl816">
+                <div class="top-left fl">
+                    <ul class="flul">
+                        <li><span>城市：</span><span id="city"></span> <a href="<?php echo U('Portal/index/change_city');?>">[切换城市]</a></li>
+                        <li><span>天气：</span> <span id="weather"> </span></li>
+                    </ul>
+                </div>
+                <div class="top-right fr">
+                    <ul class="flul">
 
-                <?php if($_SESSION['user']['id']): ?><li>欢迎您：<?php echo ($_SESSION['user']['user_login']); ?><a href="<?php echo U('User/my/index');?>">  您好</a></li>
-                <li><a href="<?php echo U('user/my/index');?>">会员中心</a></li>
-                <?php else: ?>
-                <li><a href="<?php echo U('User/Login/index');?>">登陆</a></li>
-                <li><a href="<?php echo U('User/register/index');?>">注册</a></li><?php endif; ?>
-                <li><a href="<?php echo U('user/jobs/aejobs');?>">发布需求信息</a></li>
-            </ul>
+                        <?php if($_SESSION['user']['id']): ?><li><?php echo ($_SESSION['user']['user_realname']); ?><a href="<?php echo U('User/my/index');?>">  您好</a></li>
+                        <li><a href="<?php echo U('user/my/index');?>">会员中心</a></li>
+                        <li><a href="<?php echo U('user/index/logout');?>">退出</a></li>
+                        <?php else: ?>
+                        <li><a href="<?php echo U('User/Login/index');?>">登陆</a></li>
+                        <li><a href="<?php echo U('User/register/index');?>">注册</a></li><?php endif; ?>
+                        <!--<li><a href="<?php echo U('user/jobs/aejobs');?>">发布需求信息</a></li>-->
+                    </ul>
+                </div>
+
+                <div class="c"></div>
+            </div>
         </div>
-        <div class="c"></div>
+
     </div>
     <div class="h-center">
         <div class="head-banner">
@@ -55,15 +62,22 @@
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
                     <button class="btn-search" id="search-btn">搜索</button>
+
                 </form>
+            </div>
+            <div class="publish fl">
+                <a href="<?php echo U('user/jobs/aejobs');?>" class="publish">发布信息</a>
             </div>
             <div class="c"></div>
         </div>
         <!--导航start-->
         <div class="nav">
             <ul class="flul">
-                <li><a href="" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a></li>
+                <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
+
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
         </div>
         <!--导航end-->
@@ -96,7 +110,7 @@
 	
 	<div class="wrapper order-wrap">
 		<div class="wrap">
-			<div class="grid myhmv-grid">
+			<div class="grid myhmv-grid  portrait-page">
 				<div class="grid-l order-sidebar">
 					<aside class="sidebar-top">
 						<div class="sidebar-hd">
@@ -105,8 +119,8 @@
 						<div class="sidebar-bd">
 							<ul class="side-nav">
                                 <li class="head">用户管理</li>
-								<li class="active"><a href="<?php echo U('user/my/index');?>">我的账户</a></li>
-                                <li><a href="<?php echo U('user/my/profile');?>">个人资料</a></li>
+								<li class="active"><a href="<?php echo U('user/my/index');?>">基本资料</a></li>
+                                <!--<li><a href="<?php echo U('user/my/profile');?>">个人资料</a></li>-->
                                 <li><a href="<?php echo U('user/my/change_pwd');?>">密码修改</a></li>
                                 <li><a href="<?php echo U('user/my/user_verify');?>">安全认证</a></li>
 
@@ -153,7 +167,7 @@
 									</div>
 									<div class="u-safe">
 										<p>
-											帳戶安全
+											账户安全
 										</p>
 										<div class="rank-box">
 											<span class="safe-rank">
@@ -199,7 +213,7 @@
 							<li class="info-line-3 cate-icon"></li>
 						</ul>
 					</div>
-                    <div class="order-main" id="user-index">
+                    <div class="order-main" id="user-index" style="display: none">
                         <hr/>
                         <div class="myaccount">
                             <p>注册日期：<span class="red"><?php echo ($_SESSION['user']['create_time']); ?></span></p>
@@ -224,11 +238,101 @@
                                     无<?php endif; ?>
                             </span></p>
 
-                            <p>我的余额：<span class="red"><?php echo ($account["money"]); ?></span></p>
-                            <p><a href="" class="btn btn-primary">现在充值</a></p>
+                            <!--<p>我的余额：<span class="red"><?php echo ($account["money"]); ?></span></p>-->
+                            <!--<p><a href="" class="btn btn-primary">现在充值</a></p>-->
                         </div>
                     </div>
 				</div>
+                <div class="grid-r">
+                    <div class="order-main">
+                        <div class="hd">
+                            <ul class="portrait-head">
+                                <li class="active">基本资料</li>
+                                <li><a href="<?php echo U('user/my/portrait');?>">头像照片</a></li>
+                            </ul>
+                        </div>
+                        <div class="bd">
+                            <form action="">
+                                <div class="grid">
+                                    <!--<p class="title">&nbsp;&nbsp;用户名：<?php echo ($_SESSION['user']['user_realname']); ?></p>-->
+                                </div>
+                                <div class="portrait-gd dl-hori">
+                                    <dl style="display: none">
+                                        <dt>
+                                            当前头像：
+                                        </dt>
+                                        <dd>
+                                            <a class="pot-pic" target='_blank' href="<?php echo ($user["avatar_origin"]); ?>">
+                                                <img src="<?php echo ($user["avatar"]); ?>"/>
+                                            </a>
+                                        </dd>
+                                    </dl>
+
+                                    <dl>
+                                        <dt>
+                                            *昵   称：
+                                        </dt>
+                                        <dd>
+                                            <input type="text" name="user_nicename" id="" value="<?php echo ($user["user_nicename"]); ?>" />
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            *用&nbsp;户&nbsp;&nbsp;名：
+                                        </dt>
+                                        <dd>
+                                            <input type="text" name="user_realname" id="" value="<?php echo ($user["user_realname"]); ?>" />
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            *性　　別：
+                                        </dt>
+                                        <dd>
+                                            <div class="checkbox">
+                                                <input type="radio" name='sex' <?php if($user['sex'] == 0): ?>checked<?php endif; ?> name="gender" id="" value="0" />&nbsp;男
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" name='sex' <?php if($user['sex'] == 1): ?>checked<?php endif; ?> name="gender" id="" value="1" />&nbsp;女
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl style="display: none">
+                                        <dt>
+                                            *生　　日：
+                                        </dt>
+                                        <dd class="date">
+                                            <select name="year">
+                                                <option value="">年</option>
+                                                <?php for( $i=1970;$i<2016;$i++ ){ if( $user['birth'][0] == $i ){ echo "<option selected value='".$i."'>$i</option>"; }else{ echo "<option value='".$i."'>$i</option>"; } } ?>
+                                            </select>
+                                            <select name="month">
+                                                <option value="">月</option>
+                                                <?php for( $i=0;$i<13;$i++ ){ if( $user['birth'][1] == $i ){ echo "<option selected value='".$i."'>$i</option>"; }else{ echo "<option value='".$i."'>$i</option>"; } } ?>
+                                            </select>
+                                            <select name="day">
+                                                <option value="">日</option>
+                                                <?php for( $i=0;$i<32;$i++ ){ if( $user['birth'][2] == $i ){ echo "<option selected value='".$i."'>$i</option>"; }else{ echo "<option value='".$i."'>$i</option>"; } } ?>
+                                            </select>
+                                            <span class="tips">（出生年月為保密）</span>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            *居&nbsp;住&nbsp;&nbsp;地：
+                                        </dt>
+                                        <dd>
+                                            <input type="text" class="l-text" name="address" id="" value="<?php echo ($user["address"]); ?>" />
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="grid text-center">
+                                    <button class="btn btn-lg submit">保　存</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 			</div>			
 		</div>		
 	</div>
@@ -250,5 +354,24 @@
         </div>
     </div>
 </div>
+    <script>
+        $("button.submit").click(function(data){
+            $.ajax({
+                url:"<?php echo U('user/profile/edit_post');?>",
+                type:'post',
+                data:{
+                    user_nicename:$("input[name=user_nicename]").val(),
+                    sex:$("input[name=sex]:checked").val(),
+                    birthday:$("select[name=year] option:selected").val()+'-'+$("select[name=month] option:selected").val()+'-'+$("select[name=day] option:selected").val(),
+                    address:$("input[name=address]").val(),
+                    user_realname:$("input[name=user_realname]").val(),
+                },
+                success:function(data){
+                    alert(data.info);
+                }
+            });
+            return false;
+        })
+    </script>
 </body>
 </html>

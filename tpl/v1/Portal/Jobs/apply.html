@@ -13,26 +13,23 @@
 
     <link href="__TMPL__Public/zp/css/index.css" rel="stylesheet" type="text/css" />
     <link href="__TMPL__Public/zp/css/jobs.css" rel="stylesheet" type="text/css" />
+
+    <link href="__TMPL__Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
     <script src="__TMPL__Public/js/jquery-1.11.1.min.js" type="text/javascript" language="javascript"></script>
 
 </head>
 <body>
 <div class="wrap">
     <!--头部start-->
-    <tc_include file='Public:header'/>
+
     <!--头部end-->
     <!--主体部分-->
     <div id="main" class="main">
-        <div class="position">
-            <span class="red">当前位置:</span>
-            <a href="">首页</a>
-            <span> >> </span>
-            家政招聘
-        </div>
+
         <div id="job">
-            <div class="apply">
-                <h4>申请职位</h4>
-                <p class="job_name">职位名称：{$job.job_name}</p>
+            <div class="apply" style="padding: 30px;">
 
                 <h4>选择简历</h4>
                 <div class="resume-list">
@@ -53,7 +50,7 @@
     </div>
     <!--主体部分end-->
     <!--底部start-->
-    <tc_include file='Public:footer'/>
+
     <!--底部end-->
 
 </div>

@@ -49,7 +49,7 @@ var GV = {
 <div class="wrap J_check_wrap container-fluid">
     <ul class="nav nav-tabs">
         <li class="active"><a href="javascript:;">所有职位</a></li>
-     
+
     </ul>
 
         <div class="search_type cc mb10 row-fluid">

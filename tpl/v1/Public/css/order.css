@@ -21,14 +21,14 @@
 	overflow: hidden;
 }
 .sidebar-hd{
-	background-color: #e6006d;
-	height: 80px;
+	background-color: #fff;
+	height: 56px;
 }
 .sidebar-hd h4{
 	line-height: 80px;
 }
 .order-sidebar h4{
-	color: #fff;
+	color: #333;
 	font-size: 16px;
 	text-align: center;
 	font-weight: normal;

@@ -27,23 +27,23 @@
     </div>
     <div class="bd">
         <div class="margin-out">
-            <div class="add-address data-item">
+            <div class="add-address data-item" style="width: 430px;margin: 0 auto">
                 <dl>
                     <dt>*原&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
-                        <input type="password" name='oldpwd' placeholder="原密码" />
+                        <input type="password" name='oldpwd' placeholder="请输入原密码" />
                     </dd>
                 </dl>
                 <dl>
                     <dt>*新&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
-                        <input type="password" name='newpwd' placeholder="原密码" />
+                        <input type="password" name='newpwd' placeholder="请输入新密码" />
                     </dd>
                 </dl>
                 <dl>
                     <dt>*确&nbsp;认&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
-                        <input type="password" name='renewpwd' placeholder="原密码" />
+                        <input type="password" name='renewpwd' placeholder="确认新密码" />
                     </dd>
                 </dl>
                     <br />
@@ -73,7 +73,7 @@
         }
         //console.log(pwd_data);
         if(pwd_data.oldpwd=='' || pwd_data.oldpwd.length<6 || pwd_data.oldpwd.length>16){
-            alert("旧密码长度应该在6到16之间11");
+            alert("旧密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd.length<6 || pwd_data.newpwd.length>16){

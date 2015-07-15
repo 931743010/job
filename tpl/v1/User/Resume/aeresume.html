@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <title>地址</title>
+    <title><if condition="$edit">
+        修改简历
+        <else/>
+        新增简历
+    </if></title>
 
     <tc_include file='Public:head'/>
     <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/index.css"/>
@@ -49,11 +53,10 @@
                     <dl>
                         <dt>*性别：</dt>
                         <dd>
-                            <select name="gender" id="gender">
-                                <option value="1">男</option>
-                                <option value="0">女</option>
-                            </select>
 
+                            <input type="radio" name="gender" value="1" id="boy"/> 男
+                            <input type="radio" name="gender" value="0" id="girl"/> 女
+                            <input type="hidden" value="{$resume.gender}" id="sex" name="sex" />
                         </dd>
                     </dl>
                     <dl>
@@ -112,7 +115,7 @@
                         </dd>
                     </dl>
                     <if condition='$edit'>
-                        <input type="hidden" name="rid" value="{$resume['id']}"/>
+                        <input type="hidden" name="rid" id="rid" value="{$resume['id']}"/>
                         </if>
                     <div class="c"></div>
                     <div class="" style="margin-top: 25px;margin-left: 130px">
@@ -136,20 +139,32 @@
 
     <if condition='$edit'>
     var gender = "{$resume['gender']}";
-    $("select[name=gender]").val(gender);
+//    $("input[name=gender]").val(gender);
+//     $("input[name=gender]").val(gender);
+    if(gender==1){
+        $("#boy").attr('checked','checked');
+    }else{
+        $("#girl").attr('checked','checked');
+
+    }
     var degree = "{$resume['degree']}";
     $("select[name=degree]").val(degree);
 
     </if>
 
-
+    $("#boy").click(function(){
+        $("#sex").val(1);
+    });
+    $("#girl").click(function(){
+        $("#sex").val(0);
+    });
 
     $("#aeresume").click(function(){
 
         var resume = {
             title: $('input[name=title]').val(),
             name:$("input[name=name]").val(),
-            gender:$("select[name=gender]").val(),
+            gender:$("input[name=sex]").val(),
             live_place:$("input[name=live_place]").val(),
             age:$("input[name=age]").val(),
             tel:$("input[name=tel]").val(),
@@ -158,7 +173,7 @@
             degree:$("select[name=degree]").val(),
             resume_content:$("textarea[name=resume_content]").val()
         };
-        console.log(resume);
+
         if(resume.title=='' || resume.title.length>60){
             alert("简历名称不能为空或者超过60个字符");
             return false;
@@ -167,6 +182,7 @@
             alert("姓名不能为空或者超过20个字符");
             return false;
         }
+//        alert(resume.gender);return false;
         if(resume.gender!=0 && resume.gender!=1){
             alert("请选择性别");
             return false;
@@ -197,17 +213,19 @@
             alert("工作经历必须填写，并且字数要在10到300个之间");
             return false;
         }
+        var rid = $("#rid").val();
+        if(rid){
+            resume.rid = rid;
+        }
         $.ajax({
             type:'post',
             url:"{:U('user/resume/aeresume')}",
             dataType:'json',
             data: resume,
             success:function(data){
+                alert(data.msg);
                 if(data.r==0){
-                    alert('操作成功');
                     location.href="{:U('user/resume/index')}";
-                }else{
-                    alert(data.msg);
                 }
             }
         })

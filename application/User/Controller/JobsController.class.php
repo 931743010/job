@@ -381,5 +381,22 @@ class JobsController extends HomeBaseController
         echo $ip;
 
     }
+    //查看用户是否有权限
+    function publish_auth(){
+        //查看用户权限
+        if(!IS_AJAX){die();}
+        $ac = M("Account");
+        $uid = $this->user['id'];
+        $vdata = $ac->where("uid=$uid and audit=2")->select();
+//        if(!$vdata){
+//            $this->error("请先认证您的身份",U("User/my/user_verify"));
+//            exit();
+//        }
+        if($vdata){
+            echo 1;
+        }else{
+            echo 0;
+        }
+    }
 
 }

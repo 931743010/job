@@ -32,7 +32,7 @@ class ApplyController extends HomeBaseController
         $count = $this->apply_obj->where("uid={$uid}")->count();
         $Page = page($count , 10);
         $limit = "limit ".$Page->firstRow.','.$Page->listRows;
-        $sql = "select a.*,j.addtime,j.job_name,m.user_login from {$prefix}apply a left join {$prefix}jobs j on j.id = a.job_id  left join {$prefix}member m on  m.id=a.compid where a.uid={$uid} {$limit}";
+        $sql = "select a.*,j.addtime,j.job_name,m.user_login from {$prefix}apply a left join {$prefix}jobs j on j.id = a.job_id  left join {$prefix}member m on  m.id=a.compid where a.uid={$uid} order by a.apply_time desc {$limit}";
         $data = $this->apply_obj->query($sql);
         $this->assign("list",$data);
         $this->assign("show",$Page->show());

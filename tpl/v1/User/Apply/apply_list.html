@@ -39,7 +39,7 @@
                                 <tr>
                                     <td width="14%">申请日期</td>
                                     <td width="10%">岗位名称</td>
-                                    <td>兼职提供方用户名</td>
+                                    <td>对方名称</td>
                                     <td>投递状态</td>
                                     <td width="16%">查看</td>
                                 </tr>
@@ -60,7 +60,12 @@
                                             <p>{$vo.job_name}</p>
                                         </td>
                                         <td class="text-center">
-                                            {$vo.user_login}
+                                            <if condition="$vo['user_realname']">
+
+                                            {$vo.user_realname}
+                                                <else />
+                                                {$vo.user_login}
+                                                </if>
                                         </td>
                                         <td>
                                             <if condition="$vo['status'] eq 0 ">
@@ -71,7 +76,7 @@
                                             </if>
                                         </td>
                                         <td>
-                                            <a data-id='{$vo.id}'  href="{:U('jobs/jobs/detail?id=')}{$vo.job_id}" class="viewJob">查看此职位</a>
+                                            <a data-id='{$vo.id}'  href="{:U('Portal/jobs/detail?id=')}{$vo.job_id}" class="viewJob">查看此职位</a>
 
                                         </td>
 

@@ -106,18 +106,18 @@ function sp_sql_link_posts($id) {
  * @todo 音乐分类
  *      
  */
-function sp_sql_cate($parent = '') {
-	// 音乐分类
-	$map = array ();
-	if ($parent) {
-		$map ['parent'] = array (
-				'eq',
-				$parent 
-		);
-	}
-	$cate = M ( 'Cate' )->where ( $map )->select ();
-	return $cate;
-}
+//function sp_sql_cate($parent = '') {
+//	// 音乐分类
+//	$map = array ();
+//	if ($parent) {
+//		$map ['parent'] = array (
+//				'eq',
+//				$parent
+//		);
+//	}
+//	$cate = M ( 'Cate' )->where ( $map )->select ();
+//	return $cate;
+//}
 /**
  * @ 处理标签函数
  * @ $tag以字符串方式传入,通过sp_param_lable函数解析为以下变量。例："cid:1,2;order:post_date desc,listorder desc;"

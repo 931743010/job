@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<title>首頁</title>
+	<title>登录</title>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/base.css"/>
@@ -15,21 +15,22 @@
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/login.css"/>
+    <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="theme page-2">	
-	<header>		
-		<div class="head-logo">
+<body class="theme page-2">
+<header style="width: 980px;margin: 0 auto">
+
+        <div class="head-logo">
 			<div class="head-block">
 				<a class="logo" href="/">
-					<img src="/tpl/v1/Public/images/logo1.png"/>
+					<img src="/tpl/v1/Public/images/logo.png"/>
 				</a>
 				<div class="top-txt">
 					<div class="wel-txt">
-						歡迎光臨hmv，<a href="<?php echo U('user/register/index');?>">免費註冊</a>
+                        用户登录中心
 					</div>
-					<ul class="fr navtop-right">					
-						<li class="lang"><a>English</a><a class="on">繁</a><a href="index.html">簡</a></li>
-					</ul>
+
 				</div>
 				
 			</div>
@@ -41,27 +42,29 @@
 			<section>
 				<div class="login-box">
 					<div class="login-hd">
-						<h3>用戶登錄</h3>
+						<h3>用户登录</h3>
 					</div>
 					<div class="login-bd">
 							<div class="login_message">
 								<!--您輸入的密碼錯誤-->
 							</div>
 							<div class="login-name input">
-								<input type="text" name="username" id="" value="" placeholder="請輸入郵箱/手機號" />
+								<input type="text" name="username"  value="" placeholder="请输入邮箱/用户名" />
 							</div>
 							<div class="login-pwd input">
-								<input type="password" name="password" id="" value="" placeholder="請輸入密碼" />
+								<input type="password" name="password"  value="" placeholder="请输入密码" />
 							</div>
 							<div class="login-links">
 								<span class="auto-login">
 									<input type="checkbox" name="auto_login" id="" value="1" />
-									自動登錄
+									自动登录
 								</span>
-								<a class="forget-pwd" href="<?php echo U('user/login/password_find');?>">忘記密碼？</a>
+								<a class="forget-pwd" href="<?php echo U('user/login/password_find');?>">忘记密码？</a>
 							</div>
 							<div class="login-button">
-								<input class="btn btn-lg btn-block" type="submit" value="登錄"/>
+								<input class="btn btn-lg btn-block" type="submit" value="登录"/>
+                                <br />
+                                <a href="<?php echo U('user/register/index');?>">无账号，免费注册</a>
 							</div>
 					</div>
 				</div>
@@ -71,7 +74,7 @@
 			
 		</div>		
 	</div>
-	<div id="footer" class="footer">
+	<!--<div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -87,8 +90,19 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
+</div>-->
+<div id="footer" class="footer">
+    <div class="fmain autow">
+        <div class="c"></div>
+        <div class="copy-right">
+            <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+            <p>版权所有: <a href="">© 人工在线</a></p>
+            <p>深圳市公安网络备案编号：10000000</p>
+        </div>
+    </div>
 </div>
-	<script>
+
+    <script>
 		$(document).ready(function(){
 			$("input[type=submit]").click(function(){
 			var auto_login = $("input[name=auto_login]").prop('checked')?1:0;

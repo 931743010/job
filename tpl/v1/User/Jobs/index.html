@@ -31,7 +31,7 @@
                 <div class="order-main">
                     <div class="hd">
                         <div class="tips">
-                            发布历史-- <a href="{:U('user/jobs/aejobs')}" style="color: mediumvioletred">发布职位</a>
+                            发布历史-- <a href="{:U('user/jobs/aejobs')}" onclick="check_auth();return false" style="color: mediumvioletred">发布职位</a>
                         </div>
                     </div>
                     <div class="bd">
@@ -65,7 +65,7 @@
                                             <p>{$vo.job_name}</p>
                                         </td>
                                         <td class="text-center">
-                                            {$vo.rcount}
+                                            <a href="{:U('resume/receive_group')}&job_id={$vo.id}" title="点击查看">{$vo.rcount}</a>
                                         </td>
                                         <td>
                                             {$vo.refreshtime|date="Y-m-d H:i:s",###}
@@ -171,6 +171,33 @@
 
         });
     });
+    function check_auth(){
+        var html =
+                '<div class="no-verify" style="padding: 20px"><p class="title1">对不起您的身份还未认证，请先认证</p><p class="verifyss"><a href="{:U('User/my/user_verify')}" class="red">现在去认证</a></p></div>';
+
+        $.ajax({
+            url:"{:U('jobs/publish_auth')}",
+            dataType:'text',
+            type:"POST",
+            data:{},
+            success: function (data) {
+                if(data==1){
+                    location.href="{:U('Jobs/aejobs')}"
+                }else{
+                    layer.open({
+                        type: 1,
+                        title: '认证身份',
+                        maxmin: true,
+                        shadeClose: true, //点击遮罩关闭层
+                        area : ['330px' , '140px'],
+                        content: html
+                });
+                }
+            }
+
+        });
+        return false;
+    }
 
 
 
