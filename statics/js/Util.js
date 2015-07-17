@@ -3,7 +3,37 @@
  */
 
 var Util = {};
-
+Util.judgeImgSize = function(img, wdMax, hMax, hide, marginTop) {
+    /*要执行2次赋值才可以获得正确的值，怪哉！*/
+    Util.imgWidth = img.width;
+    Util.imgHeight = img.height;
+    Util.imgWidth = img.width;
+    Util.imgHeight = img.height;
+    var o = $(img);
+    if (img.width > wdMax)
+    {
+        var h = (wdMax / img.width) * img.height, w = wdMax;
+        if (h > hMax)
+            o.css({width: (hMax / h) * w, height: hMax});
+        else {
+            if (marginTop)
+                o.css({width: w, height: h, 'margin-top': (hMax - h) / 2});
+            else
+                o.css({width: w, height: h});
+        }
+    }
+    else if (img.height > hMax) {
+        var w = (hMax / img.height) * img.width, h = hMax;
+        if (w > wdMax)
+            o.css({width: wdMax, height: (wdMax / w) * h});
+        else
+            o.css({width: w, height: h});
+    }
+    else if (marginTop)
+        o.css({'margin-top': (hMax - img.height) / 2});
+    if (!hide)
+        o.show();
+};
 Util.getUrlPara = function(paraName, sUrl) { /*获取url中的参数值*/
     if (typeof(sUrl) == 'undefined')
         sUrl = document.location.href;

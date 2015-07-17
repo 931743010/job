@@ -144,8 +144,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>

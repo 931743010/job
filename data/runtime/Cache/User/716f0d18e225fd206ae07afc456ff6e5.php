@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
     <script src="/tpl/v1/Public/js/ajaxupload.js"></script>
     <script src="/statics/js/Util.js"></script>
+    <script type="text/javascript" src="/tpl/v1/Public/js/swfobject.js"></script>
+    <script type="text/javascript" src="/tpl/v1/Public/js/fullAvatarEditor.js"></script>
 
 </head>
 <body class="theme foot-white-bg">
@@ -146,8 +148,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>
@@ -161,14 +166,6 @@
                     <div class="bd">
                         <div class="identify">
                             <!--身份认证-->
-
-
-                            <input type="file" name="file1" id="file1"/>
-                            <div id="imgsrc">
-
-                            </div>
-                            <div id="txt"></div>
-
                             <div class="tips">
                                 <span>认证状态：</span>
                                 <?php if($account['audit'] == 2): ?><strong style="color:red">您已经认证通过</strong>
@@ -432,5 +429,6 @@
     });
 
 </script>
+
 </body>
 </html>

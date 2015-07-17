@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>
     <script src="__TMPL__Public/js/ajaxupload.js"></script>
     <script src="/statics/js/Util.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/js/swfobject.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/js/fullAvatarEditor.js"></script>
 
 </head>
 <body class="theme foot-white-bg">
@@ -30,14 +32,6 @@
                     <div class="bd">
                         <div class="identify">
                             <!--身份认证-->
-
-
-                            <input type="file" name="file1" id="file1"/>
-                            <div id="imgsrc">
-
-                            </div>
-                            <div id="txt"></div>
-
                             <div class="tips">
                                 <span>认证状态：</span>
                                 <if condition="$account['audit'] eq 2">
@@ -299,5 +293,6 @@
     });
 
 </script>
+
 </body>
 </html>

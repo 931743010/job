@@ -29,7 +29,6 @@
 					<div class="wel-txt">
 						欢迎光临，<a href="<?php echo U('user/login/index');?>">请登录</a>
 					</div>
-
 				</div>
 				
 			</div>

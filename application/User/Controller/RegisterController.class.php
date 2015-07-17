@@ -103,7 +103,7 @@ class RegisterController extends HomeBaseController {
     					'create_time' => date("Y-m-d H:i:s"),
     					'last_login_time' => date("Y-m-d H:i:s"),
     					'user_status' => $need_email_active?2:1,
-    					"utype"=>1,
+    					"utype"=>0,
                         'user_phone' => $user_phone,
     			);
     			$rst = $users_model->add($data);

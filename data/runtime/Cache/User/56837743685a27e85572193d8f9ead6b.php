@@ -84,7 +84,7 @@
             <ul class="flul">
                 <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
 
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
                 <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
                 <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
@@ -153,8 +153,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>

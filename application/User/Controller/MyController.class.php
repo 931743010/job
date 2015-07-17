@@ -41,7 +41,7 @@ class MyController extends HomeBaseController {
         $this->user['birth'] = explode('-' , $this->user['birthday']);
         $this->assign( 'user' , $this->user );
         //var_dump($this->user);die;
-        $this->display();
+//        $this->display();
         $this->display();
 	}
 	
@@ -224,11 +224,177 @@ class MyController extends HomeBaseController {
     }
 	//安全认证
     function user_verify(){
+        if($this->user['utype']==2){
+            $this->redirect(U('my/company_verify'));
+            exit();
+        }else{
+            $this->redirect(U('my/person_verify'));
+            exit();
+        }
+    }
+
+    //个人认证
+    function person_verify(){
+        if($this->user['utype']==2){
+            $this->redirect(U("my/company_verify"));
+            exit();
+        }
         $user = new MemberModel();
         $account = $user->audit_status($_SESSION['user']['id']);
         $this->assign("account",$account);
         $this->display();
     }
+
+    //个人上传资料
+    function person_post(){
+        if(!IS_POST){
+            $this->error("访问的页面不存在");
+            exit();
+        }
+        if($this->user['utype']==2){
+            $this->error("您是企业用户，请勿使用个人身份验证");
+            exit();
+        }
+        $account = M("Account");
+        $uid = $this->user['id'];
+        $res = $account->where("uid={$uid}")->select();
+        if($res[0]['status']==2){
+            $this->error("您已经验证通过,请勿重复提交");
+            exit();
+        }
+        //判断是否已经验证过了
+        $person_name = I("post.person_name");
+        if($person_name==''){
+            $this->error("您的身份证姓名为空，请重新填写");
+            exit();
+        }
+        $data['person_name'] = $person_name;
+        $person_id = I("post.person_id");
+        if(strlen($person_id)!=16 && strlen($person_id)!=18){
+            $this->error("身份证号码必须为16位或者18位");
+            exit();
+        }
+        $data['person_id'] = $person_id;
+        if(!$_FILES['identify_z']['name']){
+            $this->error("身份证正面必须上传");
+            exit();
+        }
+        if(!$_FILES['identify_f']['name']){
+            $this->error("身份证反面必须上传");
+            exit();
+        }
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath  =     './data/upload/'; // 设置附件上传根目录
+        $upload->savePath  =     ''; // 设置附件上传（子）目录
+        // 上传文件
+        $info   =   $upload->upload();
+        //dump($info);die();
+        if(!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+            exit();
+        }else{// 上传成功
+            $data['identify_z'] =$upload->rootPath.$info['identify_z']['savepath'].$info['identify_z']['savename'];
+            $data['identify_f'] =$upload->rootPath.$info['identify_f']['savepath'].$info['identify_f']['savename'];
+            //更新系统
+            $uid = $this->user['id'];
+            $data['audit'] = 1;
+            $res = M("Account")->where("uid={$uid}")->save($data);
+            //更新member表utype
+            $up['utype'] =1;
+            M("Member")->where("id={$uid}")->save($up);
+            if($res){
+                $this->success("上传成功，请等待管理员审核",U('my/index'));
+                exit();
+            }else{
+                $this->error("系统忙，请重试");
+                exit();
+            }
+
+        }
+    }
+    //企业认证
+    function company_verify(){
+        if($this->user['utype']==1){
+            $this->redirect(U("my/person_verify"));
+            exit();
+        }
+        $user = new MemberModel();
+        $account = $user->audit_status($_SESSION['user']['id']);
+        $this->assign("account",$account);
+        $this->display();
+    }
+
+    //上传营业执照
+    function company_post(){
+        if(!IS_POST){
+            $this->error("访问的页面不存在");
+            exit();
+        }
+        if($this->user['utype']==1){
+            $this->error("您是个人用户，请勿使用企业身份验证");
+            exit();
+        }
+        $account = M("Account");
+        $uid = $this->user['id'];
+        $res = $account->where("uid={$uid}")->select();
+        if($res[0]['status']==2){
+            $this->error("您已经验证通过,请勿重复提交");
+            exit();
+        }
+        //判断是否已经验证过了
+        $company_name = I("post.company_name");
+        if($company_name==''){
+            $this->error("企业名称为空，请重新填写");
+            exit();
+        }
+        $data['company_name'] = $company_name;
+        $company_id = I("post.company_id");
+        if($company_id==''){
+            $this->error("营业执照号码为空，请重新填写");
+            exit();
+        }
+        $data['company_id'] = $company_id;
+        if(!$_FILES['license']['name']){
+            $this->error("营业执照必须上传");
+            exit();
+        }
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath  =     './data/upload/'; // 设置附件上传根目录
+        $upload->savePath  =     ''; // 设置附件上传（子）目录
+        // 上传文件
+        $info   =   $upload->upload();
+        //dump($info);die();
+        if(!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+            exit();
+        }else{// 上传成功
+            $data['license'] =$upload->rootPath.$info['license']['savepath'].$info['license']['savename'];
+            //更新系统
+            $uid = $this->user['id'];
+            $data['audit'] = 1;
+            $res = M("Account")->where("uid={$uid}")->save($data);
+            //更新member表utype
+            $up['utype'] =2;
+            M("Member")->where("id={$uid}")->save($up);
+            if($res){
+                $this->success("上传成功，请等待管理员审核",U('my/index'));
+                exit();
+            }else{
+                $this->error("系统忙，请重试");
+                exit();
+            }
+
+        }
+    }
+
+
+
+
     //上传认证
     function upload_identify()
     {

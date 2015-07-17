@@ -47,8 +47,13 @@
 .sidebar-bd{
 	background-color: #fff;
 	padding: 20px 0;
-	border-bottom: 8px solid #e6006d;
+
 }
+/*.sidebar-top .rollbg{*/
+    /*width: 170px;*/
+    /*height: 257px;*/
+    /*background: url("../images/rollby.png") no-repeat;*/
+/*}*/
 .side-nav li{
 	margin-left: 40px;
 	padding-left: 30px;

@@ -169,12 +169,13 @@ _height:477px;}
 
 
 .change-city{margin: 20px 0;}
-.change-city .choose{font-size: 14px;font-weight: bold;margin: 10px 0;display:block;height: 30px;line-height: 30px;border-bottom: 1px solid #ccc}
+.change-city .choose{font-size: 16px;font-weight: bold;margin: 10px 0;display:block;height: 30px;line-height: 30px;border-bottom: 1px solid #ccc;text-align: center}
 
 .change-city .province{height: 30px;line-height: 30px;border-bottom: 1px dashed #ccc;}
 .change-city .province .city {margin-left: 20px;margin-top: 10px;}
 .change-city .province .city li{height: 30px;line-height: 30px;margin-right: 10px;}
-.change-city .province .city li a{color: red;}
+.change-city .province .city li a{color: rgb(239,22,16);}
+.change_city_bg{background: url("../images/change_city_bg.png") no-repeat;width: 940px;height: 289px;margin: 0 auto;}
 
 
 

@@ -38,7 +38,9 @@
 	</header>	
 	<div class="wrapper wrapper-2">
 		<div class="wrap">
-			
+			<div class="adimg" style="position: relative;top: 20px;">
+                <img src="/tpl/v1/Public/images/lr-adimg_02.png" height="440" alt=""/>
+			</div>
 			<section>
 				<div class="login-box">
 					<div class="login-hd">
