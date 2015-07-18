@@ -49,11 +49,11 @@
 	padding: 20px 0;
 
 }
-/*.sidebar-top .rollbg{*/
-    /*width: 170px;*/
-    /*height: 257px;*/
-    /*background: url("../images/rollby.png") no-repeat;*/
-/*}*/
+.sidebar-top .rollbg{
+    width: 192px;
+    height: 60px;
+    background: url("../images/roll_02.png");
+}
 .side-nav li{
 	margin-left: 40px;
 	padding-left: 30px;
