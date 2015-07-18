@@ -26,9 +26,15 @@
     <div id="main" class="main">
         <div class="position">
             <span class="red">当前位置:</span>
-            <a href="">首页</a>
-            <span> >> </span>
-            家政招聘
+            <php>
+                $id = intval($_GET['id']);
+                $catid = $job['catid'];
+                if($catid==0){
+                    echo '<a href="/">首页</a><span> &gt;&gt; </span>'.$job['catname'].'<span> &gt;&gt; </span>'.$job['job_name'];
+                }else{
+                    echo your_location($catid,$id);
+                }
+            </php>
         </div>
         <div id="job" style="padding: 10px;margin-top: 20px;border:1px solid #ccc">
             <div class="detail">

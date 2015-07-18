@@ -2,7 +2,7 @@
     padding: 0;margin: 0;
 }
 img{border: 0;}
-a{text-decoration: none;}
+a{text-decoration: none;color: rgb(220,22,16)}
 body{font-family: "微软雅黑";font-size: 14px;color: #050405;}
 .flul li{ float: left;}
 ul {list-style-type: none;}

@@ -73,10 +73,10 @@
         <div class="nav">
             <ul class="flul">
                 <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">家政服务</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">文化生活</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">社区综合</a><span class="shu"></span></li>
+
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
         </div>
         <!--导航end-->
@@ -111,9 +111,7 @@
     <div id="main" class="main">
         <div class="position">
             <span class="red">当前位置:</span>
-            <a href="">首页</a>
-            <span> >> </span>
-            家政招聘
+            <?php $id = intval($_GET['id']); $catid = $job['catid']; if($catid==0){ echo '<a href="/">首页</a><span> &gt;&gt; </span>'.$job['catname'].'<span> &gt;&gt; </span>'.$job['job_name']; }else{ echo your_location($catid,$id); } ?>
         </div>
         <div id="job" style="padding: 10px;margin-top: 20px;border:1px solid #ccc">
             <div class="detail">

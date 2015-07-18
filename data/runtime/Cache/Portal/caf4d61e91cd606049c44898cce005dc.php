@@ -149,9 +149,7 @@
     <div id="main" class="main">
         <div class="position">
             <span class="red">当前位置:</span>
-            <a href="">首页</a>
-            <span> >> </span>
-            家政招聘
+            <?php $catid = intval($_GET['catid']); echo your_location($catid); ?>
         </div>
 
         <div class="job-list">

@@ -1636,3 +1636,22 @@ function logCost($uid ,$cost,$type,$alias,$job_name = '',$job_id='',$job_catenam
     $res = $log->add($data);
     return $res;
 }
+
+/*
+ * 您所在位置
+ */
+function your_location($catid,$job_id=0){
+    $cate= M("Cate")->find($catid);
+    $cate_name = $cate['name'];
+    $location = '<a href="/">首页</a><span> &gt;&gt; </span>'.$cate_name;
+    if($job_id!=0){
+        $job = M("Jobs")->find($job_id);
+        $job_name = $job['job_name'];
+        $cate_url = U("Protal/jobs/category",array('cateid',$catid));
+        $location = '<a href="/">首页</a><span> &gt;&gt; </span><a href="'.$cate_url.'">'.$cate_name.'</a>';
+        $location.="<span> &gt;&gt; </span>".$job_name;
+    }
+    return $location;
+
+
+}

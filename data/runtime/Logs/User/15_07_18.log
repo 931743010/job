@@ -1571,3 +1571,2082 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
 
+[ 2015-07-18T10:01:24+08:00 ] 127.0.0.1 /index.php?g=User&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0001s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009112s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2015-07-18T10:01:29+08:00 ] 127.0.0.1 /index.php?g=user&m=login&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001198s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sp_member` WHERE `user_email` = 'yqbaa@qq.com' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `sp_member` SET `last_login_time`='2015-07-18 10:01:29',`last_login_ip`='127.0.0.1' WHERE ( id=15 ) [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/LoginController.class.php 第 267 行.
+
+[ 2015-07-18T10:01:32+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0036s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016491s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-07-18T10:05:19+08:00 ] 127.0.0.1 /index.php?g=User&m=my&a=company_verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: module /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+
+[ 2015-07-18T10:05:19+08:00 ] 127.0.0.1 /index.php?g=&&g=User&m=my&a=person_verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2015-07-18T10:05:36+08:00 ] 127.0.0.1 /index.php?g=User&m=my&a=person_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: status /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/MyController.class.php 第 261 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Upload.class.php 第 170 行.
+SQL: UPDATE `sp_account` SET `person_name`='闹闹',`person_id`='350588177212209876',`identify_z`='./data/upload/2015-07-18/55a9b470c3d47.png',`identify_f`='./data/upload/2015-07-18/55a9b470c41c5.png',`audit`='1' WHERE ( uid=15 ) [ RunTime:0.0008s ]
+SQL: UPDATE `sp_member` SET `utype`='1' WHERE ( id=15 ) [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+
+[ 2015-07-18T10:05:39+08:00 ] 127.0.0.1 /index.php?g=User&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016193s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2015-07-18T10:27:58+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002738s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0013s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020724s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001383s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2015-07-18T10:28:13+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2015-07-18T10:28:37+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019358s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000438s ]
+
+[ 2015-07-18T10:34:51+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003307s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0012s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020618s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001029s ]
+
+[ 2015-07-18T10:35:49+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017838s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000475s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2015-07-18T10:36:36+08:00 ] 127.0.0.1 /index.php?g=user&m=jobs&a=aejobs
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 and audit=2 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005731s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+
+[ 2015-07-18T10:36:39+08:00 ] 127.0.0.1 /index.php?g=User&m=my&a=user_verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: module /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+
+[ 2015-07-18T10:36:39+08:00 ] 127.0.0.1 /index.php?g=&&g=User&m=my&a=person_verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001523s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/93a71d5fd04e19df10e973bcdf886ec5.php 第 93 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2015-07-18T10:36:42+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000516s ]
+
+[ 2015-07-18T10:36:46+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=change_pwd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/fdcc10f53a7e2dc6dd45ac7661c9ba7c.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/fdcc10f53a7e2dc6dd45ac7661c9ba7c.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/fdcc10f53a7e2dc6dd45ac7661c9ba7c.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/fdcc10f53a7e2dc6dd45ac7661c9ba7c.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011723s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2015-07-18T10:51:42+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003376s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0019s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000820s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000875s ]
+
+[ 2015-07-18T10:51:45+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013580s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013619s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000659s ]
+
+[ 2015-07-18T10:51:47+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014367s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2015-07-18T10:51:56+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013991s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2015-07-18T10:52:32+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001203s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003716s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000463s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000935s ]
+
+[ 2015-07-18T10:52:34+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2015-07-18T10:53:40+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003547s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 15 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 15 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0014s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=15 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2015-07-18T11:24:30+08:00 ] 127.0.0.1 /index.php?g=User&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2015-07-18T11:24:37+08:00 ] 127.0.0.1 /index.php?g=user&m=register&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/RegisterController.class.php 第 10 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009067s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000609s ]
+
+[ 2015-07-18T11:24:59+08:00 ] 127.0.0.1 /index.php?g=user&m=register&a=doregister
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_member` WHERE `user_login` = 'yqbaa@qwe.com' OR `user_email` = 'yqbaa@qwe.com' LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [8] Undefined variable: user_phone /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/RegisterController.class.php 第 107 行.
+SQL: INSERT INTO `sp_member` (`user_login`,`user_email`,`user_nicename`,`user_realname`,`user_pass`,`last_login_ip`,`create_time`,`last_login_time`,`user_status`,`utype`,`user_phone`) VALUES ('yqbaa@qwe.com','yqbaa@qwe.com','yqbaa@qwe.com','yqiij','c535018ee946e10adc3949ba59abbe56e057f20f883e89af','127.0.0.1','2015-07-18 11:24:59','2015-07-18 11:24:59','1','0',NULL) [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `sp_cost_config` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `sp_cost_config` WHERE ( name = 'register' )  [ RunTime:0.0002s ]
+SQL: INSERT INTO `sp_account` (`uid`,`money`) VALUES ('24','20.00') [ RunTime:0.0015s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '24' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-07-18T11:25:00+08:00 ] 127.0.0.1 /index.php?g=user&m=login&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001402s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000459s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000497s ]
+
+[ 2015-07-18T11:26:14+08:00 ] 127.0.0.1 /index.php?g=user&m=login&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: module /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+
+[ 2015-07-18T11:26:14+08:00 ] 127.0.0.1 /index.php?g=&&g=User&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '24' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 24 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 24 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0035s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=24 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=24 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=24 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=24 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '24' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017360s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000403s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2015-07-18T11:26:19+08:00 ] 127.0.0.1 /index.php?g=user&m=index&a=logout
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001685s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 24 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+
+[ 2015-07-18T11:26:21+08:00 ] 127.0.0.1 /index.php?g=User&m=register&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/RegisterController.class.php 第 10 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007144s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007185s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2015-07-18T11:26:36+08:00 ] 127.0.0.1 /index.php?g=user&m=register&a=doregister
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_member` WHERE `user_login` = 'dsfsdf@qq.com' OR `user_email` = 'dsfsdf@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: user_phone /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/User/Controller/RegisterController.class.php 第 107 行.
+SQL: INSERT INTO `sp_member` (`user_login`,`user_email`,`user_nicename`,`user_realname`,`user_pass`,`last_login_ip`,`create_time`,`last_login_time`,`user_status`,`utype`,`user_phone`) VALUES ('dsfsdf@qq.com','dsfsdf@qq.com','dsfsdf@qq.com','uuuuuuu','c535018ee946e10adc3949ba59abbe56e057f20f883e89af','127.0.0.1','2015-07-18 11:26:36','2015-07-18 11:26:36','1','0',NULL) [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sp_cost_config` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sp_cost_config` WHERE ( name = 'register' )  [ RunTime:0.0002s ]
+SQL: INSERT INTO `sp_account` (`uid`,`money`) VALUES ('25','20.00') [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-07-18T11:26:37+08:00 ] 127.0.0.1 /index.php?g=user&m=login&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001434s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: module /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Common/functions.php 第 990 行.
+
+[ 2015-07-18T11:26:37+08:00 ] 127.0.0.1 /index.php?g=&&g=User&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015492s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-07-18T11:34:29+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015114s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015159s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2015-07-18T11:48:31+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001039s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2015-07-18T11:50:21+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000439s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2015-07-18T11:51:25+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-07-18T11:51:30+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0010s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015714s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2015-07-18T11:51:32+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0011s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2015-07-18T11:51:58+08:00 ] 127.0.0.1 /index.php?g=user&m=my&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 25 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+SQL: SHOW COLUMNS FROM `sp_order` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sp_order o WHERE `user_id` = 25 AND `user_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id`,`order_sn`,`order_status`,`add_time`,`money_total`,`shipping_fee`,`pay_status`,`shipping_status`,`receive_time` FROM `sp_order` WHERE `user_id` = 25 AND `user_status` = 0 ORDER BY order_id desc LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_order_goods` [ RunTime:0.0014s ]
+SQL: SELECT g.name,g.img_url,og.goods_num,og.goods_attr,og.order_id FROM sp_order_goods og left join sp_goods g on og.goods_id=g.id   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_account` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_account` WHERE ( uid=25 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_jobs` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_jobs` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_resume` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_resume` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_apply` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sp_apply` WHERE ( uid=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_member` WHERE `id` = '25' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined variable: Think /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant wiki - assumed 'wiki' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Use of undefined constant weather - assumed 'weather' /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 88 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 314 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+NOTIC: [8] Undefined offset: 2 /Applications/XAMPP/xamppfiles/htdocs/trunk/job/data/runtime/Cache/User/4b4e8c791a8949474a0be08fffeb657b.php 第 318 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014256s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+

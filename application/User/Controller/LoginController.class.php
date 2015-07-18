@@ -12,6 +12,9 @@ class LoginController extends HomeBaseController {
 	
 	function index(){
 		$_SESSION['login_http_referer'] = $_SERVER["HTTP_REFERER"];
+        if(isset($_SESSION['user']['id'])){
+            $this->redirect(U('User/my/index'));
+        }
 		$this->display(":login");
 	}
 	
@@ -264,7 +267,7 @@ hello;
     			if($ucenter_old_user_login){
     				//$ucenter_old_user_login_msg="老用户请在跳转后，再次登陆";
     			}
-				if( $_COOKIE['cart'] ) $this->sync_cart();	
+//				if( $_COOKIE['cart'] ) $this->sync_cart();
     			$this->success("登录验证成功！", $redirect);
     		}else{
     			$this->error("密码错误！");

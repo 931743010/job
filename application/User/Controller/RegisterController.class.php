@@ -123,7 +123,10 @@ class RegisterController extends HomeBaseController {
     					unset($_SESSION['user']);
     					$this->success("注册成功，激活后才能使用！",U("user/login/index"));
     				}else {
-    					$this->success("注册成功！",__ROOT__."/");
+
+                        $res = M("Member")->find($rst);
+                        $_SESSION["user"] = $res;
+    					$this->success("注册成功！",U('User/my/index'));
     				}
     					
     			}else{
