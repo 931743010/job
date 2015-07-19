@@ -51,6 +51,9 @@ class JobsController extends HomeBaseController
             $this->error("请先认证您的身份",U("User/my/user_verify"));
             exit();
         }
+        //分类
+        $cate = M("Cate")->where("parent=0")->select();
+        $this->assign("cate",$cate);
         if(IS_POST){
             $data['job_name'] = I('post.job_name');
             $data['catid'] = I('post.catid');
@@ -73,8 +76,8 @@ class JobsController extends HomeBaseController
             $data['work_address'] = I('post.work_address');
             $data['work_map_x'] = I('post.work_map_x');
             $data['work_map_y'] = I('post.work_map_y');
-            if($data['job_name'] =='' || strlen($data['job_name'])>60){
-                Utils::resOut(-1,'招聘标题不能为空，或者超过60个字符');
+            if($data['job_name'] =='' || strlen($data['job_name'])>15){
+                Utils::resOut(-1,'招聘标题不能为空，或者超过15个字符');
                 exit();
             }
             if(!Utils::isPositiveInt($data['catid'])){
@@ -85,8 +88,8 @@ class JobsController extends HomeBaseController
                 Utils::resOut(-1,'工作内容不能为空，或者超过10个字符');
                 exit();
             }
-            if(strlen($data['job_content'])<20 || strlen($data['job_content'])>300){
-                Utils::resOut(-1,'工作内容小于20个字符，或者超过300个字符');
+            if(strlen($data['job_content'])<=0 || strlen($data['job_content'])>200){
+                Utils::resOut(-1,'工作内容不能为空，或者超过200个字符');
                 exit();
             }
             if(!Utils::isInt($data['work_start_time']) || !Utils::isInt($data['work_end_time'])){
@@ -103,7 +106,7 @@ class JobsController extends HomeBaseController
                 exit();
             }
             if(!is_numeric($data['work_pay']) || $data['work_pay']<=0){
-                Utils::resOut(-1,'价钱必须是大于0的数字');
+                Utils::resOut(-1,'兼职待遇必须是大于0的数字');
                 exit();
             }
             if(!Utils::isInt($data['pay_date'])){
@@ -117,7 +120,7 @@ class JobsController extends HomeBaseController
                 Utils::resOut(-1,'结算方式错误');
                 exit();
             }elseif($data['pay_method']!=1 && $data['pay_method']!=0){
-                Utils::resOut(-1,'结算方式错误1');
+                Utils::resOut(-1,'结算方式错误');
                 exit();
             }
             if(!Utils::isPositiveInt($data['work_nature'])){
@@ -152,8 +155,13 @@ class JobsController extends HomeBaseController
                 $data['catname'] = $cate['name'];
             }
             $res = $this->jobs->aejobs($data,$up,$jid);
+            if($up){
+                $msg = "更新";
+            }else{
+                $msg = "新增";
+            }
             if(!$res){
-                Utils::resOut('-1','操作失败');
+                Utils::resOut('-1',$msg.'失败');
                 exit();
             }else{
                 if($up){
@@ -162,7 +170,7 @@ class JobsController extends HomeBaseController
                         logCost($this->user['id'],$cost,1,'发布职位',$data['job_name'],$res,$data['catname']);
                     }
                 }
-                Utils::resOut(0,'操作成功');
+                Utils::resOut(0,$msg.'成功');
                 exit();
             }
         }
@@ -170,10 +178,10 @@ class JobsController extends HomeBaseController
         $nature = M("Nature");
         $nature_data = $nature->select();
         $this->assign("nature",$nature_data);
-        //分类
-        $cate = new CateModel();
-        $cateData = $cate->getSelectList(0);
-        $this->assign("cate",$cateData);
+//        //分类
+//        $cate = new CateModel();
+//        $cateData = $cate->getSelectList(0);
+//        $this->assign("cate",$cateData);
         if(isset($_GET['jid'])){
             $this->assign("edit",1);
             $jid = intval($_GET['jid']);
@@ -185,6 +193,7 @@ class JobsController extends HomeBaseController
             $this->assign("jobs",$this->jobs->getJobsInfo($jid,$this->user['id']));
         }
 //        $province =
+
         $this->display();
     }
     //下架工作

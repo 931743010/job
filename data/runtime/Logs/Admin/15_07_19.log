@@ -1,0 +1,11 @@
+[ 2015-07-19T21:09:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001030s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `sp_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_role_user` [ RunTime:0.0019s ]
+SQL: SELECT `role_id` FROM sp_role_user a INNER JOIN sp_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0019s ]
+SQL: UPDATE `sp_users` SET `user_login`='admin',`user_pass`='c535018ee9467fef6171469e80d32c0559f88b37724589af',`user_nicename`='hhh',`user_email`='',`user_phone`='',`user_url`='www.badu.xm',`avatar`=NULL,`sex`='0',`birthday`='0000-00-00',`signature`='ddd',`last_login_ip`='127.0.0.1',`last_login_time`='2015-07-19 21:09:27',`create_time`='0000-00-00 00:00:00',`user_activation_key`='',`user_status`='1',`score`='0' WHERE `id` = '1' [ RunTime:0.0006s ]
+

@@ -20,10 +20,13 @@
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/datepicker.css"/>
 
-    <script src="/statics/js/Cache/region.js"></script>
+    <script src="/statics/js/cache/region.js"></script>
     <script src="/statics/js/Util.js"></script>
     <script src="/tpl/v1/Public/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pOjKwgwxn0nlutaU2ppwIk8p"></script>
+    <style type="text/css">
+        #province,#city,#area{width:75px;}
+    </style>
 
 </head>
 <body class="theme foot-white-bg">
@@ -171,22 +174,33 @@
                         <div class="margin-out">
                             <div class="add-address data-item">
                                 <dl>
-                                    <dt>*标题：</dt>
+                                    <dt>标题：</dt>
                                     <dd>
-                                        <input type="text" name='job_name' placeholder="招聘标题" value="<?php echo ($jobs['job_name']); ?>" />
+                                        <input type="text" name='job_name' placeholder="" value="<?php echo ($jobs['job_name']); ?>" />
+                                        <label>
+                                            （输入少于15个字符！）
+                                        </label>
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>*岗位类别：</dt>
+
                                     <dd>
-                                        <select name="catid">
-                                            <?php echo ($cate); ?>
+                                        <label>兼职类型：</label>
+                                        <select name="cate-1" id="cate-1">
+                                        <option value="0">请选择</option>
+                                            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </select>
-                                        <span>其他：</span>
-                                        <input type="text" name="catname" style="width:100px;" placeholder="岗位类别" value="<?php echo ($jobs["catname"]); ?>"/>
+                                        <label>兼职行业：</label>
+                                        <select name="cate-2" id="cate-2">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                        <label>岗位名称：</label>
+                                        <select name="cate-3" id="cate-3">
+                                            <option value="0">请选择</option>
+                                        </select>
                                     </dd>
                                 </dl>
-                                <dl>
+                                <dl style="display: none">
                                     <dt>*招聘人数：</dt>
                                     <dd>
                                         <input type="text" name='person_num' placeholder="招聘人数" value="<?php echo ($jobs['person_num']); ?>"/>
@@ -194,161 +208,108 @@
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>*工作内容：</dt>
+                                    <dt>工作内容：</dt>
                                     <dd>
                                         <input type="text" name='job_desc' placeholder="简要说明，如清理房间" value="<?php echo ($jobs['job_desc']); ?>"/>
-
+                                        <label>（输入少于15个字符！） </label>
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>*工作详细内容：</dt>
-                                    <dd style="height: 250px;width: 600px;" class="f">
-                                        <textarea name="job_content" placeholder="请简要描述，字数不少于20，不超过300" id="job_content" style="width: 600px;height: 250px;"><?php echo ($jobs['job_content']); ?></textarea>
+                                    <dt>详细工作内容（要求）：</dt>
+                                    <dd style="height: 190px;width: 600px;" class="f">
+                                        <textarea name="job_content" placeholder="字数限制在200字以内！" id="job_content" style="width: 600px;height: 190px;"><?php echo ($jobs['job_content']); ?></textarea>
                                     </dd>
                                 </dl>
                                 <div class="c"></div>
                                 <dl>
-                                    <dt>*工作时间：</dt>
-                                    <dd>
-                                        <select name="work_start_time" id="work_start_time">
-                                            <option value="0">0点</option>
-                                            <option value="1">1点</option>
-                                            <option value="2">2点</option>
-                                            <option value="3">3点</option>
-                                            <option value="4">4点</option>
-                                            <option value="5">5点</option>
-                                            <option value="6">6点</option>
-                                            <option value="7">7点</option>
-                                            <option value="8">8点</option>
-                                            <option value="9">9点</option>
-                                            <option value="10">10点</option>
-                                            <option value="11">11点</option>
-                                            <option value="12">12点</option>
-                                            <option value="13">13点</option>
-                                            <option value="14">14点</option>
-                                            <option value="15">15点</option>
-                                            <option value="16">16点</option>
-                                            <option value="17">17点</option>
-                                            <option value="18">18点</option>
-                                            <option value="19">19点</option>
-                                            <option value="20">20点</option>
-                                            <option value="21">21点</option>
-                                            <option value="22">22点</option>
-                                            <option value="23">23点</option>
-                                        </select>
-                                        <span> 至</span>
-                                        <select name="work_end_time" id="work_end_time">
-                                            <option value="0">0点</option>
-                                            <option value="1">1点</option>
-                                            <option value="2">2点</option>
-                                            <option value="3">3点</option>
-                                            <option value="4">4点</option>
-                                            <option value="5">5点</option>
-                                            <option value="6">6点</option>
-                                            <option value="7">7点</option>
-                                            <option value="8">8点</option>
-                                            <option value="9">9点</option>
-                                            <option value="10">10点</option>
-                                            <option value="11">11点</option>
-                                            <option value="12">12点</option>
-                                            <option value="13">13点</option>
-                                            <option value="14">14点</option>
-                                            <option value="15">15点</option>
-                                            <option value="16">16点</option>
-                                            <option value="17">17点</option>
-                                            <option value="18">18点</option>
-                                            <option value="19">19点</option>
-                                            <option value="20">20点</option>
-                                            <option value="21">21点</option>
-                                            <option value="22">22点</option>
-                                            <option value="23">23点</option>
-                                        </select>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>*工作日期：</dt>
-                                    <dd>
-                                        <input type="text" id="work_start_date" name='work_start_date' placeholder="开始日期" value="<?php echo ($jobs['work_start_date']); ?>" style="width: 130px" />
+                                    <dt>工作日期：</dt>
+                                    <dd style="float: left;">
+                                        <input type="text" id="work_start_date" name='work_start_date' placeholder="请选择日期" value="<?php echo ($jobs['work_start_date']); ?>" style="width: 130px" />
                                         <span> 至 </span>
-                                        <input type="text" id="work_end_date" name='work_end_date' placeholder="结束日期" value="<?php echo ($jobs['work_end_date']); ?>" style="width: 130px" />
+                                        <input type="text" id="work_end_date" name='work_end_date' placeholder="请选择日期" value="<?php echo ($jobs['work_end_date']); ?>" style="width: 130px" />
+
+                                    </dd>
+                                    <dt style="margin-left: 10px;">工作时间：</dt>
+                                    <dd>
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="<?php echo ($job["work_start_time"]); ?>" style="width: 70px"/>
+                                        <span> 至</span>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="<?php echo ($job["work_end_time"]); ?>" style="width: 70px;"/>
 
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>*时长：</dt>
+
+                                </dl>
+
+                                <dl>
+                                    <dt>工作时长：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
+                                        <input name='work_total_date' type="text" value="<?php echo ($jobs['work_total_date']); ?>" style="width:70px" /> 小时
+                                    </dd>
+                                    <dt>兼职待遇：</dt>
                                     <dd>
-                                        <input name='work_total_date' type="text" placeholder="总共工作时间" value="<?php echo ($jobs['work_total_date']); ?>" /> 小时
+                                        <input name='work_pay' type="text" value="<?php echo ($jobs['work_pay']); ?>"  style="width:70px" />元/小时
                                     </dd>
                                 </dl>
 
                                 <dl>
-                                    <dt>*价钱：</dt>
-                                    <dd>
-                                        <input name='work_pay' type="text" placeholder="10元/小时" value="<?php echo ($jobs['work_pay']); ?>" />元/小时
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>*结算方式：</dt>
-                                    <dd>
+                                    <dt>结算方式：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
                                         <select name="pay_method" id="pay_method">
                                             <option value="0">现金</option>
                                             <option value="1">打卡</option>
                                         </select>
                                     </dd>
-                                </dl>
-                                <dl>
-                                    <dt>*结算时间：</dt>
-                                    <dd>
+                                    <dt>结算时间：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
                                         <select name="pay_date" id="pay_date">
                                             <option value="0">日结</option>
                                             <option value="1">现金结算</option>
                                         </select>
                                     </dd>
-                                </dl>
-                                <dl>
-                                    <dt>*工作性质：</dt>
+                                    <dt>岗位性质：</dt>
                                     <dd>
                                         <select name="work_nature" id="work_nature">
                                            <?php if(is_array($nature)): $i = 0; $__LIST__ = $nature;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["nature_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </select>
                                     </dd>
                                 </dl>
+                                
                                 <dl>
-                                    <dt>*工作地点：</dt>
-                                    <dd class="work_place_obj">
+                                    <dt style='float:none;display:block'>详细地址：</dt>
+                                    <dd class="work_place_obj" style='margin-left:27px;'>
+                                    <label>省：</label>
                                         <select name="province" id="province">
                                             <option value="0">请选择</option>
                                         </select>
+                                    <label>市：</label>
                                         <select name="city" id="city">
                                             <option value="0">请选择</option>
-
                                         </select>
+                                    <label>区（县）：</label>
                                         <select name="area" id="area">
                                             <option value="0">请选择</option>
-
                                         </select>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>*详细地址：</dt>
-                                    <dd>
-                                        <input name='work_address' id="suggestId" type="text" placeholder="详细地址" value="<?php echo ($jobs['work_address']); ?>" />
+                                         <input name='work_address' id="suggestId" type="text" placeholder="请输入路或巷、门牌号" value="<?php echo ($jobs['work_address']); ?>" />
                                         <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
                                     </dd>
                                 </dl>
+                                
                                 <dl>
-                                    <dt>*地图标注：</dt>
-                                    <dd style="height: 300px;width: 700px;overflow:hidden" class="f" style='position:relative'>
+                                    <dt>请在下面地图标注具体所在的地点：</dt>
+                                    <dd style="height: 360px;width: 700px;overflow:hidden;position:relative;border:1px solid #ccc;padding:10px" class="f">
                                         <input type="hidden" id="work_map_x" name="work_map_x" value="<?php echo ($jobs["work_map_x"]); ?>"/>
                                         <input type="hidden" id="work_map_y" name="work_map_y" value="<?php echo ($jobs["work_map_y"]); ?>" />
                                         <div id="allmap" style="height:300px"></div>
+                                        <p class="red" style="margin-top:15px;">温馨提示：鼠标点击地图上所在地点就可以实现定位！</p>
                                     </dd>
                                 </dl>
 
                                 <?php if($edit == 1): ?><input type="hidden" id="jid" name="jid" value="<?php echo ($jobs['id']); ?>"/><?php endif; ?>
+                                <input type="hidden" id="cate_url" value="<?php echo U('portal/jobs/get_son_cate');?>"/>
                                 <div class="c"></div>
-                                <div class="" style="margin-top: 25px;margin-left: 130px">
-                                    <button id='aejobs' class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
+                                <div class="" style="margin-top: 25px;text-align:center">
+                                    <button id='aejobs'>&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
                                 </div>
                             </div>
 
@@ -396,7 +357,7 @@
         });
     });
 
-    var proins = '<option value="0">--请选择--</option>';
+    var proins = '<option value="0">请选择</option>';
     for(var i in _province){
         proins+="<option value='"+_province[i].id+"'>"+_province[i].name+"</option>";
     }
@@ -423,8 +384,8 @@
             person_num:$("input[name=person_num]").val(),
             job_content:$("textarea[name=job_content]").val(),
             catid:$("select[name=catid]").val(),
-            work_start_time:$("select[name=work_start_time]").val(),
-            work_end_time:$("select[name=work_end_time]").val(),
+            work_start_time:$("input[name=work_start_time]").val(),
+            work_end_time:$("input[name=work_end_time]").val(),
             work_start_date:$("input[name=work_start_date]").val(),
             work_end_date:$("input[name=work_end_date]").val(),
             work_total_date:$("input[name=work_total_date]").val(),
@@ -440,21 +401,30 @@
             work_map_y:$("input[name=work_map_y]").val(),
             jid:$("#jid").val()
         };
-
-        if(job.job_name=='' || job.job_name.length>60){
-            alert("招聘标题不能为空或者超过60个字符");
+        var catid = '';
+        var cate3 = $("#cate-3").val();
+        if(cate3==0){
+            var cate2 = $("#cate-2").val();
+            if(cate2==0){
+                cateid = $("#cate-1").val();
+            }else{
+                catid = cate2;
+            }
+        }else{
+            catid = cate3;
+        }
+        job.catid = catid;
+        if(job.job_name=='' || job.job_name.length>15){
+            alert("招聘标题不能为空或者超过15个字符");
             return false;
         }
         if(job.job_desc=='' || job.job_desc.length>10){
             alert("工作简介不能为空或者超过10个字符");
             return false;
         }
-        if(!Util.isNum(job.person_num) || job.person_num<=0){
-            alert('招聘人数必须是大于0的整数');
-            return false;
-        }
-        if(job.job_content.length<20 && job.job_content.length>300){
-            alert("工作内容字数必须在20到300个之间");
+        
+        if(job.job_content=='' && job.job_content.length>200){
+            alert("工作内容字数必须在小于200个字,并且不能为空");
             return false;
         }
         if(job.work_start_date=='' || job.work_end_date==''){
@@ -488,6 +458,7 @@
             alert("请先标注地图");
             return false;
         }
+    
 
         $.ajax({
             type:'post',
@@ -516,6 +487,52 @@
         Util.regionChange(3,cityid,obj);
         $("#area").val("<?php echo ($jobs["work_area"]); ?>");
     }
+    //兼职类型
+    $("#cate-1").change(function(){
+        var id = $(this).val();
+        if(id > 0){
+            $.ajax({
+                url:$("#cate_url").val(),
+                type:'POST',
+                dataType:'json',
+                data:{id:id},
+                success: function (data) {
+                    var html = '<option value="0">不限</option>';
+                    if(data.r==0) {
+                        var msg = data.msg;
+                        for(var i in msg){
+                            var item = msg[i];
+                            html+='<option value="'+item.id+'">'+item.name+'</option>';
+                        }
+                        $("#cate-2").html(html);
+                    }
+                }
+            })
+        }
+    });
+
+    $("#cate-2").change(function(){
+        var id = $(this).val();
+        if(id > 0){
+            $.ajax({
+                url:$("#cate_url").val(),
+                type:'POST',
+                dataType:'json',
+                data:{id:id},
+                success: function (data) {
+                    var html = '<option value="0">不限</option>';
+                    if(data.r==0) {
+                        var msg = data.msg;
+                        for(var i in msg){
+                            var item = msg[i];
+                            html+='<option value="'+item.id+'">'+item.name+'</option>';
+                        }
+                        $("#cate-3").html(html);
+                    }
+                }
+            })
+        }
+    })
 
 
 

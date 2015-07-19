@@ -34,7 +34,7 @@
 
     <div class="top">
         <div style="width: 980px;margin: 0 auto;">
-            <div class="cl816" style="width: 824px;">
+            <div class="cl816">
                 <div class="top-left fl">
                     <ul class="flul">
                         <li><span>城市：</span><span id="city"></span> <a href="<?php echo U('Portal/index/change_city');?>">[切换城市]</a></li>
@@ -50,7 +50,7 @@
                         <?php else: ?>
                         <li><a href="<?php echo U('User/Login/index');?>">登陆</a></li>
                         <li><a href="<?php echo U('User/register/index');?>">注册</a></li><?php endif; ?>
-                        <li><a href="<?php echo U('user/jobs/aejobs');?>">发布需求信息</a></li>
+                        <!--<li><a href="<?php echo U('user/jobs/aejobs');?>">发布需求信息</a></li>-->
                     </ul>
                 </div>
 
@@ -69,7 +69,11 @@
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
                     <button class="btn-search" id="search-btn">搜索</button>
+
                 </form>
+            </div>
+            <div class="publish fl">
+                <a href="<?php echo U('user/jobs/aejobs');?>" class="publish">发布信息</a>
             </div>
             <div class="c"></div>
         </div>
@@ -77,10 +81,10 @@
         <div class="nav">
             <ul class="flul">
                 <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">家政服务</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">文化生活</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">社区综合</a><span class="shu"></span></li>
+
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
         </div>
         <!--导航end-->
@@ -147,8 +151,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>
@@ -171,7 +178,7 @@
                                 <p>一天消费：<span id="costMoney"><?php echo ($costMoney); ?></span>元</p>
                             </div>
                             <div class="days">
-                                <label>推广给时间：</label><input type="text" id="start_time" name="start_time" placeholder="开始时间"/>
+                                <label>推广时段：</label><input type="text" id="start_time" name="start_time" placeholder="开始时间"/>
                                 <span>至</span>
 
                                 <input type="text" id="end_time" name="end_time" placeholder="结束时间"/>
@@ -179,7 +186,7 @@
                             <div class="myaccount">
                                 我的账户余额：<span id="mymoney"><?php echo ($yue); ?></span>元
                             </div>
-                            <div class="btn-area">
+                            <div class="btn-area" style="text-align: center">
                                 <button class="btn btn-sm" id="jobPos">确定推广</button>
                             </div>
                         </div>

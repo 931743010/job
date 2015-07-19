@@ -484,7 +484,7 @@
 	margin: 20px 0 0;
 }
 .add-address dl dt{
-	width: 130px;
+
 	float: left;
 	font-weight: normal;
 }
@@ -1182,6 +1182,13 @@
 }
 .order-detail .order-total .count{
 	font-size: 18px;
+}
+
+#aejobs{
+	width: 172px;height: 58px;
+	background: url(../images/post_job_03.png) no-repeat;
+	border: none;
+	text-indent: -9999px;
 }
 /*安全认证*/
 .person-type .identify_z{

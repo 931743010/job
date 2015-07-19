@@ -273,7 +273,7 @@ Util.getArea=function(type,id){
  */
 
 Util.regionChange=function(type,pid,domobj){
-    var html = '<option value="0">--请选择--</option>';
+    var html = '<option value="0">请选择</option>';
     if(type == 1){
         //找省份
         data = _province;

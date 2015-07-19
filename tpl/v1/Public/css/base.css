@@ -279,7 +279,7 @@ input[type=text].l-text{
 select{
 	border: 1px solid #D3D3D3;
 	padding: 0 2px;
-	min-width: 72px;
+	min-width: 52px;
 }
 label{
 	margin: 0;
