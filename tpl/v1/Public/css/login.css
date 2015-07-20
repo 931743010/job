@@ -1,5 +1,6 @@
 .page-2 .head-logo{
 	background-color: #fff;
+
 }
 .page-2 .head-logo .top-txt{
 	padding: 80px 0 0 20px;
@@ -86,6 +87,11 @@
 .login-button{
 	margin-top: 10px;
 }
+.login-button input{
+	background-color: rgb(225,221,221);
+	color: #000;
+}
+
 
 
 .reg-box{
@@ -107,6 +113,7 @@
 }
 .reg-hd ul>li.active{
 	background-color: #fff;
+	margin-left: 98px;
 }
 .reg-block{
 	width: 380px;
@@ -170,4 +177,8 @@
 }
 .foot_hr{
 	border-bottom: 1px dotted #999;
+}
+.reg-btn{
+	color: #000;
+	background-color: rgb(225,221,221);
 }

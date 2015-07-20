@@ -27,7 +27,7 @@
 					<img src="/tpl/v1/Public/images/logo.png"/>
 				</a>
 				<div class="top-txt">
-					<div class="wel-txt">
+					<div class="wel-txt" style="float:none;text-align:center;font-size:18px;font-weight:bold;margin-left:-60px">
                         用户登录中心
 					</div>
 
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 	</header>	
-	<div class="wrapper wrapper-2">
+	<div class="wrapper wrapper-1 wrapper-2">
 		<div class="wrap">
 			<div class="adimg" style="position: relative;top: 20px;">
                 <img src="/tpl/v1/Public/images/lr-adimg_02.png" height="440" alt=""/>
@@ -76,7 +76,7 @@
 			
 		</div>		
 	</div>
-	<!--<div id="footer" class="footer">
+	<!--<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -92,7 +92,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>-->
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>-->
 <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="c"></div>

@@ -117,6 +117,17 @@
             <div class="detail">
                 <div class="job-head">
                     <div class="user fl">
+                        <div class="user-avatar fl">
+                            <div class="user-avatar-title">用户头像</div>
+                            <div class="avatar-img">
+                                <?php if($user["avatar_small"] != ''): ?><img src="<?php echo ($user["avatar_small"]); ?>" alt="" style="border-radius:50%"/>
+                                    <?php else: ?>
+                                    <div class="cccbg" style="width: 115px;height: 115px;background: #ccc;border-radius:50%">
+
+                                    </div><?php endif; ?>
+
+                            </div>
+                        </div>
                         <div class="user-info fl">
                             <div class="user-item">
                                 <span class="u-title">用户名：</span><span class="u-val red">
@@ -135,17 +146,7 @@
                                 <span class="u-title">信息诚信协议签订状态：</span><span class="u-val red">已签</span>
                             </div>
                         </div>
-                        <div class="user-avatar fl">
-                            <div class="user-avatar-title">用户头像</div>
-                            <div class="avatar-img">
-                                <?php if($user["avatar_small"] != ''): ?><img src="<?php echo ($user["avatar_small"]); ?>" alt="" style="border-radius:50%"/>
-                                    <?php else: ?>
-                                    <div class="cccbg" style="width: 115px;height: 167px;background: #ccc">
-
-                                    </div><?php endif; ?>
-
-                            </div>
-                        </div>
+                        
                         <div class="c"></div>
                     </div>
                     <div class="job-desc fl">
@@ -246,7 +247,7 @@
                             <label> 至 </label>
                             <input type="text" readonly disabled value="<?php echo ($job["work_address"]); ?>"/>
                             <button id="search_way"> 搜索 </button>
-                            <div class="apply">
+                            <div class="apply" style="text-align:center">
                                 <button id="apply" class="apply-btn">立即应聘</button>
                             </div>
                         </div>
@@ -257,7 +258,7 @@
     </div>
     <!--主体部分end-->
     <!--底部start-->
-    <div id="footer" class="footer">
+    <!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -273,7 +274,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
     <!--底部end-->
     <div id="shadow">
 

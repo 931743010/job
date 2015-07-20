@@ -5,8 +5,8 @@
 #job .detail .user .user-info{width: 200px;  overflow: hidden;}
 #job .detail .user .user-item{height: 40px; line-height: 40px;}
 #job .detail .user .user-avatar{width: 140px;height:220px;text-align: center;}
-#job .detail .user .user-avatar-title{text-align: center;}
-#job .detail .user .avatar-img{width: 120px;height:180px;border-left: 1px solid #5a5a5a;margin: 10px 0 0 10px;padding: 5px}
+#job .detail .user .user-avatar-title{text-align: center;margin-top: 13px;}
+#job .detail .user .avatar-img{width: 120px;height:180px;margin: 10px 0 0 10px;padding: 5px}
 
 #job .detail .job-desc{width: 570px;height:230px;margin-left: 20px;text-align: right;}
 #job .detail .job-desc .blank{height: 170px;}

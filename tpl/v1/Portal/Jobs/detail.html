@@ -40,6 +40,19 @@
             <div class="detail">
                 <div class="job-head">
                     <div class="user fl">
+                        <div class="user-avatar fl">
+                            <div class="user-avatar-title">用户头像</div>
+                            <div class="avatar-img">
+                                <if condition="$user.avatar_small neq ''">
+                                    <img src="{$user.avatar_small}" alt="" style="border-radius:50%"/>
+                                    <else />
+                                    <div class="cccbg" style="width: 115px;height: 115px;background: #ccc;border-radius:50%">
+
+                                    </div>
+                                </if>
+
+                            </div>
+                        </div>
                         <div class="user-info fl">
                             <div class="user-item">
                                 <span class="u-title">用户名：</span><span class="u-val red">
@@ -60,19 +73,7 @@
                                 <span class="u-title">信息诚信协议签订状态：</span><span class="u-val red">已签</span>
                             </div>
                         </div>
-                        <div class="user-avatar fl">
-                            <div class="user-avatar-title">用户头像</div>
-                            <div class="avatar-img">
-                                <if condition="$user.avatar_small neq ''">
-                                    <img src="{$user.avatar_small}" alt="" style="border-radius:50%"/>
-                                    <else />
-                                    <div class="cccbg" style="width: 115px;height: 167px;background: #ccc">
-
-                                    </div>
-                                </if>
-
-                            </div>
-                        </div>
+                        
                         <div class="c"></div>
                     </div>
                     <div class="job-desc fl">
@@ -179,7 +180,7 @@
                             <label> 至 </label>
                             <input type="text" readonly disabled value="{$job.work_address}"/>
                             <button id="search_way"> 搜索 </button>
-                            <div class="apply">
+                            <div class="apply" style="text-align:center">
                                 <button id="apply" class="apply-btn">立即应聘</button>
                             </div>
                         </div>

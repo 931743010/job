@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <title>地址</title>
+    <title><?php if($edit): ?>修改简历
+        <?php else: ?>
+        新增简历<?php endif; ?></title>
 
     	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
@@ -76,10 +78,10 @@
         <div class="nav">
             <ul class="flul">
                 <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">家政服务</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">文化生活</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">社区综合</a><span class="shu"></span></li>
+
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
         </div>
         <!--导航end-->
@@ -146,8 +148,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>
@@ -162,7 +167,7 @@
         </div>
         <div class="bd">
             <div class="margin-out">
-                <div class="add-address data-item">
+                <div class="add-address data-item aeresume" style="width:550px;margin:0 auto;">
                     <dl>
                         <dt>*简历名称：</dt>
                         <dd>
@@ -235,13 +240,13 @@
                     </dl>
                     <dl>
                         <dt>*工作经验：</dt>
-                        <dd style="height: 250px;width: 600px;" class="f">
-                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20，不超过300" id="resume_content" style="width: 600px;height: 250px;"><?php echo ($resume['resume_content']); ?></textarea>
+                        <dd style="height: 150px;width: 450px;" class="f">
+                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20，不超过300" id="resume_content" style="width: 450px;height: 150px;"><?php echo ($resume['resume_content']); ?></textarea>
                         </dd>
                     </dl>
                     <?php if($edit): ?><input type="hidden" name="rid" id="rid" value="<?php echo ($resume['id']); ?>"/><?php endif; ?>
                     <div class="c"></div>
-                    <div class="" style="margin-top: 25px;margin-left: 130px">
+                    <div class="" style="margin-top: 25px;text-align:center">
                         <button id='aeresume' class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
                     </div>
                 </div>

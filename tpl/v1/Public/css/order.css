@@ -73,9 +73,14 @@
 .side-nav li.active{	
 	background-position:-376px -201px;
 }
-.side-nav li.active a,
+.side-nav li a{
+	color: #000;
+}
+
 .side-nav li a:hover{
 	color: #e6006d;
+	color: rgb(239,22,16)
+
 }
 .see-again .hd{
 	background-color: #e6006d;
@@ -720,7 +725,10 @@
 .address-page .data-item{
 	padding: 20px 40px;
 }
-
+.aeresume dt{display: inline-block;width: 80px;text-align: right;}
+.aeresume  #aeresume{
+	background-color: #ccc
+}
 .portrait-page .hd{
 	overflow:visible;
 	height: 60px;
