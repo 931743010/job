@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <title>密码修改</title>
 
-    	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/base.css"/>
-	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/top.css"/>
+    	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/top.css"/>
 		
 	<script src="/statics/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 	<script src="/statics/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
-    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
+	<script src="/trunk/job/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/trunk/job/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/trunk/job/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/order.css"/>
+    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/main.css"/>
 
 </head>
 <body class="theme foot-white-bg">
-<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/trunk/job/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/trunk/job/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 <div class="header" id="header">
 
     <div class="top">
@@ -54,10 +54,10 @@
     </div>
     <div class="h-center">
         <div class="head-banner">
-            <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
+            <img src="/trunk/job/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="http://localhost/zp/"><img src="/trunk/job/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -196,7 +196,7 @@
 </div>
 </div>
 
-<div id="footer" class="footer">
+<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -212,7 +212,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
 <script>
     $("#change_pwd").click(function(){
 

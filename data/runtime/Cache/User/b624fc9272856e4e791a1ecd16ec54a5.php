@@ -15,6 +15,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
@@ -25,6 +28,7 @@
 <body class="theme">	
 	<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -146,8 +150,11 @@
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>
@@ -155,7 +162,7 @@
 					<div class="order-main">
 						<div class="hd">
 							<ul class="portrait-head">
-								<li><a href="<?php echo U('user/my/profile');?>">基本资料</a></li>
+								<li><a href="<?php echo U('user/my/index');?>">基本资料</a></li>
 								<li class="active">头像照片</li>
 							</ul>
 						</div>
@@ -238,7 +245,7 @@
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5f036dd99455cb8adc9de73e2f052f72' type='text/javascript'%3E%3C/script%3E"));
 </script>	
-	<div id="footer" class="footer">
+	<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -254,6 +261,16 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

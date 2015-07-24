@@ -86,7 +86,11 @@ class IndexController extends HomeBaseController {
 
 
     function test(){
-        $this->display();
+         $sid = session_id();
+      $data = M("Session")->select();
+      $res = $data[0]['session_data'];
+      $r=  unserialize($res);
+      dump($r);
     }
 }
 

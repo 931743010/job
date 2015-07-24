@@ -1,0 +1,172 @@
+[ 2015-07-23T00:21:13+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+
+[ 2015-07-23T20:28:20+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002141s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+
+[ 2015-07-23T20:59:41+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+
+[ 2015-07-23T21:34:27+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001360s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+
+[ 2015-07-23T21:34:34+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001671s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+
+[ 2015-07-23T21:35:52+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001241s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 21 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 21 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+
+[ 2015-07-23T21:36:45+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001399s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 16 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 16 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+
+[ 2015-07-23T21:36:58+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 16 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 16 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+
+[ 2015-07-23T21:59:05+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001630s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_cart` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_cart` WHERE `uid` = 15 ORDER BY id asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('103')  [ RunTime:0.0002s ]
+
+[ 2015-07-23T23:00:33+08:00 ] 127.0.0.1 /trunk/job/index.php?g=Portal&m=Index&a=getWiki
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002152s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004165s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Applications/XAMPP/xamppfiles/htdocs/trunk/job/simplewind/Core/Library/Think/Session/Driver/Db.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `sp_ad` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `sp_ad` WHERE ( ad_content="top_hot_search" ) LIMIT 7   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 11 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `sp_goods` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 13 行.
+NOTIC: [8] Undefined index: user /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 174 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 182 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 184 行.
+SQL: SELECT `id`,`name`,`smallimage`,`price`,`pricespe`,`weight` FROM `sp_goods` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Order/Controller/CartController.class.php 第 209 行.
+NOTIC: [8] Undefined index: cart /Applications/XAMPP/xamppfiles/htdocs/trunk/job/application/Common/Controller/HomeBaseController.class.php 第 48 行.
+

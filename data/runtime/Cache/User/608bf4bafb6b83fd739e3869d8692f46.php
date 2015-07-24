@@ -14,6 +14,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/login.css"/>
     <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
     <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
@@ -76,7 +79,7 @@
 			
 		</div>		
 	</div>
-	<!--<!-- <div id="footer" class="footer">
+	<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -102,17 +105,8 @@
                 <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
             </div>
         </div>
-    </div>-->
-<div id="footer" class="footer">
-    <div class="fmain autow">
-        <div class="c"></div>
-        <div class="copy-right">
-            <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
-            <p>版权所有: <a href="">© 人工在线</a></p>
-            <p>深圳市公安网络备案编号：10000000</p>
-        </div>
     </div>
-</div>
+
 
     <script>
 		$(document).ready(function(){

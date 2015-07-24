@@ -18,6 +18,7 @@ if (ini_get('magic_quotes_gpc')) {
 	$_GET = stripslashesRecursive($_GET);
 	$_POST = stripslashesRecursive($_POST);
 }
+ini_set('session.serialize_handler', 'php_serialize');
 //开启调试模式
 define("APP_DEBUG", true);
 //网站当前路径
@@ -56,5 +57,6 @@ if(file_exists(UC_CLIENT_ROOT."config.inc.php")){
 
 //载入框架核心文件
 require SPAPP_PATH.'Core/ThinkPHP.php';
+ini_set("session.save_handler", "user");
 
 

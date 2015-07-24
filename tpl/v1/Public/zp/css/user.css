@@ -26,8 +26,16 @@
 .verify .verify-info .box .item  .identify-info img.company_img{width: 340px!important;height: 188px!important;}
 .verify .verify-info .company .item{height: 185px;}
 .verify .verify-info .company .btn-submit{margin-left: -37px!important;}
+.verify .user-profile a{color: #333;}
 
-
+.profile {padding: 20px;}
+.profile .other ul li{height: 40px;line-height: 40px;}
+.profile #save{width: 162px;height: 58px;background: url(../images/btn-profile-save.png) no-repeat;border: 0;text-indent: -9999px;margin-top: 30px;}
+.profile .avatar{margin-bottom: 15px;}
+.profile .avatar .avatar_small {margin-right: 15px;}
+.profile .avatar .avatar_small img{border-radius: 50%;width: 130px;height: 130px;}
+.profile .avatar .title{display: inline-block;margin-top: 60px;margin-right: 10px;}
+.profile .verify-a{margin-left: 20px;}
 
 
 

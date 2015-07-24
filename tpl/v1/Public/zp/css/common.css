@@ -12,5 +12,5 @@ ul {list-style-type: none;}
 .btn{padding:6px;}
 .autow {width: 980px;margin: 0 auto;}
 .red{color: red;}
-
+.black{color: #333;}
 .common-head{height: 40px;line-height: 40px;text-indent: 30px;font-weight: bold;font-size: 16px;background: #eee;}

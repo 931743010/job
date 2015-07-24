@@ -139,6 +139,7 @@ class Db {
    public function write($sessID,$sessData) { 
        $hander = is_array($this->hander)?$this->hander[0]:$this->hander;
        $expire = time() + $this->lifeTime; 
+       //$sessData = json_encode($sessData);
        mysql_query("REPLACE INTO  ".$this->sessionTable." (  session_id, session_expire, session_data)  VALUES( '$sessID', '$expire',  '$sessData')",$hander); 
        if(mysql_affected_rows($hander)) 
            return true; 

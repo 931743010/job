@@ -42,7 +42,7 @@ class MyController extends HomeBaseController {
         $this->assign( 'user' , $this->user );
         //var_dump($this->user);die;
 //        $this->display();
-        $this->display();
+        $this->display("new_profile");
 	}
 	
 	public function addAddress(){

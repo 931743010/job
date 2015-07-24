@@ -168,6 +168,7 @@ hello;
     	}
     	$users_model=M('Member');
     	$result = $users_model->where($where)->find();
+    	$ures = $result;
     	$ucenter_syn=C("UCENTER_ENABLED");
     		
     	$ucenter_old_user_login=false;
@@ -249,7 +250,7 @@ hello;
     	{
     		if($result['user_pass'] == sp_password($password)|| $ucenter_login_ok)
     		{
-    			$_SESSION["user"]=$result;
+    			$_SESSION["user"]=$ures;
 				if( $_POST['auto_login']==1 ){
 					setcookie('user_login',$result['user_login'],time()+3600,'/');
 					setcookie('user_auth',md5($result['user_pass'].'iloveyouhmvpoint'),time()+3600,'/');
