@@ -43,3 +43,178 @@
 #job .apply .resume-list li{height: 30px;line-height: 30px;}
 #job .apply .apply-btn{background: #d41e24;border: none;color: #fff;border-radius: 2px;
     cursor: pointer;}
+
+#job-map{
+width: 980px;margin: 0 auto;position:relative
+}
+#job-map .baiduMap{width: 550px;height: 300px;}
+#job-map #r-result{width: 400px;position:absolute;left:560px;top: 145px;height: 260px;overflow: scroll;}
+#job-map  .mylocation{position: absolute;top: 0;left: 560px;}
+
+
+
+#walk_search_box{position: relative;}
+#route_header{position: relative;height: 33px;clear: both;}
+.route-ntab{
+	background: #FAFCFF;
+border-bottom: 1px solid #A5C4FF;
+}
+.route-ntab li {
+font-size: 13px;
+float: left;
+width: 81px;
+height: 32px;
+line-height: 32px;
+text-align: center;
+cursor: pointer;
+}
+.route-ntab a {
+color: #000;
+text-decoration: none;
+}
+.route-ntab li.bus-tab i {
+width: 13px;
+height: 16px;
+background-position: -1px -192px;
+}
+.route-ntab .tab-item span {
+margin-left: 8px;
+}
+.route-ntab li i {
+display: inline-block;
+position: relative;
+top: 2px;
+background-image: url(http://webmap1.map.bdstatic.com/wolfman/static/common/images/ui3/mo_banner_ba37b5d.png);
+background-repeat: no-repeat;
+}
+.route-ntab.drive li.drive-tab i {
+background-position: -45px -194px;
+}
+.route-ntab li.walk-tab i {
+width: 16px;
+height: 18px;
+background-position: -102px -189px;
+top: 3px;
+}
+.route-ntab li.drive-tab i {
+width: 15px;
+height: 14px;
+background-position: -29px -194px;
+}
+/*ul.route-ntab.bus .bus-tab a, ul.route-ntab.drive .drive-tab a, ul.route-ntab.walk .walk-tab a {
+color: #3385ff;
+font-weight: 700;
+}*/
+
+.route-search-box form {
+position: relative;
+font-size: 13px;
+/*border-bottom: 1px solid #dee1e3;*/
+}
+.route-search-box .route-switch {
+display: inline-block;
+vertical-align: middle;
+width: 48px;
+text-align: center;
+}
+
+.route-search-box .route-switch a {
+display: block;
+text-decoration: none;
+width: 17px;
+height: 14px;
+background: url(http://webmap1.map.bdstatic.com/wolfman/static/common/images/ui3/mo_banner_ba37b5d.png) no-repeat -36px -224px;
+cursor: pointer;
+margin: 0 auto;
+}
+
+.route-search-box .route-input-box {
+display: inline-block;
+vertical-align: middle;
+width: 308px;
+position: relative;
+}
+.route-search-box p {
+position: relative;
+}
+.route-search-box .route-input-box .start i, .route-search-box .route-input-box .through i {
+background: url(http://webmap1.map.bdstatic.com/wolfman/static/common/images/ui3/mo_banner_ba37b5d.png) no-repeat -44px -210px;
+}
+.route-search-box .route-input-box i {
+display: inline-block;
+width: 11px;
+height: 11px;
+position: relative;
+top: 25px;
+
+}
+#drive_search_box .start input, #drive_search_box .through input {
+width: 175px;
+}
+.route-search-box .route-input-box input {
+width: 300px;
+height: 30px;
+line-height: 26px;
+display: inline-block;
+border: 0;
+border-bottom: 1px solid #eaebed;
+font-size: 13px;
+color: #333;
+padding: 5px 0 5px 15px;
+vertical-align: middle;
+
+}
+
+.route-search-box .route-input-box .end i {
+background: url(http://webmap1.map.bdstatic.com/wolfman/static/common/images/ui3/mo_banner_ba37b5d.png) no-repeat -57px -210px;
+}
+
+/*#bus_end_input, #drive_end_input, #walk_end_input {
+border-bottom: 0;
+}*/
+.route-submit {
+background: #F5F7FA;
+border: 1px solid #f2f2f2;
+text-align: center;
+cursor: pointer;
+font-size: 13px;
+color: #999;
+position: absolute;
+top: 1px;
+bottom: 1px;
+right: -49px;
+width: 54px;
+}
+
+.route-submit:hover {
+background-color: #3385ff;
+color: #fff;
+}
+.route-ntab .tab-active a{
+	color: #3385ff;
+}
+.route-ntab li i.walk-tab-active{
+	background-position: -120px -189px
+}
+.route-ntab li i.bus-tab-active{
+	background-position: -15px -192px;
+}
+.route-ntab li i.drive-tab-active{
+	background-position: -45px -194px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

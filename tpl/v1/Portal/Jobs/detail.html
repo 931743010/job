@@ -170,21 +170,59 @@
                 </div>
                 <!--工作内容end-->
                 <!--地图开始-->
-                <div class="map" style="width: 550px;margin: 0 auto">
-                    <div class="baiduMap" id="allmap" style="width: 550px;height: 300px;">
+                <div class="map" id='job-map'>
+                    <div class="baiduMap" id="allmap">
 
                     </div>
-                    <div id="r-result" style="width: 550px;"></div>
-                        <div class="mylocation">
-                            <label>您的位置: </label><input type="text" name="mylocation" id="mylocation"/>
-                            <label> 至 </label>
-                            <input type="text" readonly disabled value="{$job.work_address}"/>
-                            <button id="search_way"> 搜索 </button>
-                            <div class="apply" style="text-align:center">
+                    <div id="r-result"></div>
+                    <div class="c"></div>
+                     <div class="mylocation route-search-box" id="route_search_box">
+
+                        <div id="route_header">        
+                            <ul class="route-ntab walk cf" id="route_tab">   <span class="arrow-wrap"></span>
+                                <li class="tab-item bus-tab tab-active" data-index="0"><a class="border-line"><i></i><span>公交</span></a></li>
+                                <li class="tab-item drive-tab" data-index="1"><a class="border-line"><i></i><span>驾车</span></a></li>            
+                                <li class="tab-item walk-tab" data-index="2"><a><i></i><span>步行</span></a></li>
+                            </ul>
+                        </div>
+                        <div id="walk_search_box" style="display: block;">
+
+                            <form class="route-search-form" name="walk_form" data-index="3" onsubmit="return false">
+                            <div class="route-switch" title="切换步行起终点"><a></a></div>
+                            <div class="route-input-box">              
+                                <p class="route-input start">             
+                                    <i></i>
+                                    <input type="text" name="walk_start_wd" id="mylocation" value="" placeholder="请输入起点" autocomplete="off" maxlength="256" data-from="start">              
+                                </p>              
+                                <p class="route-input end">                
+                                    <i></i>
+                                    <input type="text" name="walk_end_wd" id="walk_end_input" value="{$job.work_address}" placeholder="请输入终点" autocomplete="off" maxlength="256" data-from="end">              
+                                </p>
+                            </div>
+                        
+                                <input type="hidden" id='search-type' value="0">
+                                <input value="搜索" class="route-submit" id="walkSearchBtn" title="" type="submit">
+                            </form>
+                        </div>
+
+                        <!-- <label>
+                        <select name='type' id='search-type'>
+                            <option value="0">公交</option>
+                            <option value="1">驾车</option>
+                            <option value="2">步行</option>
+                        </select>
+                        </label>
+                        <label>您的位置: </label>
+                        <input type="text" name="mylocation" id="mylocation"/>
+                        <label> 至 </label>
+                        <input type="text" value="{$job.work_address}"/>
+                        <button id="search_way"> 搜索 </button> -->
+                            
+                        </div>
+                </div>
+                <div class="apply" style="text-align:center">
                                 <button id="apply" class="apply-btn">立即应聘</button>
                             </div>
-                        </div>
-                    </div>
                 <!--地图end-->
             </div>
         </div>
@@ -222,6 +260,22 @@
             }
         }
     });
+    $("#route_header li").click(function(){
+        var type = $(this).data('index');
+        $("#route_header li").removeClass("tab-active");
+        $("#route_header li").eq(type).addClass("tab-active");
+        if(type==0){
+            $("#route_header li").find('i').removeClass('tab-active').removeClass('walk-tab-active').removeClass('drive-tab-active');
+            $(this).find('i').addClass('bus-tab-active').addClass('tab-active');
+        }else if(type==1){
+            $("#route_header li").find('i').removeClass('walk-tab-active').removeClass('bus-tab-active');
+            $(this).find('i').addClass('drive-tab-active').addClass('tab-active');
+        }else if(type==2){
+            $("#route_header li").find('i').removeClass('tab-active').removeClass('dirve-tab-active').removeClass('bus-tab-active');
+            $(this).find('i').addClass('walk-tab-active').addClass('tab-active');
+        }
+        $("#search-type").val(type);
+    })
 
 
 
@@ -244,17 +298,32 @@
 //        result[0].marker.setIcon(myIcon);
 //        result[1].marker.setIcon(myIcon);
 //    });
-    $("#search_way").click(function () {
+    $("#walkSearchBtn").click(function () {
         var start = $("#mylocation").val() ;
         if(start==''){
             alert("请输入您的位置");
             return false;
         }
+
         var end = "{$job.work_address}";
-        var transit = new BMap.TransitRoute(map, {
-            renderOptions: {map: map, panel: "r-result"}
-        });
-        transit.search(start, end);
+        end ='西乡地铁站';
+        var type = $("#search-type").val();
+        if(type==0){
+            var transit = new BMap.TransitRoute(map, {
+                renderOptions: {map: map, panel: "r-result"}
+            });
+            transit.search(start, end);
+        }else if(type==1){
+            var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
+    driving.search(start, end);
+        }else if(type==2){
+    //         var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+    // walking.search(start, end);
+
+    var walking = new BMap.WalkingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
+    walking.search(start, end);
+        }
+        return false;
     });
 </script>
 
