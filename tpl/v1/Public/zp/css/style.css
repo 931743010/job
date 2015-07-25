@@ -14,7 +14,7 @@
 .main{width: 980px;margin: 10px auto;height: auto; }
 .job-list{margin-bottom: 20px;}
 .job-list  .item{width: 235px;height: 260px;margin: 10px 10px  0 0px;}
-.job-list .item .item-body,.job-list .item .item-bottom{border:1px solid #ef1410; }
+.job-list .item .item-body{border:1px solid #ef1410; }
 .job-list a{color: #333;}
 .job-list a:hover{background: #eee;color: red;}
 .job-list .item .item-body{padding: 40px 10px;}

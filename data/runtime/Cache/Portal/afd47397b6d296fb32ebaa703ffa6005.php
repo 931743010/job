@@ -54,7 +54,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>

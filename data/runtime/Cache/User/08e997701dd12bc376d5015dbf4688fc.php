@@ -15,6 +15,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
@@ -30,6 +33,7 @@
 <body class="theme foot-white-bg">
 <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -143,9 +147,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -203,7 +207,7 @@
     </div>
 </div>
 
-<div id="footer" class="footer">
+<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -219,7 +223,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
 <script>
     $(function(){
         $('#start_time').datepicker({
@@ -232,11 +246,11 @@
            var start_time = $("#start_time").val();
            var end_time = $("#end_time").val();
             if(start_time=='' || end_time==''){
-                alert("请选择推广时间");
+                layer.alert("请选择推广时间");
                 return false;
             }
             if(start_time>end_time) {
-                alert("开始时间不能大于结束时间");
+                layer.alert("开始时间不能大于结束时间");
                 return false;
             }
             var job_id = "<?php echo ($job["id"]); ?>";
@@ -247,7 +261,7 @@
                 dataType:'json',
                 data:{job_id:job_id,start_time:start_time,end_time:end_time,type:type},
                 success:function(data){
-                    alert(data.msg);
+                    layer.alert(data.msg);
                     if(data.r==0){
                         location.href= "<?php echo U('jobs/index');?>";
                     }
@@ -264,10 +278,10 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
+                layer.alert(data.msg,function(){
                     location.reload();
-                }
+                });
+                
             }
 
         });

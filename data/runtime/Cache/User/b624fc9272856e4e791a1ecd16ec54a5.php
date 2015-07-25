@@ -63,7 +63,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -142,9 +142,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -185,7 +185,7 @@
             swfobject.addDomLoadEvent(function () {
 				//以下两行代码正式环境下请删除
 				if(location.href.indexOf('http://') == -1) 
-				alert('请于WEB服务器环境中查看、测试！\n\n既 http://*/simpleDemo.html\n\n而不是本地路径 file:///*/simpleDemo.html的方式');
+				layer.alert('请于WEB服务器环境中查看、测试！\n\n既 http://*/simpleDemo.html\n\n而不是本地路径 file:///*/simpleDemo.html的方式');
 				var swf = new fullAvatarEditor("/statics/fullAvatarEditor.swf", "expressInstall.swf", "swfContainer", {
 					    id : 'swf',
 						upload_url : "/index.php/user/profile/savePortrait",	//上传接口
@@ -198,22 +198,22 @@
                         console.log(msg);
 						switch(msg.code)
 						{
-							case 1 :// alert("页面成功加载了组件！");break;
+							case 1 :// layer.alert("页面成功加载了组件！");break;
 							case 2 :
 								document.getElementById("upload").style.display = "inline";
 								break;
 							case 3 :
 								if(msg.type == 0)
 								{
-									alert("摄像头已准备就绪且用户已允许使用。");
+									layer.alert("摄像头已准备就绪且用户已允许使用。");
 								}
 								else if(msg.type == 1)
 								{
-									alert("摄像头已准备就绪但用户未允许使用！");
+									layer.alert("摄像头已准备就绪但用户未允许使用！");
 								}
 								else
 								{
-									alert("摄像头被占用！");
+									layer.alert("摄像头被占用！");
 								}
 							break;
 							case 5 : 
@@ -221,13 +221,13 @@
 								{
 									if(msg.content.sourceUrl)
 									{
-										//alert("原图已成功保存至服务器，url为：\n" +　msg.content.sourceUrl+"\n\n" + "头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n\n")+"\n\n传递的userid="+msg.content.userid+"&username="+msg.content.username);
-										alert('头像保存成功');
+										//layer.alert("原图已成功保存至服务器，url为：\n" +　msg.content.sourceUrl+"\n\n" + "头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n\n")+"\n\n传递的userid="+msg.content.userid+"&username="+msg.content.username);
+										layer.alert('头像保存成功');
 									}
 									else
 									{
-										//alert("头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n\n")+"\n\n传递的userid="+msg.content.userid+"&username="+msg.content.username);
-										alert('头像保存成功');
+										//layer.alert("头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n\n")+"\n\n传递的userid="+msg.content.userid+"&username="+msg.content.username);
+										layer.alert('头像保存成功');
 									}
 								}
 							break;
@@ -235,7 +235,7 @@
 					}
 				);
 //                $("#upload").click(function (e) {
-//                    alert(333);
+//                    layer.alert(333);
 //                    swf.call("upload");
 //                });
 //				document.getElementById("upload").onclick=function(){

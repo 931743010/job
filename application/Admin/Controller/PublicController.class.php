@@ -13,11 +13,12 @@ class PublicController extends AdminbaseController {
     	if(isset($_SESSION['ADMIN_ID'])){//已经登录
     		$this->success(L('LOGIN_SUCCESS'),U("Index/index"));
     	}else{
-    		if(empty($_SESSION['adminlogin'])){
-    			redirect(__ROOT__."/");
-    		}else{
+
+    		// if(empty($_SESSION['adminlogin'])){
+    		// 	redirect(__ROOT__."/");
+    		// }else{
     			$this->display(":login");
-    		}
+    		//}
     		
     	}
     }

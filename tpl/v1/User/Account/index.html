@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>个人中心</title>
+	
+	<tc_include file='Public:head'/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/order.css"/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>
+
+</head>
+<body class="theme">	
+	<tc_include file='Public:header'/>
+	
+	<div class="wrapper order-wrap">
+		<div class="wrap">
+			<div class="grid myhmv-grid  portrait-page">
+				<tc_include file='User:My:leftside'/>
+			
+                <div class="grid-r">
+                    <div class="order-main">
+                        <div class="hd">
+                            <div class="tips">
+                                <span>我的余额</span>
+                            </div>
+                        </div>
+                        <div class="bd">
+                            <div class="yue">
+                                <p>我的余额：{$account.money|default=0}元</p>
+                                <br />
+                                <p><a href="{:U('account/pay')}" class="red">现在充值</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>			
+		</div>		
+	</div>
+	
+	<tc_include file='Public:footer'/>
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -38,7 +38,7 @@
                                 <thead>
                                 <tr>
                                     <td width="14%">岗位名称</td>
-                                    <td width="10%">发布时间</td>
+                                    <td>发布时间</td>
                                     <td>应聘时间</td>
                                     <td>阅读标记</td>
                                     <td width="16%">查看</td>
@@ -121,10 +121,11 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
-                    location.reload();
-                }
+                layer.alert(data.msg);
+                setTimeout(function(){
+                   if(data.r==0)
+                    location.reload(); 
+                },3000); 
             }
 
         });
@@ -137,10 +138,11 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-
-                alert(data.msg);
-                if(data.r==0)
-                    location.reload();
+                layer.alert(data.msg);
+                setTimeout(function(){
+                   if(data.r==0)
+                    location.reload(); 
+                },3000);    
             }
 
         });

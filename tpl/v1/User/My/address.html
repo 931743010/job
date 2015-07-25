@@ -475,10 +475,10 @@
 					},
 				success:function(data){
 					if(data.status==1){
-						alert(data.info);
+						layer.alert(data.info);
 						location.reload();
 					}else{
-						alert(data.info);
+						layer.alert(data.info);
 					}
 				}
 			})
@@ -489,7 +489,7 @@
 				url:"{:U('user/my/setAdressDefault')}",
 				data:{id:$(this).attr('data-id')},
 				success:function(data){
-					alert(data.info);
+					layer.alert(data.info);
 					location.reload();
 				}
 				
@@ -501,7 +501,7 @@
 				url:"{:U('user/my/delAddress')}",
 				data:{id:$(this).attr('data-id')},
 				success:function(data){
-					alert(data.info);
+					layer.alert(data.info);
 					location.reload();
 				}
 				
@@ -509,7 +509,7 @@
 		});
 		
 function loadRegion(sel,type_id,selName,url){
-	//alert(jQuery("#"+sel).val());
+	//layer.alert(jQuery("#"+sel).val());
 	jQuery("#"+selName+" option").each(function(){
 		jQuery(this).remove();
 	});

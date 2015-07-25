@@ -5,24 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <title>密码修改</title>
 
-    	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/base.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/top.css"/>
+    	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/top.css"/>
 		
 	<script src="/statics/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 	<script src="/statics/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/order.css"/>
-    <link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/main.css"/>
+	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
 
 </head>
 <body class="theme foot-white-bg">
-<link href="/trunk/job/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/trunk/job/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -54,10 +58,10 @@
     </div>
     <div class="h-center">
         <div class="head-banner">
-            <img src="/trunk/job/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
+            <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/trunk/job/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -136,9 +140,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -163,26 +167,26 @@
         <div class="margin-out">
             <div class="add-address data-item" style="width: 430px;margin: 0 auto">
                 <dl>
-                    <dt>*原&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>原&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
                         <input type="password" name='oldpwd' placeholder="请输入原密码" />
                     </dd>
                 </dl>
                 <dl>
-                    <dt>*新&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>新&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
                         <input type="password" name='newpwd' placeholder="请输入新密码" />
                     </dd>
                 </dl>
                 <dl>
-                    <dt>*确&nbsp;认&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>确认密码：</dt>
                     <dd>
                         <input type="password" name='renewpwd' placeholder="确认新密码" />
                     </dd>
                 </dl>
                     <br />
                 <div class="">
-                    <button id='change_pwd' class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
+                    <button id='change_pwd' style="margin-left:88px;" class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
                 </div>
             </div>
 
@@ -233,15 +237,15 @@
         }
         //console.log(pwd_data);
         if(pwd_data.oldpwd=='' || pwd_data.oldpwd.length<6 || pwd_data.oldpwd.length>16){
-            alert("旧密码长度应该在6到16之间");
+            layer.alert("旧密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd.length<6 || pwd_data.newpwd.length>16){
-            alert("新密码长度应该在6到16之间");
+            layer.alert("新密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd != pwd_data.renewpwd){
-            alert("两次密码不一致");
+            layer.alert("两次密码不一致");
             return false;
         }
 
@@ -253,10 +257,15 @@
             data: pwd_data,
             success:function(data){
                 if(data.r==-1){
-                    alert(data.msg);
+                    layer.alert(data.msg);
                 }else{
-                    alert(data.msg);
-                    window.location.href="<?php echo U('user/my/index');?>"
+                    layer.alert(data.msg,function(){
+                        window.location.href="<?php echo U('user/my/index');?>";
+                    });
+                    // setTimeout(function(){
+                    //     
+                    // },3000)
+                    
                 }
             }
         });

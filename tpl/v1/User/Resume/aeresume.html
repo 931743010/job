@@ -98,7 +98,7 @@
                             <select name="degree" id="degree">
                                 <option value="小学">小学</option>
                                 <option value="初中">初中</option>
-                                <option value="高中/专科">高中/专科</option>
+                                <option value="高中/专科">高中/高职</option>
                                 <option value="大专">大专</option>
                                 <option value="本科">本科</option>
                                 <option value="硕士">硕士</option>
@@ -111,7 +111,7 @@
                     <dl>
                         <dt>*工作经验：</dt>
                         <dd style="height: 150px;width: 450px;" class="f">
-                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20，不超过300" id="resume_content" style="width: 450px;height: 150px;">{$resume['resume_content']}</textarea>
+                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20字，不超过300字" id="resume_content" style="width: 450px;height: 150px;">{$resume['resume_content']}</textarea>
                         </dd>
                     </dl>
                     <if condition='$edit'>
@@ -175,42 +175,42 @@
         };
 
         if(resume.title=='' || resume.title.length>60){
-            alert("简历名称不能为空或者超过60个字符");
+            layer.alert("简历名称不能为空或者超过60个字符");
             return false;
         }
         if(resume.name=='' || resume.name.length>20){
-            alert("姓名不能为空或者超过20个字符");
+            layer.alert("姓名不能为空或者超过20个字符");
             return false;
         }
-//        alert(resume.gender);return false;
+//        layer.alert(resume.gender);return false;
         if(resume.gender!=0 && resume.gender!=1){
-            alert("请选择性别");
+            layer.alert("请选择性别");
             return false;
         }
         if(resume.live_place==''){
-            alert("居住地不能为空");
+            layer.alert("居住地不能为空");
             return false;
         }
         if(resume.age =='' && isNaN(resume.age) && resume.age<=0){
-            alert("年龄不能为空，并且必须是正整数");
+            layer.alert("年龄不能为空，并且必须是正整数");
             return false;
         }
         if(!Util.isPhoneNum(resume.tel)){
-            alert("手机号格式有误");
+            layer.alert("手机号格式有误");
             return false;
         }
         if(resume.email!=''){
             if(!Util.isEmail(resume.email)){
-                alert("邮箱格式有误");
+                layer.alert("邮箱格式有误");
                 return false;
             }
         }
         if(!Util.isNum(resume.height) && resume.height!=''){
-            alert('身高只能是数字');
+            layer.alert('身高只能是数字');
             return false;
         }
         if(resume.resume_content=='' && resume.resume_content.length<10 && resume.resume_content.length>300){
-            alert("工作经历必须填写，并且字数要在10到300个之间");
+            layer.alert("工作经历必须填写，并且字数要在10到300个之间");
             return false;
         }
         var rid = $("#rid").val();
@@ -223,10 +223,12 @@
             dataType:'json',
             data: resume,
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
+                layer.alert(data.msg,function(){
+                    if(data.r==0){
                     location.href="{:U('user/resume/index')}";
-                }
+                    }
+                });
+                
             }
         })
     });

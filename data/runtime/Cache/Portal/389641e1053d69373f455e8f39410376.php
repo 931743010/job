@@ -18,6 +18,9 @@
     <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 
     <script src="/tpl/v1/Public/js/jquery-1.11.1.min.js" type="text/javascript" language="javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>
@@ -58,7 +61,7 @@ $(".apply-btn").click(function () {
     var resume_id = $("input[name=resumeid]:checked").val();
 
     if(resume_id=='undefined'){
-        alert("请选择简历");
+        layer.alert("请选择简历");
         return false;
     }
     $.ajax({
@@ -67,10 +70,12 @@ $(".apply-btn").click(function () {
         dataType:"json",
         data:{jid:job_id,rid:resume_id},
         success: function (data) {
-            alert(data.msg);
-            if(data.r==0){
-                history.go(-1);
-            }
+            layer.alert(data.msg,function(){
+                if(data.r==0){
+                    history.go(-1);
+                }
+            });
+            
         }
     })
 });

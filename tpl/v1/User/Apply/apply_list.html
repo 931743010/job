@@ -125,7 +125,7 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
+                layer.alert(data.msg);
                 if(data.r==0){
                     location.reload();
                 }
@@ -142,7 +142,7 @@
             data:{id:$(this).attr('data-id')},
             success:function(data){
 
-                alert(data.msg);
+                layer.alert(data.msg);
                 if(data.r==0)
                     location.reload();
             }

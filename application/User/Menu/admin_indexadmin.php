@@ -91,6 +91,18 @@ return array (
             ),
           ),
         ),
+        array (
+          'app' => 'User',
+          'model' => 'AdminRank',
+          'action' => 'index',
+          'data' => '',
+          'type' => '1',
+          'status' => '1',
+          'name' => '用户等级',
+          'icon' => 'leaf',
+          'remark' => '',
+          'listorder' => '0',
+        ),
       ),
     ),
     array (

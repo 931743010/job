@@ -71,7 +71,7 @@ class ResumeController extends HomeBaseController
                 Utils::resOut(-1,'邮箱格式有误');
                 exit();
             }
-            $degree = array("小学",'初中','高中/专科','大专','本科','硕士','博士','其他');
+            $degree = array("小学",'初中','高中/高职','大专','本科','硕士','博士','其他');
             if(!in_array($data['degree'],$degree)){
                 Utils::resOut(-1,'学历有误');
                 exit();
@@ -80,8 +80,8 @@ class ResumeController extends HomeBaseController
                 Utils::resOut(-1,'身高只能是整数');
                 exit();
             }
-            if(strlen($data['resume_content']) < 10 && strlen($data['resume_content'])>300){
-                Utils::resOut(-1,'工作经历字数必须在10到300之间');
+            if(strlen($data['resume_content']) < 20 && strlen($data['resume_content'])>900){
+                Utils::resOut(-1,'工作经历字数必须在20字到300字之间');
                 exit();
             }
             if(isset($_POST['rid']) && $_POST['rid']>0){

@@ -123,7 +123,9 @@ class Db {
    public function read($sessID) { 
        $hander = is_array($this->hander)?$this->hander[1]:$this->hander;
        $res = mysql_query("SELECT session_data AS data FROM ".$this->sessionTable." WHERE session_id = '$sessID'   AND session_expire >".time(),$hander); 
+       $sql = "update ".$this->sessionTable." set session_expire=session_expire+".$this->lifeTime." WHERE session_id = '$sessID'";
        if($res) {
+          mysql_query($sql);
            $row = mysql_fetch_assoc($res);
            return $row['data']; 
        }

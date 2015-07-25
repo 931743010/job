@@ -125,9 +125,9 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		$chat = $admin ? (string) $data['chat'] : nl2br( htmlspecialchars( (string) $data['chat'], ENT_QUOTES ) );
 		$receive = $data['receive'];
 		$uid = $data['uid'];
-		if ( $admin && $chat == 'die' ) {
-			die;
-		}
+		// if ( $admin && $chat == 'die' ) {
+		// 	die;
+		// }
 		if ( !$name  ) {
 			return $class->send( array( 'msg' => '<div class="msg error">请先登陆</div>' ), $accept );
 		}
@@ -140,7 +140,9 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		}
 		$msg = array( 'chat' => '<div class="chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
 		$msg1= array( 'chat' => '<div class="me chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
-		save_data($suid,$ruid,$chat);//保存到数据库
+		//判断是否在线，在线则设置为已读
+		$status = is_online($rname,$class)?1:0;
+		save_data($suid,$ruid,$chat,$status);//保存到数据库
 		ws_send_one($name,$msg1,$class);
 		return ws_send_one($rname,$msg,$class);
 		
@@ -180,8 +182,16 @@ function ws_send_one($name,$data,$class){
 			$class->send( $data, $class->accept[$k] );
 			break;
 		}
-
 	}
+}
+//判断用户是否在线
+function is_online($name,$class){
+	foreach ( $class->bind as $k => $v ) {
+		if($v['name']==$name){
+			return true;
+		}
+	}
+	return false;
 }
 
 

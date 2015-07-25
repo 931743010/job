@@ -32,7 +32,7 @@
                 <thead>
                 <tr>
                     <td width="14%">简历名称</td>
-                    <td width="10%">姓名</td>
+                    <td>姓名</td>
                     <td>居住地址</td>
                     <td>手机</td>
                     <td width="16%">刷新时间</td>
@@ -116,8 +116,11 @@
             dataType:'json',
             data:{rid:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                location.reload();
+                layer.alert(data.msg);
+                setTimeout(function(){
+                   location.reload(); 
+                },3000);
+                
             }
 
         });
@@ -130,8 +133,10 @@
             dataType:'json',
             data:{rid:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                location.reload();
+                layer.alert(data.msg,function(){
+                    location.reload(); 
+                });
+                
             }
 
         });

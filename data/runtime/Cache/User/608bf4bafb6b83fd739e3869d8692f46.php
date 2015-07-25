@@ -123,7 +123,7 @@
 						if(data.status==1){
 							location.href=data.url;
 						}else{
-							alert(data.info);
+							layer.alert(data.info);
 						}
 					}
 				})

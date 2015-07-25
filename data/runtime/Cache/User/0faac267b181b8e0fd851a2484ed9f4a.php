@@ -15,6 +15,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
@@ -32,6 +35,7 @@
 <body class="theme foot-white-bg">
 <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -66,7 +70,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -145,9 +149,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -178,7 +182,7 @@
                                     <dd>
                                         <input type="text" name='job_name' placeholder="" value="<?php echo ($jobs['job_name']); ?>" />
                                         <label>
-                                            （输入少于15个字符！）
+                                            （输入少于12个字！）
                                         </label>
                                     </dd>
                                 </dl>
@@ -211,7 +215,7 @@
                                     <dt>工作内容：</dt>
                                     <dd>
                                         <input type="text" name='job_desc' placeholder="简要说明，如清理房间" value="<?php echo ($jobs['job_desc']); ?>"/>
-                                        <label>（输入少于15个字符！） </label>
+                                        <label>（输入少于10个字！） </label>
                                     </dd>
                                 </dl>
                                 <dl>
@@ -231,6 +235,13 @@
                                     </dd>
                                     <dt style="margin-left: 10px;">工作时间：</dt>
                                     <dd>
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="<?php echo ($job["work_start_time"]); ?>" style="width: 70px"/>
+                                        <span> 至</span>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="<?php echo ($job["work_end_time"]); ?>" style="width: 70px;"/>
+                                        <img src="/tpl/v1/Public/zp/images/add-icon.png" style="margin:4px;" id='addicon'>
+                                    </dd>
+                                    
+                                     <dd style="position:relative;top:4px;left:431px;display:none" class='more-icon'>
                                         <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="<?php echo ($job["work_start_time"]); ?>" style="width: 70px"/>
                                         <span> 至</span>
                                         <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="<?php echo ($job["work_end_time"]); ?>" style="width: 70px;"/>
@@ -257,14 +268,14 @@
                                     <dd class='fl' style='margin-right:20px'>
                                         <select name="pay_method" id="pay_method">
                                             <option value="0">现金</option>
-                                            <option value="1">打卡</option>
+                                            <option value="1">转账</option>
                                         </select>
                                     </dd>
                                     <dt>结算时间：</dt>
                                     <dd class='fl' style='margin-right:20px'>
                                         <select name="pay_date" id="pay_date">
                                             <option value="0">日结</option>
-                                            <option value="1">现金结算</option>
+                                            <option value="1">定期结算</option>
                                         </select>
                                     </dd>
                                     <dt>岗位性质：</dt>
@@ -365,6 +376,17 @@
         $('#work_end_date').datepicker({
             format: 'yyyy-mm-dd'
         });
+        $("#addicon").click(function(){
+            if($(".more-icon").hasClass('show')){
+                $(this).attr('src',"/tpl/v1/Public/zp/images/add-icon.png");
+                $(".more-icon").hide();
+                $(".more-icon").removeClass('show');
+            }else{
+                $(this).attr('src',"/tpl/v1/Public/zp/images/decrease-icon.png");
+                $(".more-icon").show();
+                $(".more-icon").addClass('show');
+            }
+        });
     });
 
     var proins = '<option value="0">请选择</option>';
@@ -425,50 +447,49 @@
         }
         job.catid = catid;
         if(job.job_name=='' || job.job_name.length>15){
-            alert("招聘标题不能为空或者超过15个字符");
+            layer.alert("招聘标题不能为空或者超过15个字符");
             return false;
         }
         if(job.job_desc=='' || job.job_desc.length>10){
-            alert("工作简介不能为空或者超过10个字符");
+            layer.alert("工作简介不能为空或者超过10个字符");
             return false;
         }
         
         if(job.job_content=='' && job.job_content.length>200){
-            alert("工作内容字数必须在小于200个字,并且不能为空");
+            layer.alert("工作内容字数必须在小于200个字,并且不能为空");
             return false;
         }
         if(job.work_start_date=='' || job.work_end_date==''){
-            alert("工作日期必须填写");
+            layer.alert("工作日期必须填写");
             return false;
         }
         if(job.work_start_date>job.work_end_date){
-            alert("工作开始时间不能大于结束时间");
+            layer.alert("工作开始时间不能大于结束时间");
             return false;
         }
 
         if(!Util.isNum(job.work_total_date) || job.work_total_date<=0){
-            alert("工作时长必须是大于0的数字");
+            layer.alert("工作时长必须是大于0的数字");
             return false;
         }
         if(!Util.isNum(job.work_pay) || job.work_pay<=0){
-            alert("价钱必须为大于0的数字");
+            layer.alert("价钱必须为大于0的数字");
             return false;
         }
         if(!job.province || !job.city || !job.area){
 
-            alert("工作地区必须选择");
+            layer.alert("工作地区必须选择");
             return false;
 
         }
         if(job.work_address==''){
-            alert('详细地址不能为空');
+            layer.alert('详细地址不能为空');
             return false;
         }
         if(!Util.isNum(job.work_map_x) ||!Util.isNum(job.work_map_y)){
-            alert("请先标注地图");
+            layer.alert("请先标注地图");
             return false;
         }
-    
 
         $.ajax({
             type:'post',
@@ -477,10 +498,12 @@
             data: job,
             success:function(data){
                 if(data.r==0){
-                    alert('操作成功');
-                    location.href="<?php echo U('user/jobs/index');?>";
+                    layer.alert(data.msg,function(){
+                        location.href="<?php echo U('user/jobs/index');?>";
+                    });
+                    //location.href="<?php echo U('user/jobs/index');?>";
                 }else{
-                    alert(data.msg);
+                    layer.alert(data.msg);
                 }
             }
         })
@@ -550,7 +573,7 @@
     // var map = new BMap.Map("allmap");
     // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
     // function showInfo(e){
-    //     alert(e.point.lng + ", " + e.point.lat);
+    //     layer.alert(e.point.lng + ", " + e.point.lat);
     // }
     // map.addEventListener("click", showInfo);
 
@@ -582,7 +605,7 @@
     function showInfo(e){
         $("#work_map_x").val(e.point.lng);
         $("#work_map_y").val(e.point.lat);
-        //alert(e.point.lng + ", " + e.point.lat);
+        //layer.alert(e.point.lng + ", " + e.point.lat);
         map.clearOverlays();  //删除已有的覆盖物
         var point = new BMap.Point(e.point.lng,e.point.lat);
         map.centerAndZoom(point, 15);
@@ -600,7 +623,7 @@
     }
 
     //var map = new BMap.Map("l-map");
-    map.centerAndZoom("深圳",12);                   // 初始化地图,设置城市和地图级别。
+    map.centerAndZoom("<?php echo ($_SESSION['wiki']['city']); ?>",12);                   // 初始化地图,设置城市和地图级别。
 
     var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
         {"input" : "suggestId"

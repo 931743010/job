@@ -15,6 +15,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
@@ -29,6 +32,7 @@
 <body class="theme foot-white-bg">
 <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -63,7 +67,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -80,10 +84,10 @@
         <div class="nav">
             <ul class="flul">
                 <li><a href="<?php echo U('Portal/Index/index');?>" target="_self">首  页</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">所有工作</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">家政服务</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">文化生活</a><span class="shu"></span></li>
-                <li><a href="<?php echo U('Portal/Jobs/lists');?>">社区综合</a><span class="shu"></span></li>
+
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=126">家政服务</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=128">文化生活</a><span class="shu"></span></li>
+                <li><a href="<?php echo U('Portal/Jobs/category');?>&catid=132">社区综合</a><span class="shu"></span></li>
             </ul>
         </div>
         <!--导航end-->
@@ -142,16 +146,19 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=0">推广消费</a></li>
                                 <li><a href="<?php echo U('user/my/cost_log');?>&type=1">发布消费</a></li>
+
 							</ul>
+
 						</div>
+                        <div class="rollbg"></div>
 					</aside>
 
 				</div>
@@ -169,7 +176,7 @@
                                 <thead>
                                 <tr>
                                     <td width="14%">岗位名称</td>
-                                    <td width="10%">发布时间</td>
+                                    <td>发布时间</td>
                                     <td>应聘时间</td>
                                     <td>阅读标记</td>
                                     <td width="16%">查看</td>
@@ -228,7 +235,7 @@
     </div>
 </div>
 
-<div id="footer" class="footer">
+<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -244,7 +251,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
 <script>
 
     //编辑工作
@@ -263,10 +280,11 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
-                    location.reload();
-                }
+                layer.alert(data.msg);
+                setTimeout(function(){
+                   if(data.r==0)
+                    location.reload(); 
+                },3000); 
             }
 
         });
@@ -279,10 +297,11 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-
-                alert(data.msg);
-                if(data.r==0)
-                    location.reload();
+                layer.alert(data.msg);
+                setTimeout(function(){
+                   if(data.r==0)
+                    location.reload(); 
+                },3000);    
             }
 
         });

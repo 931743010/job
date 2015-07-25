@@ -17,6 +17,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
     <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/main.css"/>
@@ -27,6 +30,7 @@
 <body class="theme foot-white-bg">
 <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -61,7 +65,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -140,9 +144,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -228,7 +232,7 @@
                             <select name="degree" id="degree">
                                 <option value="小学">小学</option>
                                 <option value="初中">初中</option>
-                                <option value="高中/专科">高中/专科</option>
+                                <option value="高中/专科">高中/高职</option>
                                 <option value="大专">大专</option>
                                 <option value="本科">本科</option>
                                 <option value="硕士">硕士</option>
@@ -241,7 +245,7 @@
                     <dl>
                         <dt>*工作经验：</dt>
                         <dd style="height: 150px;width: 450px;" class="f">
-                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20，不超过300" id="resume_content" style="width: 450px;height: 150px;"><?php echo ($resume['resume_content']); ?></textarea>
+                            <textarea name="resume_content" placeholder="请简要描述，字数不少于20字，不超过300字" id="resume_content" style="width: 450px;height: 150px;"><?php echo ($resume['resume_content']); ?></textarea>
                         </dd>
                     </dl>
                     <?php if($edit): ?><input type="hidden" name="rid" id="rid" value="<?php echo ($resume['id']); ?>"/><?php endif; ?>
@@ -262,7 +266,7 @@
 </div>
 
 
-<div id="footer" class="footer">
+<!-- <div id="footer" class="footer">
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
@@ -278,7 +282,17 @@
             <p>深圳市公安网络备案编号：10000000</p>
         </div>
     </div>
-</div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
 <script>
 
     <?php if($edit): ?>var gender = "<?php echo ($resume['gender']); ?>";
@@ -316,42 +330,42 @@
         };
 
         if(resume.title=='' || resume.title.length>60){
-            alert("简历名称不能为空或者超过60个字符");
+            layer.alert("简历名称不能为空或者超过60个字符");
             return false;
         }
         if(resume.name=='' || resume.name.length>20){
-            alert("姓名不能为空或者超过20个字符");
+            layer.alert("姓名不能为空或者超过20个字符");
             return false;
         }
-//        alert(resume.gender);return false;
+//        layer.alert(resume.gender);return false;
         if(resume.gender!=0 && resume.gender!=1){
-            alert("请选择性别");
+            layer.alert("请选择性别");
             return false;
         }
         if(resume.live_place==''){
-            alert("居住地不能为空");
+            layer.alert("居住地不能为空");
             return false;
         }
         if(resume.age =='' && isNaN(resume.age) && resume.age<=0){
-            alert("年龄不能为空，并且必须是正整数");
+            layer.alert("年龄不能为空，并且必须是正整数");
             return false;
         }
         if(!Util.isPhoneNum(resume.tel)){
-            alert("手机号格式有误");
+            layer.alert("手机号格式有误");
             return false;
         }
         if(resume.email!=''){
             if(!Util.isEmail(resume.email)){
-                alert("邮箱格式有误");
+                layer.alert("邮箱格式有误");
                 return false;
             }
         }
         if(!Util.isNum(resume.height) && resume.height!=''){
-            alert('身高只能是数字');
+            layer.alert('身高只能是数字');
             return false;
         }
         if(resume.resume_content=='' && resume.resume_content.length<10 && resume.resume_content.length>300){
-            alert("工作经历必须填写，并且字数要在10到300个之间");
+            layer.alert("工作经历必须填写，并且字数要在10到300个之间");
             return false;
         }
         var rid = $("#rid").val();
@@ -364,10 +378,12 @@
             dataType:'json',
             data: resume,
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
+                layer.alert(data.msg,function(){
+                    if(data.r==0){
                     location.href="<?php echo U('user/resume/index');?>";
-                }
+                    }
+                });
+                
             }
         })
     });

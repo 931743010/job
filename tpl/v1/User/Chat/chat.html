@@ -90,22 +90,34 @@ $(function(){
 </head>
 <body>
     <tc_include file='Public:header'/>
-<div class="content">
-    <div class="message"></div>
-    <div class="tool">
-        <span class="empty">清空记录</span>
-    </div>
-    <div class="send">
-        <textarea class="chat" name="chat"></textarea>
-        <p><input type="submit" class="submit" name="submit" value="发送" /></p>
-    </div>
-    <div class="list">
-        <h3>在线用户<strong class="online">0</strong></h3>
-        <ul>
+    <div id="main" class="main">
+        <div class="chat">
+            <div class="chat-list fl">
+                <ul>
+                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
+                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
+                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
+                </ul>
+            </div>
+            <div class="content fl">
+                <div class="message"></div>
+                <div class="tool">
+                    <span class="empty">清空记录</span>
+                </div>
+                <div class="send">
+                    <textarea class="chat" name="chat"></textarea>
+                    <p><input type="submit" class="submit" name="submit" value="发送" /></p>
+                </div>
+                <div class="list">
+                    <h3>在线用户<strong class="online">0</strong></h3>
+                    <ul>
 
-        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="c"></div>
+        </div>
     </div>
-</div>
     <tc_include file='Public:footer'/>
 
 </body>

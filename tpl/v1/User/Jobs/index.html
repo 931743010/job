@@ -147,10 +147,10 @@
             dataType:'json',
             data:{id:$(this).attr('data-id')},
             success:function(data){
-                alert(data.msg);
-                if(data.r==0){
+                layer.alert(data.msg,function(){
                     location.reload();
-                }
+                });
+                
             }
 
         });
@@ -164,9 +164,9 @@
             data:{id:$(this).attr('data-id')},
             success:function(data){
 
-                alert(data.msg);
-                if(data.r==0)
+                layer.alert(data.msg,function(){
                     location.reload();
+                });
             }
 
         });
@@ -199,6 +199,18 @@
         return false;
     }
 
+    $(".recommendJob").click(function(){
+        layer.alert('暂不提供此项服务，具体时间请留言网站公告');
+        return false;
+    });
+    $(".highlightJob").click(function(){
+        layer.alert('暂不提供此项服务，具体时间请留言网站公告');
+        return false;
+    });
+    $(".emergencyJob").click(function(){
+        layer.alert('暂不提供此项服务，具体时间请留言网站公告');
+        return false;
+    });
 
 
 

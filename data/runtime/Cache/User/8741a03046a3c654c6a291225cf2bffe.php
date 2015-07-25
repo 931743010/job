@@ -5,22 +5,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 	<title>找回密码</title>
 	
-		<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/base.css"/>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/top.css"/>
+		<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/top.css"/>
 		
 	<script src="/statics/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 	<script src="/statics/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/trunk/job/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="/trunk/job/tpl/v1/Public/css/order.css"/>
+	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/order.css"/>
 
 </head>
 <body class="theme">	
-	<link href="/trunk/job/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/trunk/job/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -52,10 +56,10 @@
     </div>
     <div class="h-center">
         <div class="head-banner">
-            <img src="/trunk/job/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
+            <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/trunk/job/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -116,7 +120,7 @@
 					<div class="input-box">
 						<label for="">账户名</label>
 						<div class="input-out">
-							<input type="text" name="username" id="" value="" placeholder="邮箱/手机号码"/>
+							<input type="text" name="username" id="" value="" placeholder="邮箱"/>
 						</div>
 					</div>
 				</div>

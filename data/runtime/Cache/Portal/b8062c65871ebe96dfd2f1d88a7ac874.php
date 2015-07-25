@@ -11,11 +11,11 @@
     <meta name="author" content="XG人才招聘系统" />
     <meta name="copyright" content="XG人才招聘系统" />
 
-    <link href="/trunk/job/tpl/v1/Public/zp/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/tpl/v1/Public/zp/css/index.css" rel="stylesheet" type="text/css" />
     <script src="/statics/js/cache/region.js"></script>
-    <script src="/trunk/job/tpl/v1/Public/js/jquery-1.11.1.min.js" type="text/javascript" language="javascript"></script>
-    <link href="/trunk/job/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
-    <link href="/trunk/job/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="/tpl/v1/Public/js/jquery-1.11.1.min.js" type="text/javascript" language="javascript"></script>
+    <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="wrap">

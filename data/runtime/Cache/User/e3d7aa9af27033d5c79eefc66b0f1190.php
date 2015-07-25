@@ -14,6 +14,9 @@
 	<script src="/tpl/v1/Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/tpl/v1/Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+    <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/css/login.css"/>
     <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
     <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
@@ -155,10 +158,10 @@
             var reg = new RegExp(/^[1][3458]{1}[0-9]{9}$/);
 
             if(!reg.test(phoneNum)){
-                alert('手机号码格式错误,请检查输入');
+                layer.alert('手机号码格式错误,请检查输入');
             }else{
                 $.get('<?php echo U("user/register/sendCheckcode");?>',{'phone':phoneNum},function(data){
-                    alert(data.info);
+                    layer.alert(data.info);
                 })
             }
             return false;
@@ -173,19 +176,19 @@
         });
 		$("button.reg-btn").click(function(){
             var agree = $("#agree").val();
-//            alert(agree);return false;
+//            layer.alert(agree);return false;
             if(agree!=1){
-                alert("请先同意注册条款");
+                layer.alert("请先同意注册条款");
                 return false;
             }
 			var type = $(".reg-block li.active").html();
             var realname = $("input[name=user_realname]").val();
             if(realname==''){
-                alert('请输入用户名');
+                layer.alert('请输入用户名');
                 return false;
             }
             if(realname.length<4 || realname.length>20){
-                alert('用户名不能低于4位或者超过20位');
+                layer.alert('用户名不能低于4位或者超过20位');
                 return false;
             }
 			//if( type=='邮箱注册' ){
@@ -215,10 +218,16 @@
 				},
 				success:function(data){
 					if(data.status==1){
-						alert("注册成功");
-						location.href="<?php echo U('user/login/index');?>";
+						layer.alert("注册成功,3秒后跳转",function(){
+							location.href="<?php echo U('user/login/index');?>";
+						});
+						setTimeout(function(){
+							location.href="<?php echo U('user/login/index');?>";
+						},3000)
+
+						
 					}else{
-						alert(data.info);
+						layer.alert(data.info);
 						$('.verify_img').attr('src' , '/index.php?g=Api&m=Checkcode&a=index&code_len=4&font_size=15&width=100&height=50&charset=1234567890&time='+Math.random());
 					}
 				}

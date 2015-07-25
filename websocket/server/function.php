@@ -164,7 +164,7 @@ function get_user_id($name){
 	return $data[0]['id'];
 }
 //保存聊天数据到数据库 sid send_id rid receive_id
-function save_data($sid,$rid,$data){
+function save_data($sid,$rid,$data,$status){
 	global $db;
 	$send_time = time();
 	if($sid>$rid){
@@ -172,7 +172,7 @@ function save_data($sid,$rid,$data){
 	}else{
 		$box_id = $sid.','.$rid;
 	}
-	$sql = "insert into `job`.`sp_chat` ( `id`, `send_id`,`receive_id`,`box_id`, `send_time`,`content`) values ( '0', $sid, $rid, '{$box_id}', '{$send_time}','{$data}')";
+	$sql = "insert into `job`.`sp_chat` ( `id`, `send_id`,`receive_id`,`box_id`, `send_time`,`content`,`receive_status`) values ( '0', $sid, $rid, '{$box_id}', '{$send_time}','{$data}',{$status})";
 	$res = $db->add($sql);
 	return $res;
 }

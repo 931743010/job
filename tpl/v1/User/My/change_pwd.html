@@ -29,26 +29,26 @@
         <div class="margin-out">
             <div class="add-address data-item" style="width: 430px;margin: 0 auto">
                 <dl>
-                    <dt>*原&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>原&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
                         <input type="password" name='oldpwd' placeholder="请输入原密码" />
                     </dd>
                 </dl>
                 <dl>
-                    <dt>*新&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>新&nbsp;密&nbsp;&nbsp;码：</dt>
                     <dd>
                         <input type="password" name='newpwd' placeholder="请输入新密码" />
                     </dd>
                 </dl>
                 <dl>
-                    <dt>*确&nbsp;认&nbsp;密&nbsp;&nbsp;码：</dt>
+                    <dt>确认密码：</dt>
                     <dd>
                         <input type="password" name='renewpwd' placeholder="确认新密码" />
                     </dd>
                 </dl>
                     <br />
                 <div class="">
-                    <button id='change_pwd' class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
+                    <button id='change_pwd' style="margin-left:88px;" class="btn btn-lg">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
                 </div>
             </div>
 
@@ -73,15 +73,15 @@
         }
         //console.log(pwd_data);
         if(pwd_data.oldpwd=='' || pwd_data.oldpwd.length<6 || pwd_data.oldpwd.length>16){
-            alert("旧密码长度应该在6到16之间");
+            layer.alert("旧密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd.length<6 || pwd_data.newpwd.length>16){
-            alert("新密码长度应该在6到16之间");
+            layer.alert("新密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd != pwd_data.renewpwd){
-            alert("两次密码不一致");
+            layer.alert("两次密码不一致");
             return false;
         }
 
@@ -93,10 +93,15 @@
             data: pwd_data,
             success:function(data){
                 if(data.r==-1){
-                    alert(data.msg);
+                    layer.alert(data.msg);
                 }else{
-                    alert(data.msg);
-                    window.location.href="{:U('user/my/index')}"
+                    layer.alert(data.msg,function(){
+                        window.location.href="{:U('user/my/index')}";
+                    });
+                    // setTimeout(function(){
+                    //     
+                    // },3000)
+                    
                 }
             }
         });

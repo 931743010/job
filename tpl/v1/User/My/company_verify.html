@@ -146,15 +146,15 @@ function check_company(){
     var license_z = $("#license_z").attr('src');
 
     if(company_name==''){
-        alert("企业名称必须填写");
+        layer.alert("企业名称必须填写");
         return false;
     }
     if(company_id==''){
-        alert("营业执照号码不能为空");
+        layer.alert("营业执照号码不能为空");
         return false;
     }
     if(license_z=='__TMPL__Public/zp/images/preimg_09.png'){
-        alert("请上传营业执照");
+        layer.alert("请上传营业执照");
         return false;
     }
 

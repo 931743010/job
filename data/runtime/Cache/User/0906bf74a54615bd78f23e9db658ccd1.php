@@ -91,6 +91,7 @@ $(function(){
 <body>
     <link href="/tpl/v1/Public/zp/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/tpl/v1/Public/zp/css/style.css" rel="stylesheet" type="text/css" />
+
 <div class="header" id="header">
 
     <div class="top">
@@ -125,7 +126,7 @@ $(function(){
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -175,22 +176,61 @@ $(function(){
         })
     </script>
 </div>
-<div class="content">
-    <div class="message"></div>
-    <div class="tool">
-        <span class="empty">清空记录</span>
-    </div>
-    <div class="send">
-        <textarea class="chat" name="chat"></textarea>
-        <p><input type="submit" class="submit" name="submit" value="发送" /></p>
-    </div>
-    <div class="list">
-        <h3>在线用户<strong class="online">0</strong></h3>
-        <ul>
+    <div id="main" class="main">
+        <div class="chat">
+            <div class="chat-list fl">
+                <ul>
+                    <li> <a href="<?php echo U('chat/chat');?>&rid={10}">昵称</a></li>
+                    <li> <a href="<?php echo U('chat/chat');?>&rid={10}">昵称</a></li>
+                    <li> <a href="<?php echo U('chat/chat');?>&rid={10}">昵称</a></li>
+                </ul>
+            </div>
+            <div class="content fl">
+                <div class="message"></div>
+                <div class="tool">
+                    <span class="empty">清空记录</span>
+                </div>
+                <div class="send">
+                    <textarea class="chat" name="chat"></textarea>
+                    <p><input type="submit" class="submit" name="submit" value="发送" /></p>
+                </div>
+                <div class="list">
+                    <h3>在线用户<strong class="online">0</strong></h3>
+                    <ul>
 
-        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="c"></div>
+        </div>
     </div>
-</div>
-<?php  ?>
+    <!-- <div id="footer" class="footer">
+    <div class="fmain autow">
+        <div class="f-nav">
+            <ul class="flul">
+                <li><a href="">关于我们</a></li>
+                <li><a href="">帮助中心</a></li>
+                <li><a href="">联系我们</a></li>
+                <li><a href="">加入我们</a></li>
+            </ul>
+        </div>
+        <div class="c"></div>
+        <div class="copy-right">
+            <p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>
+            <p>深圳市公安网络备案编号：10000000</p>
+        </div>
+    </div>
+</div> -->
+<div id="footer" class="footer">
+        <div class="fmain autow">
+            <div class="c"></div>
+            <div class="copy-right">
+                <!--<p>版权所有 2015-2018 公司名称 粤icp备：icp000000000</p>-->
+                <p>版权所有: <a href="">© 人工在线</a></p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

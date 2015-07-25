@@ -66,7 +66,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -145,9 +145,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -162,6 +162,73 @@
 
 				</div>
             <div class="grid-r">
+
+                <div class="order-main">
+                        <ul class="user-info">
+                            <li class="info-line-1 cate-icon"></li>
+                            <li class="base-info">
+                                <a href="<?php echo U('my/portrait');?>" target='_blank'>
+                                    <div class="user-pic">
+                                        <div class="cate-icon msk">                                     
+                                        </div>
+                                        <img src="<?php echo ($user["avatar_large"]); ?>"/>                                       
+                                    </div>
+                                </a>
+                                <div class="u-info">
+                                    <div class="u-name">
+                                        <?php echo ($user["user_login"]); ?>
+                                    </div>
+                                    <div class="u-safe">
+                                        <p>
+                                            账户安全
+                                        </p>
+                                        <div class="rank-box">
+                                            <span class="safe-rank">
+                                                <i class="rank-1"></i>
+                                                <!--<i class="rank-2"></i>-->
+                                                <!--<i class="rank-3"></i>-->
+                                            </span>
+                                            <span class="rank-txt">低</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="info-line-2 cate-icon"></li>
+                            <li class="user-couts">
+                                <ul>
+                                    <li>
+                                        <div class="counts-item">
+                                            <i class="cate-icon count-01"></i>
+                                            <p>余额<em><?php echo ((isset($account['money']) && ($account['money'] !== ""))?($account['money']):0); ?></em></p>
+                                        </div>                                      
+                                    </li>
+
+                                    <li>
+                                        <div class="counts-item">
+                                            <i class="cate-icon count-04"></i>
+                                            <p>职位<em><?php echo ((isset($jobCount) && ($jobCount !== ""))?($jobCount):0); ?></em></p>
+                                        </div>                                      
+                                    </li>
+                                    <li>
+                                        <div class="counts-item">
+                                            <i class="cate-icon count-05"></i>
+                                            <p>申请<em><?php echo ((isset($applyCount) && ($applyCount !== ""))?($applyCount):0); ?></em></p>
+                                        </div>                                      
+                                    </li>
+                                    <li>
+                                        <div class="counts-item">
+                                            <i class="cate-icon count-06"></i>
+                                            <p>简历<em><?php echo ((isset($resumeCount) && ($resumeCount !== ""))?($resumeCount):0); ?></em></p>
+                                        </div>                                      
+                                    </li>                                   
+                                </ul>
+                            </li>
+                            <li class="info-line-3 cate-icon"></li>
+                        </ul>
+                    </div>
+
+
+
                 <div class="order-main">
                     
                     <div class="bd verify">
@@ -176,7 +243,7 @@
                         <div class="line" style="border-bottom: 1px solid #ccc"></div>
                         <div class="profile" style="width:500px;margin:0 auto;">
                         <form action="">
-                            <div class="avatar">
+                            <div class="avatar" style="display:none">
                                 <span class='title'>用户头像：</span>
                                 <?php if($user["avatar_small"] == ""): ?><span class='avatar_small'>
                                     <a href="<?php echo U('my/portrait');?>">
@@ -231,11 +298,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="notice">
-                                <p class="text-right red">
-                                    注释：认证后自动更新这些数据！
-                                </p>
-                            </div>
+                            
                             <div class="save">
                                 <p class="text-center">
                                     <button type="button" id='save'>
@@ -287,7 +350,7 @@
 $("#save").click(function(data){
     var user_phone = $("input[name=user_phone]").val();
     if(!Util.isPhoneNum(user_phone)){
-        layer.alert("请输入正确的手机号");
+        layer.layer.alert("请输入正确的手机号");
         return false;
     }
             $.ajax({
@@ -297,7 +360,7 @@ $("#save").click(function(data){
                     user_phone:$("input[name=user_phone]").val()
                 },
                 success:function(data){
-                    alert(data.info);
+                    layer.alert(data.info);
                 }
             });
             return false;

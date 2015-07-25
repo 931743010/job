@@ -16,6 +16,8 @@
     <script src="/tpl/v1/Public/js/jquery-1.11.1.min.js" type="text/javascript" language="javascript"></script>
     <script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" language="javascript"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pOjKwgwxn0nlutaU2ppwIk8p"></script>
+    <script type="text/javascript" src='/statics/js/Util.js'></script>
+    <script type="text/javascript" src='/statics/js/cache/region.js'></script>
 </head>
 <body>
 <div class="wrap">
@@ -57,7 +59,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -179,7 +181,7 @@
                     </div>
                     <div class="cate">
                          <div class="cate-item">
-                             <span>岗位类别：
+                             <span>岗位名称：
                              <?php if($job.catid): echo ($catname); ?>
                                  <?php else: ?>
                                  <?php echo ($job["catname"]); endif; ?>
@@ -233,6 +235,16 @@
                                 定期结<?php endif; ?>
                             </span>
                         </div>
+
+                        <div class="cate-item">
+                            <span>详细地址：
+                            <span id='service_address'>
+                                <?php echo ($job["work_address"]); ?>
+                            </span>
+                            
+                            </span>
+                        </div>
+
                     </div>
                     <div class="c"></div>
                 </div>
@@ -269,7 +281,7 @@
                             </div>
                         
                                 <input type="hidden" id='search-type' value="0">
-                                <input value="搜索" class="route-submit" id="walkSearchBtn" title="" type="submit">
+                                <input value="查询路线" class="route-submit" id="walkSearchBtn" title="" type="submit">
                             </form>
                         </div>
 
@@ -349,8 +361,10 @@
                 });
             }else{
                 //去新增简历
-                alert("您还没有简历，请先新建简历");
-                window.location.href = "<?php echo U('User/Resume/aeresume');?>";
+                layer.alert("您还没有简历，请先新建简历",function(){
+                    window.location.href = "<?php echo U('User/Resume/aeresume');?>";
+                });
+                
             }
         }
     });
@@ -380,27 +394,28 @@
     work_map_x = parseFloat(work_map_x);
     work_map_y = parseFloat(work_map_y);
     map.centerAndZoom(new BMap.Point(work_map_x,work_map_y), 12);
-//    map.enableScrollWheelZoom();
-//    var start = "腾讯大厦" ,end = "百度大厦";
-//    var transit = new BMap.TransitRoute(map, {
-//        renderOptions: {map: map}
-//    });
-//    transit.search(start,end);
-//    var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/location.gif", new BMap.Size(14,23));
-//    //设置起终点图标
-//    transit.setMarkersSetCallback(function(result){
-//        result[0].marker.setIcon(myIcon);
-//        result[1].marker.setIcon(myIcon);
-//    });
+
+
+    // var point = new BMap.Point(work_map_x, work_map_y});
+    // map.centerAndZoom(point, 12);
+    var marker = new BMap.Marker(new BMap.Point(work_map_x,work_map_y));  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
     $("#walkSearchBtn").click(function () {
         var start = $("#mylocation").val() ;
         if(start==''){
-            alert("请输入您的位置");
+            layer.alert("请输入您的位置");
+            return false;
+        }
+        var end = $("#walk_end_input").val();
+        if(end==''){
+            layer.alert("请输入终点");
             return false;
         }
 
-        var end = "<?php echo ($job["work_address"]); ?>";
-        end ='西乡地铁站';
+        // var end = "<?php echo ($job["work_address"]); ?>";
+        // end ='西乡地铁站';
         var type = $("#search-type").val();
         if(type==0){
             var transit = new BMap.TransitRoute(map, {
@@ -419,6 +434,16 @@
         }
         return false;
     });
+
+
+    $(function(){
+        var work_province = Util.getArea(_province,"<?php echo ($job["work_province"]); ?>");
+        var work_city =  Util.getArea(_city,"<?php echo ($job["work_city"]); ?>");
+        var work_area =  Util.getArea(_area,"<?php echo ($job["work_area"]); ?>");
+        var address = work_province+work_city+work_area+"<?php echo ($job["work_address"]); ?>";
+        $("#service_address").html(address);
+        
+    })
 </script>
 
 </body>

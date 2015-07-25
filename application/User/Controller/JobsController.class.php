@@ -76,15 +76,15 @@ class JobsController extends HomeBaseController
             $data['work_address'] = I('post.work_address');
             $data['work_map_x'] = I('post.work_map_x');
             $data['work_map_y'] = I('post.work_map_y');
-            if($data['job_name'] =='' || strlen($data['job_name'])>15){
-                Utils::resOut(-1,'招聘标题不能为空，或者超过15个字符');
+            if($data['job_name'] =='' || strlen($data['job_name'])>36){
+                Utils::resOut(-1,'招聘标题不能为空，或者超过12个字符');
                 exit();
             }
             if(!Utils::isPositiveInt($data['catid'])){
                 Utils::resOut(-1,'分类必须选择');
                 exit();
             }
-            if($data['job_desc'] == '' || strlen($data['job_desc'])>10){
+            if($data['job_desc'] == '' || strlen($data['job_desc'])>30){
                 Utils::resOut(-1,'工作内容不能为空，或者超过10个字符');
                 exit();
             }

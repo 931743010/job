@@ -66,7 +66,7 @@
             <img src="/tpl/v1/Public/zp/images/top-banner.gif" alt=""/>
         </div>
         <div class="h-center-bottom">
-            <div class="logo fl"><a href="http://localhost/zp/"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
+            <div class="logo fl"><a href="<?php echo U('Portal/Index/index');?>"><img src="/tpl/v1/Public/images/logo.png" alt="XG人才招聘系统" border="0" align="absmiddle" /></a></div>
             <div class="search fl">
                 <form action="">
                     <input type="text" id="top-search" class="search-control" placeholder="请输入关键字查询" value=""/>
@@ -145,9 +145,9 @@
 
                                 <li class="head">账户管理</li>
 
-                                <li><a href="<?php echo U('order/index/index');?>">我的余额</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">充值历史</a></li>
-                                <li><a href="<?php echo U('order/index/index');?>">我要充值</a></li>
+                                <li><a href="<?php echo U('user/account/index');?>">我的余额</a></li>
+                                <li><a href="<?php echo U('user/account/pay_log');?>">充值历史</a></li>
+                                <li><a href="<?php echo U('user/account/pay');?>">我要充值</a></li>
 
                                 <li class="head">推广管理</li>
 
@@ -314,19 +314,19 @@ Util.previewImg('identify_f','pre_f',false,300,300);
         var id_z = $("#pre_z").attr('src');
         var id_f = $("#pre_f").attr('src');
         if(person_name==''){
-            alert("身份证姓名必须填写");
+            layer.alert("身份证姓名必须填写");
             return false;
         }
         if(person_id.length!=16 && person_id.length!=18){
-            alert("身份证必须是16位或者18位");
+            layer.alert("身份证必须是16位或者18位");
             return false;
         }
         if(id_z=='/tpl/v1/Public/zp/images/preimg_09.png'){
-            alert("请上传正面");
+            layer.alert("请上传正面");
             return false;
         }
         if(id_f=='/tpl/v1/Public/zp/images/preimg_09.png'){
-            alert("请上传反面");
+            layer.alert("请上传反面");
             return false;
         }
         return true;
@@ -341,15 +341,15 @@ Util.previewImg('identify_f','pre_f',false,300,300);
         }
         //console.log(pwd_data);
         if(pwd_data.oldpwd=='' || pwd_data.oldpwd.length<6 || pwd_data.oldpwd.length>16){
-            alert("旧密码长度应该在6到16之间11");
+            layer.alert("旧密码长度应该在6到16之间11");
             return false;
         }
         if(pwd_data.newpwd.length<6 || pwd_data.newpwd.length>16){
-            alert("新密码长度应该在6到16之间");
+            layer.alert("新密码长度应该在6到16之间");
             return false;
         }
         if(pwd_data.newpwd != pwd_data.renewpwd){
-            alert("两次密码不一致");
+            layer.alert("两次密码不一致");
             return false;
         }
 
@@ -361,9 +361,9 @@ Util.previewImg('identify_f','pre_f',false,300,300);
             data: pwd_data,
             success:function(data){
                 if(data.r==-1){
-                    alert(data.msg);
+                    layer.alert(data.msg);
                 }else{
-                    alert(data.msg);
+                    layer.alert(data.msg);
                     window.location.href="<?php echo U('user/my/index');?>"
                 }
             }
@@ -393,7 +393,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                         'info': '文件类型为图片'
                     });
                 } else {
-                    alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
+                    layer.alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
                     return false;
                 }
             }
@@ -420,7 +420,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                 $('#upload_identify_z').html("上传成功");
                 $('#upload_identify_z').remove();
             }else{
-                alert(response.msg);
+                layer.alert(response.msg);
             }
 
         }
@@ -435,7 +435,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                         'info': '文件类型为图片'
                     });
                 } else {
-                    alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
+                    layer.alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
                     return false;
                 }
             }
@@ -462,7 +462,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                 $('#upload_identify_f').html("上传成功");
                 $('#upload_identify_f').remove();
             }else{
-                alert(response.msg);
+                layer.alert(response.msg);
             }
 
         }
@@ -477,7 +477,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                         'info': '文件类型为图片'
                     });
                 } else {
-                    alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
+                    layer.alert('文件格式错误，请上传格式为.png .jpg .jpeg 的图片');
                     return false;
                 }
             }
@@ -502,7 +502,7 @@ Util.previewImg('identify_f','pre_f',false,300,300);
                 $('#upload_license').html("上传成功");
                 $('#upload_license').remove();
             }else{
-                alert(response.msg);
+                layer.alert(response.msg);
             }
 
         }
