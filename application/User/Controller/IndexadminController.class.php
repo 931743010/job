@@ -90,8 +90,21 @@ class IndexadminController extends AdminbaseController {
         $account = M("Account")->where("uid=$uid")->find();
         $this->assign('user',$user);
         $this->assign('account',$account);
-        dump($account);
         $this->display(':view');
+    }
+
+    //设置认证
+    function audit(){
+        if(IS_POST && IS_AJAX){
+            $audit = intval($_POST['audit']);
+            $uid = intval($_POST['uid']);
+            if($audit!=2 && $audit != 3){
+                die();
+            }
+            $up['audit'] = $audit;
+            M("Account")->where("uid={$uid}")->save($up);
+            
+        }
     }
 
 

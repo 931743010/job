@@ -105,7 +105,8 @@ var GV = {
 	            <?php if($vo['user_status'] == 1): ?><a href="<?php echo U('indexadmin/ban',array('id'=>$vo['id']));?>" class="J_ajax_dialog_btn" data-msg="您确定要拉黑此用户吗？">拉黑</a> 
 		         <?php else: ?>
 		            <a href="<?php echo U('indexadmin/cancelban',array('id'=>$vo['id']));?>" class="J_ajax_dialog_btn" data-msg="您确定要启用此用户吗？">启用</a><?php endif; ?>
-		           |<a href="<?php echo U('indexadmin/view');?>&uid=<?php echo ($vo["id"]); ?>">查看</a>
+		           | 
+		           <a href="<?php echo U('indexadmin/view');?>&uid=<?php echo ($vo["id"]); ?>">查看</a>
 		        </td>
 	          	</tr><?php endforeach; endif; ?>
 			</tbody>

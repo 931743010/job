@@ -56,12 +56,19 @@ var GV = {
 
 
 <body class="J_scroll_fixed">
+<style type="text/css">
+	.zhengjian{
+		max-width: 700px;
+		max-height: 300px;
+		overflow: hidden;
+	}
+</style>
 <div class="wrap jj">
   <ul class="nav nav-tabs">
-     <li class="active"><a href="<?php echo U('User/userinfo');?>">个人信息</a></li>
+     <li class="active"><a href="#">个人信息</a></li>
   </ul>
   <div class="common-form">
-    <form class="form-horizontal J_ajaxForm" method="post" action="<?php echo U('User/userinfo_post');?>">
+    <form class="form-horizontal J_ajaxForm" method="post" action="<?php echo U('User/userinfo_post');?>" onsubmit="return false;">
         <fieldset>
           <div class="control-group">
             <label class="control-label" for="input01">昵称:</label>
@@ -109,32 +116,41 @@ var GV = {
 		<div class="control-group">
             <label class="control-label" for="input01">认证资料:</label>
             <div class="controls">
-              <?php if(($account["audit"] != 0) AND ($user["utype"] == 1)): ?><p>
+      
+            <?php if($account["audit"] != 0): if($user["utype"] == 1): ?><p>
 	              	<span>身份证姓名：<?php echo ($account["person_name"]); ?></span>
 	              	<span>身份证号码：<?php echo ($account["person_id"]); ?></span>
 	              </p>
-	              <p>
+	              <p class="zhengjian">
 	              	<span>身份证正面：</span>
+	              
 	              	<img src="<?php echo ($account["identify_z"]); ?>">
 	              </p>
-	              <p>
+	              <p class="zhengjian">
 	              	<span>身份证反面：</span>
+	             
 	              	<img src="<?php echo ($account["identify_f"]); ?>">
 	              </p>
-              <elseif condition='($account.audit neq 0) AND ($user.utype eq 2)'>
+              	<?php else: ?>
 
-				<p>
-	              	<span>营业执照号：<?php echo ($account["company_id"]); ?></span>
-	              	
-	              </p>
-	              <p>
-	              	<span>营业执照：</span>
-	              	<img src="<?php echo ($account["license"]); ?>">
-	              </p>
-	              <p>
-	              	<span>身份证反面：</span>
-	              	<img src="<?php echo ($account["identify_f"]); ?>">
-	              </p><?php endif; ?>
+					<p >
+	              		<span>营业执照号：<?php echo ($account["company_id"]); ?></span>	              	
+	              	</p>
+		              <p class="zhengjian">
+		              	<span>营业执照：</span>
+		              	<img src="<?php echo ($account["license"]); ?>">
+		              </p><?php endif; endif; ?>
+
+              <p>
+              	<button class="btn btn-success btn-shenhe" data-id='2'>
+              		设置为审核通过
+              	</button>
+              	<button class="btn btn-danger btn-shenhe" data-id='3'>
+              		设置为审核不通过
+              	</button>
+
+              </p>
+
             </div>
          </div>
 
@@ -146,6 +162,25 @@ var GV = {
       </form>
   </div>
 </div>
+<script type="text/javascript">
+	$(".btn-shenhe").click(function(){
+		var audit = $(this).data('id');
+		$.ajax({
+			url:"<?php echo U('IndexAdmin/audit');?>",
+			type:'post',
+			dataType:'json',
+			data:{audit:audit,uid:"<?php echo ($account["uid"]); ?>"},
+			success:function(data){
+				layer.alert("设置成功",function(){
+					window.location.reload();
+				})
+			}
+
+		})
+	})
+
+
+</script>
 <script src="/statics/js/common.js"></script>
 
 </body>
