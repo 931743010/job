@@ -45,6 +45,16 @@ var GV = {
 			z-index:9999;
 		}
 	</style><?php endif; ?>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+<script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
 <body class="J_scroll_fixed">
 <div class="wrap jj">
   <div class="common-form">
@@ -54,20 +64,16 @@ var GV = {
 	        <thead>
 	          <tr>
 	            <th align='center'>ID</th>
+	            <th>邮箱</th>
 	            <th>用户名</th>
-	            <th>昵称</th>
-	            <th>真实姓名</th>
-	            <th>等级积分</th>
-	            <th>消费积分</th>
-	            <th>头像</th>
-	            <th>E-mail</th>
-	            <th>性别</th>
-	            <th>生日</th>
-	            <th>星座</th>
+	            <th>头像</th>	
+	            <th>类型</th>   
+	            <th>认证</th>
 	            <th>注册时间</th>
 	            <th>最后登录时间</th>
 	            <th>最后登录IP</th>
 	            <th>状态</th>
+
 	            <th align='center'>操作</th>
 	          </tr>
 	        </thead>
@@ -75,16 +81,22 @@ var GV = {
 	        	<?php $user_statuses=array("0"=>"已拉黑","1"=>"正常","2"=>"未验证"); ?>
 	        	<?php if(is_array($lists)): foreach($lists as $key=>$vo): ?><tr>
 	            <td align='center'><?php echo ($vo["id"]); ?></td>
-	            <td><?php echo ((isset($vo["user_login"]) && ($vo["user_login"] !== ""))?($vo["user_login"]):'第三方用户'); ?></td>	            
-	            <td><?php echo ((isset($vo["user_nicename"]) && ($vo["user_nicename"] !== ""))?($vo["user_nicename"]):'未填写'); ?></td>
+	            <td><?php echo ((isset($vo["user_login"]) && ($vo["user_login"] !== ""))?($vo["user_login"]):'第三方用户'); ?></td>	
 	            <td><?php echo ((isset($vo["user_realname"]) && ($vo["user_realname"] !== ""))?($vo["user_realname"]):'未填写'); ?></td>
-	            <td><a href="<?php echo U('indexadmin/points_list',array('id'=>$vo['id'], 'type'=>'rank'));?>"><?php echo ($vo["rank_points"]); ?></a></td>
-	            <td><a href="<?php echo U('indexadmin/points_list',array('id'=>$vo['id'], 'type'=>'pay'));?>"><?php echo ($vo["pay_points"]); ?></a></td>
+	           
 	            <td><img width="25" height="25" src="<?php echo U('user/public/avatar',array('id'=>$vo['id']));?>" /></td>
-	            <td><?php echo ($vo["user_email"]); ?></td>
-	            <td><?php echo ($vo["sex"]); ?></td>
-	            <td><?php echo ($vo["birthday"]); ?></td>
-	            <td><?php echo ($vo["constellation"]); ?></td>	     
+	            <td>
+	            	<?php if($vo["utype"] == 0): ?><span style='color:#ccc'>未知</span>
+	            	 <?php elseif($vo["utype"] == 1): ?>
+	            	 	<span style='color:red'>个人</span>
+	            	 	<?php else: ?>
+	            	 	<span style='color:blue'>企业</span><?php endif; ?>
+	            </td>
+	            <td>
+	            <?php $audit = user_audit($vo['id']); $audit_arr = ['未验证',"	<span style='color:#f40'>验证中</span>","<span style='color:red'>验证通过</span>","<span style='color:#ccc'>验证不通过</span>"]; ?>
+	            	<?php echo ($audit_arr[$audit]); ?>
+	            </td>
+	         	     
 	            <td><?php echo ($vo["create_time"]); ?></td>
 	            <td><?php echo ($vo["last_login_time"]); ?></td>
 	            <td><?php echo ($vo["last_login_ip"]); ?></td>
@@ -93,7 +105,7 @@ var GV = {
 	            <?php if($vo['user_status'] == 1): ?><a href="<?php echo U('indexadmin/ban',array('id'=>$vo['id']));?>" class="J_ajax_dialog_btn" data-msg="您确定要拉黑此用户吗？">拉黑</a> 
 		         <?php else: ?>
 		            <a href="<?php echo U('indexadmin/cancelban',array('id'=>$vo['id']));?>" class="J_ajax_dialog_btn" data-msg="您确定要启用此用户吗？">启用</a><?php endif; ?>
-		           | <a href="<?php echo U('indexadmin/address_list',array('id'=>$vo['id']));?>">收货地址</a>
+		           |<a href="<?php echo U('indexadmin/view');?>&uid=<?php echo ($vo["id"]); ?>">查看</a>
 		        </td>
 	          	</tr><?php endforeach; endif; ?>
 			</tbody>

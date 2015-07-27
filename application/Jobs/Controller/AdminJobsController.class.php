@@ -63,6 +63,15 @@ class AdminJobsController extends AdminbaseController {
         $this->jobs->delete($id);
         $this->success("删除成功");
     }
+
+    function shenhe(){
+        if(IS_POST && IS_AJAX){
+            $jid = intval($_POST['id']);
+            $up['status'] = intval($_POST['status']);
+            M("Jobs")->where("id=$jid")->save($up);
+            //$this->ajaxReturn(array('msg'=>'更新成功'));
+        }
+    }
 	
 
 	

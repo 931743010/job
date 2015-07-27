@@ -45,6 +45,16 @@ var GV = {
 			z-index:9999;
 		}
 	</style><?php endif; ?>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+<script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
 <body class="J_scroll_fixed">
 <div class="wrap jj">
   <ul class="nav nav-tabs">

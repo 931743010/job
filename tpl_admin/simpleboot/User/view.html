@@ -1,0 +1,103 @@
+<admintpl file="header"/>
+<body class="J_scroll_fixed">
+<div class="wrap jj">
+  <ul class="nav nav-tabs">
+     <li class="active"><a href="{:U('User/userinfo')}">个人信息</a></li>
+  </ul>
+  <div class="common-form">
+    <form class="form-horizontal J_ajaxForm" method="post" action="{:U('User/userinfo_post')}">
+        <fieldset>
+          <div class="control-group">
+            <label class="control-label" for="input01">昵称:</label>
+            <div class="controls">
+              {$user.user_realname}
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="input01">类型:</label>
+            <div class="controls">
+              <if condition='$vo.utype eq 0'>
+	            	 	<span style='color:#ccc'>未知</span>
+	            	 <elseif condition='$vo.utype eq 1' />
+	            	 	<span style='color:red'>个人</span>
+	            	 	<else />
+	            	 	<span style='color:blue'>企业</span>	
+	            	</if>
+            </div>
+          </div>
+
+          
+
+          <div class="control-group">
+            <label class="control-label" for="input01">邮箱:</label>
+            <div class="controls">
+              {$user.user_login}
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input01">账户余额:</label>
+            <div class="controls">
+              {$account.money}
+            </div>
+          </div>
+          
+
+          <div class="control-group">
+            <label class="control-label" for="input01">认证状态:</label>
+            <div class="controls">
+            <php>
+             	$audit_arr = ['未验证',"	<span style='color:#f40'>验证中</span>","<span style='color:red'>验证通过</span>","<span style='color:#ccc'>验证不通过</span>"];
+             	</php>
+             	{$audit_arr[$account['audit']]}
+
+            </div>
+          </div>
+
+		<div class="control-group">
+            <label class="control-label" for="input01">认证资料:</label>
+            <div class="controls">
+              <if condition='($account.audit neq 0) AND ($user.utype eq 1)'>
+	              <p>
+	              	<span>身份证姓名：{$account.person_name}</span>
+	              	<span>身份证号码：{$account.person_id}</span>
+	              </p>
+	              <p>
+	              	<span>身份证正面：</span>
+	              	<img src="{$account.identify_z}">
+	              </p>
+	              <p>
+	              	<span>身份证反面：</span>
+	              	<img src="{$account.identify_f}">
+	              </p>
+              <elseif condition='($account.audit neq 0) AND ($user.utype eq 2)'>
+
+				<p>
+	              	<span>营业执照号：{$account.company_id}</span>
+	              	
+	              </p>
+	              <p>
+	              	<span>营业执照：</span>
+	              	<img src="{$account.license}">
+	              </p>
+	              <p>
+	              	<span>身份证反面：</span>
+	              	<img src="{$account.identify_f}">
+	              </p>
+
+              </if>
+            </div>
+         </div>
+
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn_submit  J_ajax_submit_btn">更新</button>
+          </div>
+        </fieldset>
+      </form>
+  </div>
+</div>
+<script src="__ROOT__/statics/js/common.js"></script>
+<admintpl file="footer"/>
+</body>
+</html>

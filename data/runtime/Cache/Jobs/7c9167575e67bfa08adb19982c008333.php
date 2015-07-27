@@ -45,6 +45,16 @@ var GV = {
 			z-index:9999;
 		}
 	</style><?php endif; ?>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.css"/>
+<link rel="stylesheet" type="text/css" href="/tpl/v1/Public/js/skin/layer.ext.css"/>
+<script src="/tpl/v1/Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap container-fluid">
     <ul class="nav nav-tabs">
@@ -118,13 +128,22 @@ var GV = {
                                 下架<?php endif; ?>
                         </td>
                         <td>
-                            <a href="<?php echo U('AdminJobs/delete');?>&id=<?php echo ($vo["id"]); ?>">删除</a>
+                        <?php if($vo["status"] == 0): ?><a href="javascript:void(0)" class='shenhe' data-id='<?php echo ($vo["id"]); ?>'>审核</a><?php endif; ?>
+                            <a class="delete" href="javascript:void(0)" data-url="<?php echo U('AdminJobs/delete');?>&id=<?php echo ($vo["id"]); ?>">删除</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
             </table>
             <div class="pagination"><?php echo ($Page); ?></div>
 
+        </div>
+
+        <div class="show-shenhe" style="display:none">
+            <p>
+                请选择审核结果：
+            </p>
+            <button class="btn btn-primary btn-success">通过</button>
+            <button class="btn btn-primary btn-danger">不通过</button>
         </div>
     </form>
 </div>
@@ -169,6 +188,46 @@ var GV = {
             $(this).attr("selected",'selected');
         }
     });
+    $(".shenhe").click(function(){
+        var id = $(this).attr('data-id');
+        layer.confirm('请仔细检查职位，在做一下操作', {
+            btn: ['通过', '不通过'] //可以无限个按钮
+        }, function(index, layero){
+            $.ajax({
+                url:"<?php echo U('AdminJobs/shenhe');?>",
+                dataType:"json",
+                type:"POST",
+                data:{status:2,id:id},
+                success:function(data){
+                    layer.close(index);
+                    window.location.reload();
+                }
+            })
+        }, function(index){
+           
+            $.ajax({
+                url:"<?php echo U('AdminJobs/shenhe');?>",
+                dataType:"json",
+                type:"POST",
+                data:{status:3,id:id},
+                success:function(data){
+                    layer.close(index);
+                    window.location.reload();
+                }
+            })
+        }); 
+    });
+    $("a.delete").click(function(){
+        var url = $(this).attr('data-url');
+        layer.confirm('您确定要删除吗', {
+            btn: ['确定', '取消'] //可以无限个按钮
+        }, function(index, layero){
+            window.location.href = url;
+        }, function(index){
+            layer.close(index);
+           return false;
+        }); 
+    })
 
 </script>
 </body>

@@ -167,9 +167,9 @@ class Db {
      * @param string $sessMaxLifeTime 
      */
    public function gc($sessMaxLifeTime) { 
-       $hander = is_array($this->hander)?$this->hander[0]:$this->hander;
-       mysql_query("DELETE FROM ".$this->sessionTable." WHERE session_expire < ".time(),$hander); 
-       return mysql_affected_rows($hander); 
+       // $hander = is_array($this->hander)?$this->hander[0]:$this->hander;
+       // mysql_query("DELETE FROM ".$this->sessionTable." WHERE session_expire < ".time(),$hander); 
+       // return mysql_affected_rows($hander); 
    } 
 
 }

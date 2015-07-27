@@ -1652,6 +1652,32 @@ function your_location($catid,$job_id=0){
         $location.="<span> &gt;&gt; </span>".$job_name;
     }
     return $location;
-
-
 }
+/*
+*获取用户真实姓名
+*/
+
+function sp_get_user_name($id){
+	$data = M("Member")->find($id);
+	if($data){
+		return $data['user_realname'];
+	}
+	return false;
+}
+
+/*
+用户认证状态
+*/
+
+function user_audit($uid){
+	$data = M("Account")->where("uid={$uid}")->find();
+	return $data['audit'];
+}
+
+
+
+
+
+
+
+

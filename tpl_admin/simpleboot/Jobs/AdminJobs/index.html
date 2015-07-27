@@ -75,7 +75,10 @@
                             </if>
                         </td>
                         <td>
-                            <a href="{:U('AdminJobs/delete')}&id={$vo.id}">删除</a>
+                        <if condition="$vo.status eq 0">
+                            <a href="javascript:void(0)" class='shenhe' data-id='{$vo.id}'>审核</a>
+                        </if>
+                            <a class="delete" href="javascript:void(0)" data-url="{:U('AdminJobs/delete')}&id={$vo.id}">删除</a>
                         </td>
                     </tr>
                 </volist>
@@ -83,6 +86,14 @@
             </table>
             <div class="pagination">{$Page}</div>
 
+        </div>
+
+        <div class="show-shenhe" style="display:none">
+            <p>
+                请选择审核结果：
+            </p>
+            <button class="btn btn-primary btn-success">通过</button>
+            <button class="btn btn-primary btn-danger">不通过</button>
         </div>
     </form>
 </div>
@@ -127,6 +138,46 @@
             $(this).attr("selected",'selected');
         }
     });
+    $(".shenhe").click(function(){
+        var id = $(this).attr('data-id');
+        layer.confirm('请仔细检查职位，在做一下操作', {
+            btn: ['通过', '不通过'] //可以无限个按钮
+        }, function(index, layero){
+            $.ajax({
+                url:"{:U('AdminJobs/shenhe')}",
+                dataType:"json",
+                type:"POST",
+                data:{status:2,id:id},
+                success:function(data){
+                    layer.close(index);
+                    window.location.reload();
+                }
+            })
+        }, function(index){
+           
+            $.ajax({
+                url:"{:U('AdminJobs/shenhe')}",
+                dataType:"json",
+                type:"POST",
+                data:{status:3,id:id},
+                success:function(data){
+                    layer.close(index);
+                    window.location.reload();
+                }
+            })
+        }); 
+    });
+    $("a.delete").click(function(){
+        var url = $(this).attr('data-url');
+        layer.confirm('您确定要删除吗', {
+            btn: ['确定', '取消'] //可以无限个按钮
+        }, function(index, layero){
+            window.location.href = url;
+        }, function(index){
+            layer.close(index);
+           return false;
+        }); 
+    })
 
 </script>
 </body>

@@ -17,6 +17,7 @@ if ( !add_lock( 'lock' ) ) {
 // 设置超时时间
 ignore_user_abort( true );
 set_time_limit( 0 );
+date_default_timezone_set('PRC'); 
 ini_set('session.serialize_handler', 'php_serialize');
 // 修改内存
 ini_set( 'memory_limit', WEBSOCKET_MEMORY );
@@ -104,8 +105,8 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		// 	}
 		// }
 		
-		ws_send_all( array( 'list' => array( array( $name, true ) ) ), $class );
-		ws_send_all( array( 'msg' => '<div class="msg login"><strong class="name">'. $name .'</strong>登录聊天室</div>' ), $class );
+		// ws_send_all( array( 'list' => array( array( $name, true ) ) ), $class );
+		// ws_send_all( array( 'msg' => '<div class="msg login"><strong class="name">'. $name .'</strong>登录聊天室</div>' ), $class );
 		
 		$class->bind[$index]['name'] = $name;
 		$list = array();
@@ -115,7 +116,7 @@ function get_socket_call( $data, $accept, $index, $class ) {
 			}
 		}
 		$class->send( array( 'list' => $list ), $accept );
-		return $class->send( array( 'name' => true, 'msg' => '<div class="msg yes">你已经成功登录上聊天室</div>' ), $accept );
+		// return $class->send( array( 'name' => true, 'msg' => '<div class="msg yes">你已经成功登录上聊天室</div>' ), $accept );
 	}
 	
 	// 聊天
@@ -138,8 +139,8 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		if(!$ruid || !$suid){
 
 		}
-		$msg = array( 'chat' => '<div class="chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
-		$msg1= array( 'chat' => '<div class="me chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
+		$msg = array( 'chat' => '<div class="chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="time">'.date('H:i',time()).'</div><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
+		$msg1= array( 'chat' => '<div class="me chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="time">'.date('H:i',time()).'</div><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
 		//判断是否在线，在线则设置为已读
 		$status = is_online($rname,$class)?1:0;
 		save_data($suid,$ruid,$chat,$status);//保存到数据库

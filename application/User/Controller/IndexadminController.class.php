@@ -79,4 +79,26 @@ class IndexadminController extends AdminbaseController {
 		$this->assign("lists", $lists);
 		$this->display(':points_list');
 	}
+    //查看用户信息
+    function view(){
+        if(!isset($_GET['uid'])){
+            $this->error("页面不存在");
+            exit();
+        }
+        $uid = intval($_GET['uid']);
+        $user = M("Member")->find($uid);
+        $account = M("Account")->where("uid=$uid")->find();
+        $this->assign('user',$user);
+        $this->assign('account',$account);
+        dump($account);
+        $this->display(':view');
+    }
+
+
+
+
+
+
+
+
 }

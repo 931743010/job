@@ -30,13 +30,22 @@ class ChatController extends HomeBaseController
             $this->error('页面不存在');
             exit();
           }
+          if($rid>$this->user['id']){
+            $box_id = $this->user['id'].','.$rid;
+          }else{
+            $box_id = $rid.','.$this->user['id'];
+          }
+          $this->assign('rdata',$rdata);
+          $msg = M("Chat")->where("box_id='$box_id'")->select();
+          $this->assign('msg',$msg);
+          
       }
-
       //读取会话列表
       $prefix = C("DB_PREFIX");
       $uid = $_SESSION['user']['id'];
       $sql = "select * from {$prefix}chat where FIND_IN_SET({$uid},box_id)!=0 and FIND_IN_SET({$uid},close_id)=0 group by box_id";
       $data = M()->query($sql);
+      $this->assign("list",$data);
       // dump($data);
       $this->display();
    }

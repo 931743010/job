@@ -60,18 +60,18 @@ $(function(){
     
     
     $.wsopen( function( data ) {
-        console.log(data);
-        t.append( '<div class="msg info">连接服务器成功</div>' );
+        // console.log(data);
+        // t.append( '<div class="msg info">连接服务器成功</div>' );
         // var w = t.append( '<div class="msg info name">请输入你的名称:<input type="text" class="name" name="name"  /><input type="submit" class="submit" name="submit" value="确认" /></div>' );
         // w.find('.submit').click(function(){
-            $.wssend('name=' + "{$Think.session.user.user_realname}" );
+            $.wssend('name=' + "{$user.user_realname}" );
         //     return false;
         // });
     });
     
     $('.send .submit').click(function(){
         if ( $('.send .chat').val() ) {
-            $.wssend($.param( { chat : $('.send .chat').val(),uid:'{$Think.session.user.id}',receive:'yqbaa' } ) );
+            $.wssend($.param( { chat : $('.send .chat').val(),uid:'{$Think.session.user.id}',receive:"{$rdata.user_realname}" } ) );
             $('.send .chat').val('');
         }
         return false;
@@ -94,13 +94,43 @@ $(function(){
         <div class="chat">
             <div class="chat-list fl">
                 <ul>
-                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
-                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
-                    <li> <a href="{:U('chat/chat')}&rid={10}">昵称</a></li>
+                <volist name='list' id='vo' >    
+                    <php>
+                        $chat = explode(',',$vo['box_id']);
+                        if($chat[0]==$user['id'])
+                            $chat_id = $chat[1];
+                            else
+                            $chat_id = $chat[0];
+                            $receive_name = sp_get_user_name($chat_id);    
+                    </php>    
+                    <li> <a href="{:U('chat/chat')}&rid={$chat_id}">{$receive_name}</a></li>
+                </volist>
+                   
                 </ul>
             </div>
             <div class="content fl">
-                <div class="message"></div>
+                <div class="message">
+                    
+                <volist name='msg' id='vo'> 
+                <if condition="$vo.send_id eq $user['id']">
+                    <div class="chat me">
+                        <div class="time">{$vo.send_time|date="Y-m-d H:i",###}</div>
+                        <div class="name">{$user.user_realname}</div>
+                        <p>{$vo.content}</p>
+                    </div>
+                    <else />
+                        <div class="chat">
+                            <div class="time">{$vo.send_time|date="Y-m-d H:i",###}</div>
+                            <div class="name">{$rdata.user_realname}</div>
+                            <p>{$vo.content}</p>
+                        </div>
+                    </if>
+                </volist>
+
+
+
+
+                </div>
                 <div class="tool">
                     <span class="empty">清空记录</span>
                 </div>

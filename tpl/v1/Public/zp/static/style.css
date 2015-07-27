@@ -6,10 +6,18 @@
 .content{zoom: 1;}
 .message{border-bottom: 1px solid #BFBFBF;padding:10px;height: 400px;overflow: auto;line-height:1.8;}
 .message .msg{color: #FF0000;}
-.message .chat{color: #333;}
+.message .chat{color: #333;margin-top: 0px;}
 .message .chat .name{font-size: 12px;color: #12c;font-weight: bold;}
 .message .chat.admin_chat .name{color: #FF0000;}
 .message .chat p{margin:0 0 10px 0;}
+.message .me{text-align: right;}
+.message  .time{text-align: center;}
+.message .me p,.message .chat p{
+	display: -webkit-inline-box;
+border-radius: 10px;
+border: 1px solid #ccc;
+padding: 5px 10px;}
+
 .tool{padding: 8px 10px;border-bottom: 1px solid #BFBFBF;}
 .tool span{cursor: pointer;display: inline-block;margin-right: 14px;}
 .send {float: left;}
@@ -21,12 +29,12 @@
 .list .online{font-size: 12px;padding-left:6px;font-weight: normal;}
 .list ul{width: 200px;list-style: none;margin:10px 0;padding:0;height: 130px;overflow: auto;}
 .list ul li{padding:3px 0;font-size: 12px; cursor: pointer;}
-.chat-list{width: 200px;}
-.chat-list li{height: 40px;line-height:40px;background: #C24545;text-align: center;border-bottom: 1px solid #AD3A3A}
-.chat-list li:hover{background: #E53B95;}
+.chat-list{width: 200px;min-height: 652px;background: #eee;border: 1px solid #ccc;border-right: 0;}
+.chat-list li{height: 40px;line-height:40px;background: #fff;text-align: center;border-bottom: 1px solid #ccc}
+.chat-list li:hover{background: #eee;}
 .chat-list li a{color: #333}
 
-.chat-list li a:hover{color: #fff}
+.chat-list li a:hover{color: red}
 
 
 
