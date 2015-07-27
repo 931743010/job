@@ -120,7 +120,7 @@
 	$(".btn-shenhe").click(function(){
 		var audit = $(this).data('id');
 		$.ajax({
-			url:"{:U('IndexAdmin/audit')}",
+			url:"{:U('Indexadmin/audit')}",
 			type:'post',
 			dataType:'json',
 			data:{audit:audit,uid:"{$account.uid}"},
