@@ -72,7 +72,66 @@ class AdminJobsController extends AdminbaseController {
             //$this->ajaxReturn(array('msg'=>'更新成功'));
         }
     }
-	
 
+
+    //nature 
+    function nature(){
+        $nature = M("Nature");
+        $nature_data = $nature->order('sort asc')->select();
+        $this->assign('list',$nature_data);
+        $this->display();
+    }
+    function delete_nature(){
+        if(IS_POST && IS_AJAX){
+                $id = intval($_POST['id']);
+                $res = M("Nature")->delete($id);
+                if($res){
+                    $data['msg'] = '删除成功';
+                    $data['r'] = '0';
+                }else{
+                    $data['msg'] = '删除成功';
+                    $data['r'] = '-1';
+                }
+                $this->ajaxReturn($data);
+
+
+        }
+    }
+	/*
+    新增/编辑职位性质
+    */
+    function ae_nature(){
+        if(IS_POST && IS_AJAX){
+            if(isset($_POST['id'])){
+                $id = intval($_POST['id']);
+                $up = true;
+            }else{
+                $up = false;
+            }
+
+            $data['nature_name'] = I('post.nature_name');
+            $data['sort'] = intval($_POST['sort']);
+
+            if($up){
+                $res = M("Nature")->where("id=$id")->save($data);
+                $msg = '更新';
+            }else{
+                $res = M("Nature")->add($data);
+                $msg = '新增';
+            }
+            if($res){
+                $json['r'] = $res;
+                $json['up'] = $up;
+                $json['msg'] = $msg.'成功';
+            }else{
+                $json['r'] = -1;
+                $json['up'] = $up;
+                $json['msg'] = $msg.'失败';
+            }
+            $this->ajaxReturn($json);
+
+
+        }
+    }
 	
 }

@@ -3,49 +3,99 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<title>{$name} {$seo_title} {$site_name}</title>
-	<meta name="keywords" content="{$seo_keywords}" />
-	<meta name="description" content="{$seo_description}">
+	<title>{$post_title} {$site_name} </title>
+	<meta name="keywords" content="{$post_keywords}" />
+	<meta name="description" content="{$post_excerpt}">
 	<tc_include file='Public:head'/>
 	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>	
 	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/special.css"/>
+	<style type="text/css">
+
+	.new-list{
+		width: 500px;
+		margin:10px auto;
+	}
+	.list-box {
+		width: 900px;margin: 0 auto;
+	}
+	.list-box .box{
+		float: left;margin-right: 20px;
+		width: 420px;
+	}
+	.list-box .box .box-title{
+		width: 200px;height: 60px;line-height: 60px;
+		font-size: 18px;background: #eee;
+		font-weight: bold;
+		text-align: center;
+		margin-left: 113px;
+	}
+	.box-item{border: 1px dashed #ccc;background: #fff;
+		padding: 10px;
+		margin: 10px 0;
+	}
+	.box-item li{
+		height: 35px;line-height: 35px;
+	}
+	</style>
 </head>
-<body class="theme">	
+<body class="page">	
 	
-	<tc_include file='Public:header'/>
-	
-	<div class="banner">
-		<div class="bannerBox" style="width: 100%;height: 449px; background-image: url(__TMPL__Public/images/banner/heijiao.jpg);background-position: center;background-repeat: no-repeat;">        
-            
-        </div>
-	</div>
 	<div class="wrapper">
 		<div class="wrap">
-			<section class="bg-white border-top3">
-				<div class="grid special-page border border-nt">
-					<tc_include file='Portal:news_left'/>
-					<div class="main grid-right">
-						<div class="news-head">
-							<i class="cate-icon"></i>{$name}
+			<section class="bg-white">
+				<div class="grid news-detail" style="border:0">
+	
+					<div class="main">
+						<div class="news-head" style="border:0;border-bottom:1px solid #ccc">
+							<h4>帮助中心</h4>							
 						</div>
-						<ul class="news-lsit">
-							<php>
-								$lists = sp_sql_posts_paged("limit:16;order:post_date DESC;");
-							</php>
-							<volist name="lists['posts']" id="vo">
-							<li>
-								<a href="{:leuu('article/index',array('id'=>$vo['tid']))}">
-									<span class="info">
-										{$vo.post_title}
-									</span>
-									<div class="date">
-										{$vo.post_date}
-									</div>
-								</a>
-							</li>
-							</volist>
-						</ul>
-						{$lists['page']}
+						
+						
+						<div class="list-box">
+							<div class="box">
+								<div class="box-title">
+									<span>常见问题</span>
+								</div>
+								<php>
+								$lists = sp_sql_posts_paged("cid:8;limit:16;order:post_date DESC;");
+								</php>
+								<div class="box-item">
+									<ol>
+										<volist name="lists['posts']" id="vo">
+										<li>
+											<span>{$i}、</span>
+										<a href="{:U('portal/article/index')}&id={$vo.tid}">{$vo.post_title}</a></li>
+										</volist>
+									</ol>
+								</div>
+							</div>
+
+							<div class="box">
+								<div class="box-title">
+									<span>注意事项</span>	
+								</div>
+								<div class="box-item">
+								<php>
+								$lists = sp_sql_posts_paged("cid:10;limit:16;order:post_date DESC;");
+								</php>
+							
+									<ol>
+									<volist name="lists['posts']" id="vo">
+										<li>
+											<span>{$i}、</span>
+										<a href="{:U('portal/article/index')}&id={$vo.tid}">{$vo.post_title}</a></li>
+										</volist>
+									</ol>
+								</div>
+							</div>
+							<div style="clear:both"></div>
+						</div>
+
+						<div class="content">
+							{$post_content}
+						</div>
+						
+					
 					</div>
 				</div>
 			</section>
@@ -54,4 +104,5 @@
 		</div>		
 	</div>
 	
-	<tc_include file="Public:footer" />
+</body>
+</html>

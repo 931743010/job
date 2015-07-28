@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>{$post_title} {$site_name} </title>
+	<meta name="keywords" content="{$post_keywords}" />
+	<meta name="description" content="{$post_excerpt}">
+	<tc_include file='Public:head'/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>	
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/special.css"/>
+</head>
+<body class="page">	
+	
+	<div class="wrapper">
+		<div class="wrap">
+			<section class="bg-white">
+				<div class="grid news-detail" style="border:0">
+	
+					<div class="main">
+						<div class="news-head" style="border:0;border-bottom:1px solid #ccc">
+							<h4>{$post_title}</h4>							
+						</div>
+						
+						<div class="content">
+							{$post_content}
+						</div>
+						
+					
+					</div>
+				</div>
+			</section>
+			
+			
+		</div>		
+	</div>
+	
+</body>
+</html>

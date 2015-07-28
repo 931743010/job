@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-	<title>注册中心</title>
+	<title>注册中心 {$site_name}</title>
 	<tc_include file='Public:head'/>
 	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/login.css"/>
     <link href="__TMPL__Public/zp/css/common.css" rel="stylesheet" type="text/css" />
@@ -75,7 +75,7 @@
 								</li>
 								<li>
 
-									我已阅读并同意&nbsp;<a href="">《人工在线服务协议》</a> <input type="checkbox" name="agree" id="agree" checked="checked" value="1" />
+									我已阅读并同意&nbsp;<a href="{$site_host}{:U('portal/page/index')}&id=19" target="_blank">《人工在线服务协议》</a> <input type="checkbox" name="agree" id="agree" checked="checked" value="1" />
 								</li>
 								<li>
 									<button class="reg-btn btn btn-block btn-block">注册</button>

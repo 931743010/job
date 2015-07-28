@@ -3,15 +3,16 @@ namespace Portal\Controller;
 use Common\Controller\HomeBaseController;
 class PageController extends HomeBaseController{
 	public function index() {
-		$id=$_GET['id'];
+		$id=intval($_GET['id']);
 		$content=sp_sql_page($id);
+		
 		$this->assign($content);
 		$smeta=json_decode($content['smeta'],true);
 		$tplname=isset($smeta['template'])?$smeta['template']:"";
 		
 		$tplname=sp_get_apphome_tpl($tplname, "page");
 		
-		$this->display(":$tplname");
+		$this->display(":page");
 	}
 	
 	public function nav_index(){

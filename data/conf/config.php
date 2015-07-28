@@ -2,7 +2,7 @@
   'FILE_UPLOAD_TYPE' => 'Local',
   'UPLOAD_TYPE_CONFIG' => NULL,
   'SP_DEFAULT_THEME' => 'v1',
-  'DEFAULT_THEME' => 'simplebootx',
+  'DEFAULT_THEME' => 'v1',
   'SP_ADMIN_STYLE' => 'flat',
   'URL_MODEL' => '0',
   'URL_HTML_SUFFIX' => '',

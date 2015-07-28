@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>招聘系统</title>
+    <title>{$site_name}</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
@@ -60,16 +60,16 @@
     <div class="fmain autow">
         <div class="f-nav">
             <ul class="flul">
-                <li><a href="">关于我们</a></li>
-                <li><a href="">帮助中心</a></li>
-                <li><a href="">联系我们</a></li>
-                <li><a href="">加入我们</a></li>
+                <li><a href="{$site_host}{:U('portal/page/index')}&id=20">关于我们</a></li>
+                <li><a href="{$site_host}{:U('portal/list/index')}&id=7">帮助中心</a></li>
+                <li><a href="{$site_host}{:U('portal/page/index')}&id=22">联系我们</a></li>
+                <li><a href="{$site_host}{:U('portal/page/index')}&id=21">加入我们</a></li>
             </ul>
         </div>
         <div class="c"></div>
         <div class="copy-right">
-           <p>版权所有: <a href="">© 人工在线</a></p>
-            <p><a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15056824</a></p>
+           <p>版权所有: <a href="">{$site_copyright}</a></p>
+            <p><a href="http://www.miitbeian.gov.cn/" target="_blank">{$site_icp}</a></p>
         </div>
     </div>
 </div>

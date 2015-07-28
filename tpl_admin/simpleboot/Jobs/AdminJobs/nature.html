@@ -1,0 +1,127 @@
+<admintpl file="header"/>
+<body class="J_scroll_fixed">
+<div class="wrap J_check_wrap">
+   <ul class="nav nav-tabs">
+   <li><a href="{:U('AdminJobs/index')}">所有职位</a></li>
+     <li class="active"><a href="javascript:void(0)">职位性质</a></li>
+     
+  </ul>
+   <div class="table_list">
+   <table width="100%" cellspacing="0" class="table table-hover">
+        <thead>
+          <tr>
+            <th width="50">ID</th>
+            <th>名称</th>
+            <th>排序</th>
+            <th width="120">操作</th>
+          </tr>
+        </thead>
+        <tbody class='nature_list'>
+        
+        <foreach name="list" item="vo">
+          <tr>
+            <td>{$vo.id}</td>
+            <td><input type="text" name='nature_name' class="nature_name" value="{$vo.nature_name}"></td>
+            <td>
+            <input type="text" name='sort' class="nature_sort" style="width:60px;" value="{$vo.sort}">
+            </td>
+            <td>
+                <button type="button"  class="btn btn-mini save-btn" data-id='{$vo.id}'>保存</button>
+            <a href="javascript:void(0)" class="delete" data-id="{$vo.id}">删除</a></td>
+          </tr>
+         </foreach>
+         
+        </tbody>
+        <tr>
+          <td>#</td>
+          <td><input type="text" name='add_nature_name' id='nature_name'></td>
+          <td>
+            <input type="text" name='add_sort' id="sort" class="nature_sort" style="width:60px;" value="">
+          </td>
+          <td>
+            <button type="button"  class="btn btn-success add-btn">新增</button>
+          </td>
+        </tr>
+      </table>
+      <div class="pagination">{$page}</div>
+   </div>
+</div>
+<script src="__ROOT__/statics/js/common.js"></script>
+<script type="text/javascript">
+    $("a.delete").click(function(){
+        var id = $(this).data('id');
+        if(id==''){
+          layer.msg('不存在的记录');
+          return false;
+        }
+        var _this = $(this);
+        $.ajax({
+          url:"{:U('AdminJobs/delete_nature')}",
+          type:"post",
+          dataType:'json',
+          data:{id:id},
+          success:function(data){
+            console.log(data);
+            layer.msg(data.msg);
+            if(data.r==0){            
+              _this.parents('tr').remove();
+            }
+          
+          }
+        })
+    });
+    $(".save-btn").click(function(){
+        var id = $(this).data('id');
+        if(id==''){
+          layer.msg('不存在的记录');
+          return false;
+        }
+        var index = $(".save-btn").index(this);
+        var nature_name = $(".nature_name").eq(index).val();
+        var nature_sort = $(".nature_sort").eq(index).val();
+        $.ajax({
+          url:"{:U('AdminJobs/ae_nature')}",
+          type:"post",
+          dataType:'json',
+          data:{id:id,nature_name:nature_name,sort:nature_sort},
+          success:function(data){
+            layer.msg(data.msg);
+          }
+        })
+    });
+
+    $(".add-btn").click(function(){
+        
+        var index = $(".save-btn").index(this);
+        var nature_name = $("#nature_name").val();
+        var sort = $("#sort").val();
+        if(nature_name == ''){
+          layer.msg('请输入工作性质名称');
+          return false;
+        }
+        $.ajax({
+          url:"{:U('AdminJobs/ae_nature')}",
+          type:"post",
+          dataType:'json',
+          data:{nature_name:nature_name,sort:sort},
+          success:function(data){
+            if(data.r!=-1){
+                window.location.reload();
+            }else{
+              layer.msg(data.msg);
+            }
+
+              
+          }
+        })
+    })
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
