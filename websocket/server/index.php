@@ -79,6 +79,8 @@ function get_socket_call( $data, $accept, $index, $class ) {
 	if ( !empty( $data['time'] ) ) {
 		$time = time();
 		$class->time[$index] = $time;
+		// $is_online = is_online($data['receive'],$class);
+		// return ws_send_one($data['name'],array( 'time' => $time,'is_online'=>$is_online ),$class);
 		return $class->send( array( 'time' => $time ), $accept );
 	}
 	
@@ -109,14 +111,19 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		// ws_send_all( array( 'msg' => '<div class="msg login"><strong class="name">'. $name .'</strong>登录聊天室</div>' ), $class );
 		
 		$class->bind[$index]['name'] = $name;
-		$list = array();
-		foreach( $class->bind as $v ) {
-			if ( !empty( $v['name'] ) ) {
-				$list[] = array( $v['name'], true );
-			}
-		}
-		$class->send( array( 'list' => $list ), $accept );
+		// $list = array();
+		// foreach( $class->bind as $v ) {
+		// 	if ( !empty( $v['name'] ) ) {
+		// 		$list[] = array( $v['name'], true );
+		// 	}
+		// }
+		// $class->send( array( 'list' => $list ), $accept );
 		// return $class->send( array( 'name' => true, 'msg' => '<div class="msg yes">你已经成功登录上聊天室</div>' ), $accept );
+	}
+	if(!empty($data['rname'])){
+		$is_online = is_online($data['rname'],$class);
+		return $class->send( array( 'is_online' => $is_online ), $accept );
+		// return ws_send_one($data['name'],array('is_online'=>$is_online ),$class);
 	}
 	
 	// 聊天
@@ -136,15 +143,15 @@ function get_socket_call( $data, $accept, $index, $class ) {
 		$ruid = get_user_id($rname);
 		$suid = get_user_id($name);
 		//保存到数据库
-		if(!$ruid || !$suid){
-
-		}
+		
 		$msg = array( 'chat' => '<div class="chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="time">'.date('H:i',time()).'</div><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
 		$msg1= array( 'chat' => '<div class="me chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="time">'.date('H:i',time()).'</div><div class="name">'. $name .'</div><p>'. $chat .'</p></div>') ;
 		//判断是否在线，在线则设置为已读
 		$status = is_online($rname,$class)?1:0;
 		save_data($suid,$ruid,$chat,$status);//保存到数据库
 		ws_send_one($name,$msg1,$class);
+		
+		ws_send_one($name,array('is_online' => $status),$class);
 		return ws_send_one($rname,$msg,$class);
 		
 		//return ws_send_all( array( 'chat' => '<div class="chat ' . ( $admin ? 'admin_chat' : '' ) .'"><div class="name">'. $name .'</div><p>'. $chat .'</p></div>' ), $class );

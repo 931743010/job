@@ -6,6 +6,13 @@
 <link rel="stylesheet" href="__TMPL__Public/zp/static/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="__TMPL__Public/zp/static/jquery.js"  media="all"></script>
 <script type="text/javascript" src="__TMPL__Public/zp/static/jquery.websocket.js"  media="all"></script>
+<style type="text/css">
+    .submit{padding: 10px 20px;background: rgb(225,221,221);border: 0;color: #000;}
+    .submit:hover{
+        background: rgb(239,22,16);color: #fff;
+    }
+</style>
+<if condition="$ischat eq 1">
 <script type="text/javascript">
 WS_STATIC_URL = 'http://www.hmv.com/websocket/static';
 WS_HOST = '127.0.0.1';
@@ -30,41 +37,28 @@ $(function(){
         
     });
     
-    $.wsmessage( 'list', function( data ) {
-        console.log(data);
-        if ( !data ) {
-            return false;
+    $.wsmessage( 'is_online', function( data ) {
+        var is_online = data;
+        if(is_online){
+            var msg = '<span style="color:red">对方在线</span>';
+        }else{
+            var msg = '<span>对方离线</span>';
         }
-        $.each( data, function( k, v ){
-            if ( v[1] ) {
-                var w = $( '<li>' + v[0] + '</li>' ).click(function(){
-                    $('.send .chat').val( '@' + v[0] + ' ' );
-                });
-                $('.list ul').append( w );
-            } else {
-                $(".list ul li").each(function(){
-                    if ( $(this).html() == v[0] ) {
-                        $(this).remove();
-                        return false;
-                    }
-                });
-            }
-        });
-        $('.online').html( $('.list ul li').size() );
+        $("#online_ststus").html(msg);
+        
     });
     $.wsclose(function( data ){
         $(".list ul li").html('');
         $('.online').html( 0 );
-        t.append( '<div class="msg info">连接已断开, 6秒后自动重试</div>' );
+        // t.append( '<div class="msg info">连接已断开, 6秒后自动重试</div>' );
     });
     
     
     $.wsopen( function( data ) {
-        // console.log(data);
-        // t.append( '<div class="msg info">连接服务器成功</div>' );
-        // var w = t.append( '<div class="msg info name">请输入你的名称:<input type="text" class="name" name="name"  /><input type="submit" class="submit" name="submit" value="确认" /></div>' );
+        console.log(data);
         // w.find('.submit').click(function(){
             $.wssend('name=' + "{$user.user_realname}" );
+            $.wssend($.param( {rname:"{$rdata.user_realname}" } ) );
         //     return false;
         // });
     });
@@ -87,10 +81,12 @@ $(function(){
     })
 });
 </script>
+</if>
 </head>
 <body>
     <tc_include file='Public:header'/>
     <div id="main" class="main">
+        
         <div class="chat">
             <div class="chat-list fl">
                 <ul>
@@ -108,7 +104,9 @@ $(function(){
                    
                 </ul>
             </div>
+
             <div class="content fl">
+            <if condition="$ischat eq 1">
                 <div class="message">
                     
                 <volist name='msg' id='vo'> 
@@ -136,18 +134,31 @@ $(function(){
                 </div>
                 <div class="send">
                     <textarea class="chat" name="chat"></textarea>
-                    <p><input type="submit" class="submit" name="submit" value="发送" /></p>
+                    <p style="text-align:right"><input type="submit" class="submit" name="submit" value="发送" /></p>
                 </div>
                 <div class="list">
-                    <h3>在线用户<strong class="online">0</strong></h3>
+                    <h3>对方在线状态<strong class="online" id='online_ststus'></strong></h3>
                     <ul>
 
                     </ul>
                 </div>
             </div>
             <div class="c"></div>
+            <else />
+            <div class="welcome" style="height:552px; text-align:center;padding-top:100px;">
+                
+                <h1>欢迎来到消息中心</h1>
+            </div>
+            
+            </if>
+            <div class="c"></div>
         </div>
+        </div>
+       
+        
     </div>
+     <div class="c"></div>
+     <br/>
     <tc_include file='Public:footer'/>
 
 </body>

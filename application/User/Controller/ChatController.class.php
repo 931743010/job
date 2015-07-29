@@ -23,8 +23,14 @@ class ChatController extends HomeBaseController
 //        $this->apply_obj = M("Apply");
     }
    function chat(){
+      
+      $ischat = 0;
       if(isset($_GET['rid'])){
           $rid = intval($_GET['rid']);
+          if($rid == $this->user['id']){
+            $this->error("不能和自己聊天");
+            exit();
+          }
           $rdata = M("Member")->find($rid);
           if(!$rdata){
             $this->error('页面不存在');
@@ -39,6 +45,8 @@ class ChatController extends HomeBaseController
           $msg = M("Chat")->where("box_id='$box_id'")->select();
           $this->assign('msg',$msg);
           
+          $ischat = 1;
+          
       }
       //读取会话列表
       $prefix = C("DB_PREFIX");
@@ -46,6 +54,7 @@ class ChatController extends HomeBaseController
       $sql = "select * from {$prefix}chat where FIND_IN_SET({$uid},box_id)!=0 and FIND_IN_SET({$uid},close_id)=0 group by box_id";
       $data = M()->query($sql);
       $this->assign("list",$data);
+      $this->assign('ischat',$ischat);
       // dump($data);
       $this->display();
    }

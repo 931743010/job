@@ -170,8 +170,9 @@
 
         <div class="job-list">
             <volist name="jobs" id="v">
-                <a href="{:U('Jobs/detail')}&id={$v.id}">
+               
                 <div class="item fl">
+                 <a href="{:U('Jobs/detail')}&id={$v.id}">
                     <div class="item-body">
                         <ul>
                             <li>岗位名称：{$v.job_name}</li>
@@ -180,11 +181,12 @@
                             <li>岗位类别：{$v.catname}</li>
                         </ul>
                     </div>
+                    </a>
                     <div class="item-bottom">
                         <ul class="flul">
                             <li>地点：{$v.cityName}</li>
                             <li>{$v.work_pay}元/小时</li>
-                            <li>联系</li>
+                             <li  class='chat'><a href="{:U('User/chat/chat')}&rid={$vo.uid}" target="_blank">联系</a></li>
                             <div class="c"></div>
                         </ul>
 
