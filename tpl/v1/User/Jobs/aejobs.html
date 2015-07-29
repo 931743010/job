@@ -187,6 +187,7 @@
                                 <if condition='$edit eq 1'>
                                     <input type="hidden" id="jid" name="jid" value="{$jobs['id']}"/>
                                 </if>
+                                <input type="hidden" id='agree_cx' value="0">   
                                 <input type="hidden" id="cate_url" value="{:U('portal/jobs/get_son_cate')}"/>
                                 <div class="c"></div>
                                 <div class="" style="margin-top: 25px;text-align:center">
@@ -204,9 +205,29 @@
     </div>
 </div>
 
+<div class="chengxinshu" style="display:none">
+    <p style="text-align:center"><strong><span style="font-size:29px;font-family:宋体">《诚信信息发布协议》</span></strong></p><p><span style="font-size: 19px;font-family:宋体">尊敬的用户：</span></p><p><span style="font-size:19px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:19px;font-family:宋体">您好！为了共同构造一个诚信、安全、合法、和谐的互联网信息发布平台，我们需要您对当前发布的信息不得含有以下内容作出承诺：</span></p><p><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">1</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、反对宪法所确定的基本原则的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 2</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 3</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、损害国家荣誉和利益的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 4</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、煽动民族仇恨、民族歧视，破坏民族团结的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 5</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">破坏国家宗教政策，宣扬邪教和封建迷信的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 6</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、散布谣言，扰乱社会秩序，破坏社会稳定的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 7</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 8</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、侮辱或者捏造事实诽谤他人，侵害他人合法权益的，或者进行其他恶意攻击的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;<br> 9</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、含有法律、行政法规禁止的其他内容的；</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;</span></span></strong></p><p><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">10</span></span></strong><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体;color:red">、信息内容不真实、有欺骗、欺诈行为的。</span></span></strong></p><p><strong><span style="text-decoration:underline;"><span style="font-size:19px;color:red">&nbsp;</span></span></strong></p><p><strong><span style="text-decoration:underline;"><span style="font-size:19px;font-family:宋体">承诺协议签字同意后，即对您产生约束效力，如果您被管理员发现或用户投诉有违反以上规定的，我们将有权视情节轻重采取如下措施：责令修改、信息屏蔽、封号、移交公安机关。请您遵纪守法！</span></span></strong></p><p><br></p>
+
+</div>
+
 
 <tc_include file='Public:footer'/>
 <script>
+
+        layer.confirm($('.chengxinshu').html(), {
+            area: '800px',
+            title:'诚信信息发布协议',
+            btn: ['我同意', '我不同意'], //可以无限个按钮
+        }, function(index, layero){
+
+            $("#agree_cx").val(1);
+            layer.close(index);
+        
+        }, function(index){
+       
+            window.location.href = "{:U('user/my/index')}";
+
+        });
 
 
     <if condition='$edit'>
@@ -255,7 +276,15 @@
 
 
     $("#aejobs").click(function(){
-
+        var eidt = "{$edit}";
+        if(!edit){
+            var agree_cx = $("#agree_cx").val();
+            if(agree_cx==0){
+                layer.alert('您没同意诚信信息发布协议',function(){
+                    window.location.href = "{:U('user/my/index')}";
+                })
+            }
+        }
         var job = {
             job_name: $('input[name=job_name]').val(),
             job_desc:$("input[name=job_desc]").val(),
