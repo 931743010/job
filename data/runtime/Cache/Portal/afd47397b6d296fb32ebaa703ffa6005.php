@@ -124,7 +124,7 @@
                     <ul class="flul">
                         <li>地点：<?php echo ($_SESSION['wiki']['city']); ?></li>
                         <li><?php echo ($vo["work_pay"]); ?>元/小时</li>
-                        <li><a href="<?php echo U('User/chat/chat');?>&rid=<?php echo ($vo["uid"]); ?>">联系</a></li>
+                        <li  class='chat'><a href="<?php echo U('User/chat/chat');?>&rid=<?php echo ($vo["uid"]); ?>" target="_blank">联系</a></li>
                         <div class="c"></div>
                     </ul>
 

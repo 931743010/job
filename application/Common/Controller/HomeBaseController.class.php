@@ -6,6 +6,20 @@ class HomeBaseController extends AppframeController {
 	public function __construct() {
 		$this->set_action_success_error_tpl();
 		parent::__construct();
+		if(!isset($_SESSION['wiki']['city']) || $_SESSION['wiki']['cityId']==null){
+            $res = getCurrentCity();
+            if(!$res){
+                $_SESSION['wiki']['city']='深圳';
+                $_SESSION['wiki']['cityId']=77;
+            }else{
+                $_SESSION['wiki']['city'] = $res['city'];
+                $_SESSION['wiki']['cityId'] = $res['cityId'];
+            }
+        }
+        if($_SESSION['wiki']['cityId']==null){
+        	$_SESSION['wiki']['city']='深圳';
+            $_SESSION['wiki']['cityId']=77;
+        }
 	}
 	
 	function _initialize() {

@@ -8,16 +8,7 @@ class IndexController extends HomeBaseController {
 	
     //首页
 	public function index() {
-        if(!isset($_SESSION['wiki']['city'])){
-            $res = getCurrentCity();
-            if(!$res){
-                $_SESSION['wiki']['city']='深圳';
-                $_SESSION['wiki']['cityId']=77;
-            }else{
-                $_SESSION['wiki']['city'] = $res['city'];
-                $_SESSION['wiki']['cityId'] = $res['cityId'];
-            }
-        }
+        
         $cityId= $_SESSION['wiki']['cityId'];
         $prefix = C("DB_PREFIX");
         $now = time();
