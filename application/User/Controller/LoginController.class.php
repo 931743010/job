@@ -71,10 +71,9 @@ class LoginController extends HomeBaseController {
 		$title = $options['site_name']."密码重置";
 		$uid=$user['id'];
 		$username=$user['user_login'];
-	
+		
 		$activekey=md5($uid.time().uniqid());
 		$users_model=M("Member");
-	
 		$result=$users_model->where(array("id"=>$uid))->save(array("user_activation_key"=>$activekey));
 		if(!$result){
 			$this->error('密码重置激活码生成失败！');
@@ -90,7 +89,6 @@ hello;
 		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);
 	
 		$send_result=sp_send_email($user['user_email'], $title, $content);
-	
 		if($send_result['error']){
 			$this->error('密码重置邮件发送失败！');
 		}else{
@@ -396,14 +394,12 @@ hello;
 		if($users_model->validate($rules)->create()===false){
 			$this->error($users_model->getError());
 		}else{
-			$password=sp_password(I("post.password"));
-			$result=$users_model->where(array("user_login"=>$_SESSION['find_password_user']['user_login']))->save(array("user_pass"=>$password));
-			if($result){
-				$_SESSION['find_password_user'];
-				$this->success("设置成功，请登录！",U("user/login/index"));
-			}else {
-				$this->error("设置失败！");
-			}
+			$result=M("Member")->where(array("user_login"=>$_SESSION['find_password_user']['user_login']))->save(array("user_pass"=>$password));
+
+			
+			$_SESSION['find_password_user'];
+			$this->success("设置成功，请登录！",U("user/login/index"));
+			
 					
 		}
 	}
