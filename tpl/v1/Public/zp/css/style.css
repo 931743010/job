@@ -1,4 +1,4 @@
-.header{height: 245px;width: 100%;}
+.header{height: 262px;width: 100%;}
 .header .top{padding: 0 20px;background: #e1dddd;height: 35px;line-height: 35px;}
 .header .top,.header .top a{color: #ef1410;}
 .header .top ul li{margin-left: 20px;}
@@ -7,10 +7,10 @@
 .h-center .search{width: 600px;height: 50px;margin: 24px 0 0 20px;}
 .h-center .search .search-control{width:460px;height: 32px;border: 2px solid #ef1410;border-radius: 6px;margin-right: 10px;padding-left:5px; }
 .h-center .search  .btn-search{background: url("../images/btn-serach.gif") no-repeat;width: 113px;height: 39px;border: none;text-indent: -9999px;}
-.nav{ height: 35px;line-height: 35px;background: url("../images/nav-bg.png") no-repeat;border: 0!important;margin-top: 10px;}
-.nav a{color:#ef1410;display: inline-block;width: auto;float: left;width: 163px;text-align: center;}
-.nav li{width: 170px;height: 35px;line-height: 35px;text-align: center;}
-.nav li .shu{background: url("../images/nav-r.gif") no-repeat;width: 6px;height: 32px;display: inline-block;float: right}
+.nav{ height: 65px;line-height: 65px;background: url("../images/nav-bg.png") no-repeat;border: 0!important;margin-top: 10px;padding: 0 70px}
+.nav a{color:#ef1410;display: inline-block;width: auto;float: left;width: 210px;text-align: center;text-indent: -9999px;}
+.nav li{width: 210px;height: 50px;line-height: 50px;text-align: center;}
+/*.nav li .shu{background: url("../images/nav-r.gif") no-repeat;width: 6px;height: 32px;display: inline-block;float: right}*/
 .main{width: 980px;margin: 10px auto;height: auto; }
 .job-list{margin-bottom: 20px;}
 .job-list  .item{width: 235px;height: 260px;margin: 10px 10px  0 0px;}
@@ -21,6 +21,9 @@
 .job-list .item .item-bottom{padding: 5px;margin-top: 15px;height: 30px;line-height: 30px;}
 .job-list .item .item-body li{height: 30px;line-height: 30px;overflow: hidden}
 .job-list .item .item-bottom li{margin-right: 5px;}
+
+.job-list .item .item-bottom li.chat a{display: inline-block;width: 22px;height: 22px;background: url(../images/chat_03.png) no-repeat;text-indent: -9999px;}
+
 .footer{padding: 10px 0;border-top: 5px solid #ef1410 }
 .footer a{color:#000; }
 .footer .f-nav{margin:10px 0;}
