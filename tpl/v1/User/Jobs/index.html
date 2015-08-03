@@ -131,6 +131,10 @@
 <tc_include file='Public:footer'/>
 <script>
 
+    $("a.viewJob").click(function(){
+        var id = $(this).data('id');
+        window.location.href = ".php?g=Portal&m=Jobs&a=detail"+"&id="+id;
+    });
     //编辑工作
     $(".editJob").click(function () {
         var rid = $(this).attr("data-id");
