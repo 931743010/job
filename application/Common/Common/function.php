@@ -1534,6 +1534,29 @@ function sp_sql_cate($parent = '') {
     $cate = M ( 'Cate' )->where ( $map )->select ();
     return $cate;
 }
+
+/*
+ * 所有子分类
+ */
+function sp_all_son_cate($cate_id){
+	$where = "id='{$cate_id}' or path like '%-{$cate_id}%'";
+	$data = M("Cate")->field('id')->where($where)->select();
+	$cid = '';
+	if($data){
+		foreach($data as $v){
+			$cid .=$v['id'].',';
+		}
+		$cid = substr($cid,0,strlen($cid)-1);
+	}else{
+		$cid = $cate_id;
+	}
+	return $cid;
+
+}
+
+
+
+
 /*
  * 获取当前城市 id 和名称
  *

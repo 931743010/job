@@ -222,12 +222,7 @@ class JobsController extends HomeBaseController
             exit();
         }
         $catid = intval($_GET['catid']);
-        $cate = sp_sql_cate($catid);
-        if($cate){
-            foreach($cate as $v){
-                $catid.=','.$v['id'];
-            }
-        }
+        $catid = sp_all_son_cate($catid);
         $count = M("Jobs")->where("work_city={$cityId} and catid in ({$catid}) and status=2")->count();
         $page = page($count, 12);
 // 1437816965
