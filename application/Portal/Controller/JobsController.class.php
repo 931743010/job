@@ -223,6 +223,7 @@ class JobsController extends HomeBaseController
         }
         $catid = intval($_GET['catid']);
         $catid = sp_all_son_cate($catid);
+        
         $count = M("Jobs")->where("work_city={$cityId} and catid in ({$catid}) and status=2")->count();
         $page = page($count, 12);
         $where = "j.work_city={$cityId} and j.catid in ({$catid}) and j.status=2 ";

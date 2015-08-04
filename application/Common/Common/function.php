@@ -1539,6 +1539,7 @@ function sp_sql_cate($parent = '') {
  * 所有子分类
  */
 function sp_all_son_cate($cate_id){
+
 	$where = "id='{$cate_id}' or path like '%-{$cate_id}%'";
 	$data = M("Cate")->field('id')->where($where)->select();
 	$cid = '';
