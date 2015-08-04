@@ -225,7 +225,6 @@ class JobsController extends HomeBaseController
         $catid = sp_all_son_cate($catid);
         $count = M("Jobs")->where("work_city={$cityId} and catid in ({$catid}) and status=2")->count();
         $page = page($count, 12);
-// 1437816965
         $where = "j.work_city={$cityId} and j.catid in ({$catid}) and j.status=2 ";
 
         $sql = "select j.*,c.name,n.nature_name,r.name as cityName from {$prefix}jobs j LEFT JOIN {$prefix}cate c on j.catid=c.id LEFT JOIN ";

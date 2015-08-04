@@ -1551,7 +1551,6 @@ function sp_all_son_cate($cate_id){
 		$cid = $cate_id;
 	}
 	return $cid;
-
 }
 
 
