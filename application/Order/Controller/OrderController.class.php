@@ -5,6 +5,7 @@
  */
 namespace Order\Controller;
 use Common\Controller\HomeBaseController;
+use Order\Controller\AlipayController as Alipay;
 class OrderController extends HomeBaseController {
 	private $user;
 	public function _initialize(){
@@ -13,195 +14,121 @@ class OrderController extends HomeBaseController {
 		parent::_initialize();
 	}
 	
-	public function generate(){
-		$cart = A('Order/cart');
-		$goods = array();//var_dump($cart->cart());die;
-		foreach($cart->cart()['cart'] as $k => $v){
-			$goods[] = array(
-				'id' => $v['id'],
-				'num' => $v['num'],
-				'attr' => $v['attr'],
-			);
-		}
-		$data = I('post.');
-		if( !$data['address_id'] ) $this->error("请选择收货地址");
-		$address = M('Member_address')->where( array('address_id'=>$data['address_id']) )->find();
-		$data['country'] = $address['country'];
-		$data['province'] = $address['province'];
-		$data['city'] = $address['city'];
-		$data['district'] = $address['district'];
-		$data['address'] = $address['address'];
-		$data['consignee'] = $address['consignee'];
-		$data['tel'] = $address['tel'];
-		$data['mobile'] = $address['mobile'];
-		$data['email'] = $address['email'];
-		$data['goods'] = $goods;
-		$data['uid'] = $this->user['id'];
-		//var_dump($data);die;
-		$client = A('Common/Oauthclient');
-		$orderInfo = $client -> createOrder($data);//var_dump($orderInfo->order_id);die;
-		//$this->error("订单创建成功,订单编号{$orderInfo->order_sn}",U('Order/index/index'));
-		/**$res = array(
-			'status' => 1,
-			'order_id' => $orderInfo->order_id,
-		);
-		echo json_encode($res);**/
-		$this->success($orderInfo->order_id);
-	}
-	
-	public function orderSuccess(){
-		$this->assign( 'form' , getPayForm(I('get.id')) );
+	function pay(){
 		$this->display();
 	}
-	
-	public function payreturn(){
-		$payMethod = I('get.paymentmethod');
-		if( $payMethod == 1 ){
-			$status = I('request.vpc_TxnResponseCode');
-			if( $status != 0 ) $this->error('支付失败');
-			$data['order_id'] = I('request.vpc_OrderInfo');
-			$record['money'] = I('request.vpc_Amount')/100;
-			$record['pay_sn'] = I('request.vpc_TransactionNo');
-			$record['remark'] = 'card_type:'.I('request.vpc_CardType').';card:'.I('request.vpc_Card');
-		}else if( $payMethod == 2 ){
-			$status = I('get.status');
-			if( $status == 'fail' ) $this->error('支付失败,请重新支付');
-			if( $status == 'cancel' ) $this->error('取消订单行为');
-			$data['order_id'] = I('request.Ref');
-			$record['money'] = 0;
-		}
-		$data['order_status'] = 1;
-		$data['pay_status'] = 1;
-		$data['pay_time'] = time();
-		$order = M('Order')->where( array('order_id'=>$data['order_id']) )->find();
-		if( $record['money']==0 ) $record['money'] = $order['money_total'] - $order['paid_money'];//针对第二种付款方式无奈的做法
-		//$affected_points = $order['money_total']
-		//points($affected_points , $order_sn , $uid , $remark="" , $type='default')//购买成功,增加积分
-		if(M('Order')->save($data)){
-			$record['pay_type'] = $payMethod;
-			$record['order_id'] = $data['order_id'];
-			$record['add_time'] = time();
-			M('pay_record')->add($record);
-			M('Order')->where( array('order_id'=>$data['order_id']) )->setInc('paid_money' , $record['money']);
-			if( $order['paid_points'] > 0 ){//部分使用了积分支付
-				confirmFreezePoints(-$order['paid_points'] , $order['order_sn'] , $order['user_id'] , $remark="消费成功" , 1);
-			}
-			$this->redirect(U('order/order/paySuccess'));
-		}else{
-			$this->error('支付成功,但是订单状态更改失败,请联系客服处理' , U('Order/index/index'));
-			//$this->redirect(U('order/order/paySuccess'));
-		}
-	}
-	public function paySuccess(){
-		$this->display();
-	}
-	public function payment(){
-		$id = I('get.id');
-		$order = M('Order')->where( array('order_id'=>$id) )->find();
-		if( empty($order) ) $this->error("不存在的订单号");
-		$this->assign( 'order' , $order );
-		$this->assign( 'goods' , M('Order_goods')->where( array('order_id'=>$id) )->select() );
-		$this->assign('form' , getPayForm($id));
-		$this->display();
-	}
-	public function comment(){
-		if ( !$_POST ){			
-			$id = I('get.id', '', 'intval,trim,strip_tags');
-			//订单详情
-			$order = M('Order')->where( array('order_id' => $id, 'user_id' => $_SESSION['user']['id']) )->find();
-			if( empty($order) ) $this->error("不存在的订单号");
-			$order['time'] = ceil((time()-$order['add_time'])/(3600*24));//下单时间
-			$order_goods = M('OrderGoods')->alias('OG')->where('order_id = '. $id)->join('Left join ' . C('DB_PREFIX') . 'goods g on g.id = OG.goods_id')->field('g.img_url g_img_url,goods_id,name')->select();
-			$order_comment_model = M('CommentsGoods');
-			$order_comments = array();
-			foreach($order_goods as $v){//查看是否已有评价过
-				$where['goods_id'] = $v['goods_id'];
-				$where['order_id'] = $id;
-				$where['uid'] = $_SESSION['user']['id'];
-				$comments = $order_comment_model->where($where)->field('content,goods_id,order_id,type,img_url,thumb_url,uid,score')->select();
-				if(!empty($comments)){//有评价
-					if(count($comments) > 1){//多条评价
-						foreach($comments as $key => $val){
-							if(!empty($val['img_url'])){
-								$comments[$key]['img_url'] = explode('|', $val['img_url']);
-								$comments[$key]['thumb_url'] = explode('|', $val['thumb_url']);
-							}
-						}
-					}else{//一条评价
-						if(!empty($comments[0]['img_url'])){
-							$comments[0]['img_url'] = explode('|', $comments[0]['img_url']);
-							$comments[0]['thumb_url'] = explode('|', $comments[0]['thumb_url']);
-						}
-					}
-				}
-				$order_comments[$v['goods_id']]['goods'] = $v;
-				$order_comments[$v['goods_id']]['comments'] = $comments;
-			}
-/*			echo "<pre>";
-			print_r($order_goods);
-			echo "</pre>";*/
-			$this->assign('order_comments', $order_comments);
-			$this->assign('order', $order);
-			$this->display();
-		} else {//添加评价
-			
-			if(isset($_POST['content'])){
-				$this->ajaxReturn(array('error' => 1, 'msg' => '未填写任何评价内容'));
-				exit;
-			}
-			extract($_POST);
-						//获取用户邮箱（没有邮箱则获取手机号）	
-			$user = M('Member')->where('id = ' . $_SESSION['user']['id'])->field('user_email,user_phone')->find();	
-			$username = !empty($user['user_email']) ? $user['user_email'] : $user['user_phone'];
-			$order_comment_model = M('CommentsGoods');
-			$empty = true;
-			foreach($content as $k => $v){
-				if(empty($v)){
-					continue;
-				}
-					$where['goods_id'] = $k;
-					$where['order_id'] = $order_id;
-					$where['uid'] = $_SESSION['user']['id'];
-					//获取评价表，假如已存在评价信息，则type=2（追评），否则为1（初评）
-					$count = $order_comment_model->where($where)->count();
-					if($count == 0)
-						$type = 1;
-					else
-						$type = 2;
-				if(!empty($v) && (!empty($score[$k]) || $type == 2) && !empty($order_id) && !empty($k)){
-					$thumb_url = empty($thumb_url[$k]) ? '' : implode('|', $thumb_url[$k]);
-					$img_url = empty($thumb_url) ? '' : str_replace('small_', '', $thumb_url);
-					$score[$k] = empty($score[$k]) ? 0 : $score[$k];
-					$data = array(
-								'goods_id' => $k,
-								'order_id' => $order_id,
-								'uid' => $_SESSION['user']['id'],
-								'score' => $score[$k],
-								'type' => $type,
-								'img_url' => $img_url,
-								'thumb_url' => $thumb_url,
-								'username' => $username,
-								'content' => $v,
-								'createtime' => date('Y-m-d H:i:s')
-							);
-					$rs = $order_comment_model->data($data)->add();
-					if($rs) $empty = false;
-				}
-			}
-			if($empty){
-				$this->ajaxReturn(array('error' => 1, 'msg' => '未填写任何评价内容'));
-				exit;
-			}else{
-				$this->ajaxReturn(array('error' => 0, 'msg' => '评价成功'));
-				exit;
-			}
-		}
+	/*
+	去付款
+	*/
+	function gopay(){
+		//支付类型
+        $payment_type = "1";
+        //必填，不能修改
+        //服务器异步通知页面路径
+        $notify_url = "http://www.rengongonline.com/pay/notify_url.php";
+        //需http://格式的完整路径，不能加?id=123这类自定义参数
+
+        //页面跳转同步通知页面路径
+        $return_url = "http://www.rengongonline.com/pay/return_url.php";
+        //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+
+
+        if(!isset($_POST['WIDtotal_fee'])){
+        	$this->error("请输入正确的充值金额",U("Order/order/pay"));
+        	exit();
+        }
+        //付款金额
+        $total_fee = $_POST['WIDtotal_fee'];
+        if(!is_numeric($total_fee) || $total_fee<10){
+        	$this->error("充值金额必须是大于10元",U("Order/order/pay"));
+        	exit();
+        }
+
+		$data['money'] = $total_fee;
+        //商户订单号
+        
+        $out_trade_no = $data['order_sn'] = date("YmdHis").mt_rand(0,20000).mt_rand(20000,40000);
+        //商户网站订单系统中唯一订单号，必填
+
+        //订单名称
+        $subject =$data['subject']="{ ".$this->user['user_login'].' }在线充值';
+        
+        //必填
+
+        //订单描述
+        $body =$data['body']= $subject;
+        
+        $data['add_time']= time();
+        $data['user_id'] = $this->user['id'];
+        M("Order")->add($data);
+        //商品展示地址
+        $show_url = 'http://www.rengongonline.com';
+        //需以http://开头的完整路径，例如：http://www.商户网址.com/myorder.html
+
+        //防钓鱼时间戳
+        $anti_phishing_key = "";
+        //若要使用请调用类文件submit中的query_timestamp函数
+
+        //客户端的IP地址
+        $exter_invoke_ip = "";
+        //非局域网的外网IP地址，如：221.0.0.1
+       
+
+/************************************************************/
+
 		
+		//合作身份者id，以2088开头的16位纯数字
+		$alipay_config['partner']		= '2088021359866822';
+
+		//收款支付宝账号
+		$alipay_config['seller_email']	= '3270910200@qq.com';
+
+		//安全检验码，以数字和字母组成的32位字符
+		$alipay_config['key']			= 'mn9ru925i35st9ug4xy4jhlko7ksg7uz';
+
+
+		//↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
+		//签名方式 不需修改
+		$alipay_config['sign_type']    = strtoupper('MD5');
+
+		//字符编码格式 目前支持 gbk 或 utf-8
+		$alipay_config['input_charset']= strtolower('utf-8');
+
+		//ca证书路径地址，用于curl中ssl校验
+		//请保证cacert.pem文件在当前文件夹目录中
+		$alipay_config['cacert']    = getcwd().'\\cacert.pem';
+
+		//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
+		$alipay_config['transport']    = 'http';
+
+		//构造要请求的参数数组，无需改动
+		$parameter = array(
+				"service" => "create_direct_pay_by_user",
+				"partner" => trim($alipay_config['partner']),
+				"seller_email" => trim($alipay_config['seller_email']),
+				"payment_type"	=> $payment_type,
+				"notify_url"	=> $notify_url,
+				"return_url"	=> $return_url,
+				"out_trade_no"	=> $out_trade_no,
+				"subject"	=> $subject,
+				"total_fee"	=> $total_fee,
+				"body"	=> $body,
+				"show_url"	=> $show_url,
+				"anti_phishing_key"	=> $anti_phishing_key,
+				"exter_invoke_ip"	=> $exter_invoke_ip,
+				"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+		);
+
+		//建立请求
+		$alipaySubmit = new Alipay($alipay_config);
+		$html_text = $alipaySubmit->buildRequestForm($parameter,"get", "没跳转点此");
+		echo $html_text;
 	}
-	/**
-	 * @todo 订单详情
-	 */
-	function detail(){
+
+
+	function pay1(){
 		$this->display();
 	}
 }

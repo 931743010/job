@@ -1,426 +1,223 @@
 <?php
 
-/**
- * @处理标签函数
- * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
- * ids:调用指定id的一个或多个数据,如 1,2,3
- * cid:数据所在分类,可调出一个或多个分类数据,如 1,2,3 默认值为全部,在当前分类为:'.$cid.'
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * order:推荐方式(post_date) (desc/asc/rand())
+//支付宝公共函数
+
+/* *
+ * 支付宝接口公用函数
+ * 详细：该类是请求、通知返回两个文件所调用的公用函数核心处理文件
+ * 版本：3.3
+ * 日期：2012-07-19
+ * 说明：
+ * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
+ * 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
  */
-function sp_sql_posts($tag,$where=array()){
-	if(!is_array($where)){
-		$where=array();
+
+/**
+ * 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
+ * @param $para 需要拼接的数组
+ * return 拼接完成以后的字符串
+ */
+function createLinkstring($para) {
+	$arg  = "";
+	while (list ($key, $val) = each ($para)) {
+		$arg.=$key."=".$val."&";
 	}
+	//去掉最后一个&字符
+	$arg = substr($arg,0,count($arg)-2);
 	
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
-	$order = !empty($tag['order']) ? $tag['order'] : 'post_date';
-
-
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	$where['post_status'] = array('eq',1);
-
-	if (isset($tag['cid'])) {
-		$where['term_id'] = array('in',$tag['cid']);
-	}
+	//如果存在转义字符，那么去掉转义
+	if(get_magic_quotes_gpc()){$arg = stripslashes($arg);}
 	
-	if (isset($tag['ids'])) {
-		$where['object_id'] = array('in',$tag['ids']);
-	}
-	
-
-
-	$join = "".C('DB_PREFIX').'posts as b on a.object_id =b.id';
-	$join2= "".C('DB_PREFIX').'users as c on b.post_author = c.id';
-	$rs= M("TermRelationships");
-
-	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($limit)->select();
-	return $posts;
+	return $arg;
 }
-
-
 /**
- * @ 处理标签函数
- * @ $tag以字符串方式传入,通过sp_param_lable函数解析为以下变量。例："cid:1,2;order:post_date desc,listorder desc;"
- * ids:调用指定id的一个或多个数据,如 1,2,3
- * cid:数据所在分类,可调出一个或多个分类数据,如 1,2,3 默认值为全部,在当前分类为:'.$cid.'
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * order:推荐方式(post_date) (desc/asc/rand())
+ * 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串，并对字符串做urlencode编码
+ * @param $para 需要拼接的数组
+ * return 拼接完成以后的字符串
  */
-
-function sp_posts($tag,$where=array(),$pagesize=20,$pagesetting='',$pagetpl='{first}{prev}{liststart}{list}{listend}{next}{last}'){
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '10';
-	$order = !empty($tag['order']) ? $tag['order'] : 'post_modified desc';
-
-
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	$where['post_status'] = array('eq',1);
-
-	if (isset($tag['cid'])) {
-		$where['term_id'] = array('in',$tag['cid']);
+function createLinkstringUrlencode($para) {
+	$arg  = "";
+	while (list ($key, $val) = each ($para)) {
+		$arg.=$key."=".urlencode($val)."&";
 	}
-
-	if (isset($tag['ids'])) {
-		$where['object_id'] = array('in',$tag['ids']);
-	}
-
-	$join = "".C('DB_PREFIX').'posts as b on a.object_id =b.id';
-	$join2= "".C('DB_PREFIX').'users as c on b.post_author = c.id';
-	$rs= M("TermRelationships");
-	$totalsize=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->count();
-
-	import('Page');
-	if ($pagesize == 0) {
-		$pagesize = 20;
-	}
-	$PageParam = C("VAR_PAGE");
-	$page = new \Page($totalsize,$pagesize);
-	$page->setLinkWraper("li");
-	$page->__set("PageParam", $PageParam);
-	$pagesetting=!empty($pagesetting)?$pagesetting: array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => "");
-	$page->SetPager('default', $pagetpl,$pagesetting);
-	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
-
-	$content['posts']=$posts;
-	$content['page']=$page->show('default');
-	return $content;
+	//去掉最后一个&字符
+	$arg = substr($arg,0,count($arg)-2);
+	
+	//如果存在转义字符，那么去掉转义
+	if(get_magic_quotes_gpc()){$arg = stripslashes($arg);}
+	
+	return $arg;
 }
-
-
-
-
-
 /**
- * 功能：根据分类文章分类ID 获取该分类下所有文章（包含子分类中文章），调用方式同sp_sql_posts
- * create by labulaka 2014-11-09 14:30:49
- * param int $tid 文章分类ID.
- * param string $tag 以字符串方式传入,例："order:post_date desc,listorder desc;"
- * 		field:调用post指定字段,如(id,post_title...) 默认全部
- * 		limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * 		order:推荐方式(post_date) (desc/asc/rand())
- * param int $pagesize 分页数字.
- * param string $pagetpl 以字符串方式传入,例："{first}{prev}{liststart}{list}{listend}{next}{last}"
+ * 除去数组中的空值和签名参数
+ * @param $para 签名参数组
+ * return 去掉空值与签名参数后的新签名参数组
  */
-
-function sp_sql_posts_bycatid($cid,$tag,$where=array()){
-	$cid=intval($cid);
-	$catIDS=array();
-	$terms=M("Terms")->field("term_id")->where("status=1 and ( term_id=$cid OR path like '%-$cid-%' )")->order('term_id asc')->select();
-
-	foreach($terms as $item){
-		$catIDS[]=$item['term_id'];
+function paraFilter($para) {
+	$para_filter = array();
+	while (list ($key, $val) = each ($para)) {
+		if($key == "sign" || $key == "sign_type" || $val == "")continue;
+		else	$para_filter[$key] = $para[$key];
 	}
-	if(!empty($catIDS)){
-		$catIDS=implode(",", $catIDS);
-		$catIDS="cid:$catIDS;";
-	}else{
-		$catIDS="";
-	}
-	$content= sp_sql_posts($catIDS.$tag,$where);
-	return $content;
-
+	return $para_filter;
+}
+/**
+ * 对数组排序
+ * @param $para 排序前的数组
+ * return 排序后的数组
+ */
+function argSort($para) {
+	ksort($para);
+	reset($para);
+	return $para;
+}
+/**
+ * 写日志，方便测试（看网站需求，也可以改成把记录存入数据库）
+ * 注意：服务器需要开通fopen配置
+ * @param $word 要写入日志里的文本内容 默认值：空值
+ */
+function logResult($word='') {
+	$fp = fopen("log.txt","a");
+	flock($fp, LOCK_EX) ;
+	fwrite($fp,"执行日期：".strftime("%Y%m%d%H%M%S",time())."\n".$word."\n");
+	flock($fp, LOCK_UN);
+	fclose($fp);
 }
 
 /**
- * @ 处理标签函数
- * @ $tag以字符串方式传入,通过sp_param_lable函数解析为以下变量。例："cid:1,2;order:post_date desc,listorder desc;"
- * ids:调用指定id的一个或多个数据,如 1,2,3
- * cid:数据所在分类,可调出一个或多个分类数据,如 1,2,3 默认值为全部,在当前分类为:'.$cid.'
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * order:推荐方式(post_date) (desc/asc/rand())
+ * 远程获取数据，POST模式
+ * 注意：
+ * 1.使用Crul需要修改服务器中php.ini文件的设置，找到php_curl.dll去掉前面的";"就行了
+ * 2.文件夹中cacert.pem是SSL证书请保证其路径有效，目前默认路径是：getcwd().'\\cacert.pem'
+ * @param $url 指定URL完整路径地址
+ * @param $cacert_url 指定当前工作目录绝对路径
+ * @param $para 请求的数据
+ * @param $input_charset 编码格式。默认值：空值
+ * return 远程输出的数据
  */
+function getHttpResponsePOST($url, $cacert_url, $para, $input_charset = '') {
 
-function sp_sql_posts_paged($tag,$pagesize=20,$pagetpl='{first}{prev}{liststart}{list}{listend}{next}{last}'){
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
-	$order = !empty($tag['order']) ? $tag['order'] : 'post_date';
-
-
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	$where['post_status'] = array('eq',1);
-
-	if (isset($tag['cid'])) {
-		$where['term_id'] = array('in',$tag['cid']);
+	if (trim($input_charset) != '') {
+		$url = $url."_input_charset=".$input_charset;
 	}
-
-	if (isset($tag['ids'])) {
-		$where['object_id'] = array('in',$tag['ids']);
-	}
-
-	$join = "".C('DB_PREFIX').'posts as b on a.object_id =b.id';
-	$join2= "".C('DB_PREFIX').'users as c on b.post_author = c.id';
-	$rs= M("TermRelationships");
-	$totalsize=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->count();
+	$curl = curl_init($url);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);//SSL证书认证
+	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//严格认证
+	curl_setopt($curl, CURLOPT_CAINFO,$cacert_url);//证书地址
+	curl_setopt($curl, CURLOPT_HEADER, 0 ); // 过滤HTTP头
+	curl_setopt($curl,CURLOPT_RETURNTRANSFER, 1);// 显示输出结果
+	curl_setopt($curl,CURLOPT_POST,true); // post传输数据
+	curl_setopt($curl,CURLOPT_POSTFIELDS,$para);// post传输数据
+	$responseText = curl_exec($curl);
+	//var_dump( curl_error($curl) );//如果执行curl过程中出现异常，可打开此开关，以便查看异常内容
+	curl_close($curl);
 	
-	import('Page');
-	if ($pagesize == 0) {
-		$pagesize = 20;
-	}
-	$PageParam = C("VAR_PAGE");
-	$page = new \Page($totalsize,$pagesize);
-	$page->setLinkWraper("li");
-	$page->__set("PageParam", $PageParam);
-	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""));
-	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
-
-	$content['posts']=$posts;
-	$content['page']=$page->show('default');
-	return $content;
+	return $responseText;
 }
 
 /**
- * 功能：根据关键字 搜索文章（包含子分类中文章），已经分页，调用方式同sp_sql_posts_paged
- * create by WelkinVan 2014-12-04
- * param string $keyword 关键字.
- * param string $tag 以字符串方式传入,例："order:post_date desc,listorder desc;"
- * 		field:调用post指定字段,如(id,post_title...) 默认全部
- * 		limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * 		order:推荐方式(post_date) (desc/asc/rand())
- * param int $pagesize 分页数字.
- * param string $pagetpl 以字符串方式传入,例："{first}{prev}{liststart}{list}{listend}{next}{last}"
+ * 远程获取数据，GET模式
+ * 注意：
+ * 1.使用Crul需要修改服务器中php.ini文件的设置，找到php_curl.dll去掉前面的";"就行了
+ * 2.文件夹中cacert.pem是SSL证书请保证其路径有效，目前默认路径是：getcwd().'\\cacert.pem'
+ * @param $url 指定URL完整路径地址
+ * @param $cacert_url 指定当前工作目录绝对路径
+ * return 远程输出的数据
  */
-function sp_sql_posts_paged_bykeyword($keyword,$tag,$pagesize=20,$pagetpl='{first}{prev}{liststart}{list}{listend}{next}{last}'){
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
-	$order = !empty($tag['order']) ? $tag['order'] : 'post_date';
-
-
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	$where['post_status'] = array('eq',1);
-	$where['post_title'] = array('like','%' . $keyword . '%');
+function getHttpResponseGET($url,$cacert_url) {
+	$curl = curl_init($url);
+	curl_setopt($curl, CURLOPT_HEADER, 0 ); // 过滤HTTP头
+	curl_setopt($curl,CURLOPT_RETURNTRANSFER, 1);// 显示输出结果
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);//SSL证书认证
+	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//严格认证
+	curl_setopt($curl, CURLOPT_CAINFO,$cacert_url);//证书地址
+	$responseText = curl_exec($curl);
+	//var_dump( curl_error($curl) );//如果执行curl过程中出现异常，可打开此开关，以便查看异常内容
+	curl_close($curl);
 	
-	if (isset($tag['cid'])) {
-		$where['term_id'] = array('in',$tag['cid']);
-	}
-
-	if (isset($tag['ids'])) {
-		$where['object_id'] = array('in',$tag['ids']);
-	}
-
-	$join = "".C('DB_PREFIX').'posts as b on a.object_id =b.id';
-	$join2= "".C('DB_PREFIX').'users as c on b.post_author = c.id';
-	$rs= M("TermRelationships");
-	$totalsize=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->count();
-	import('Page');
-	if ($pagesize == 0) {
-		$pagesize = 20;
-	}
-	$PageParam = C("VAR_PAGE");
-	$page = new Page($totalsize,$pagesize);
-	$page->setLinkWraper("li");
-	$page->__set("PageParam", $PageParam);
-	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""));
-	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
-	$content['count']=$totalsize;
-	$content['posts']=$posts;
-	$content['page']=$page->show('default');
-	return $content;
+	return $responseText;
 }
 
 /**
- * 功能：根据分类文章分类ID 获取该分类下所有文章（包含子分类中文章），已经分页，调用方式同sp_sql_posts_paged
- * create by labulaka 2014-11-09 14:30:49
- * param int $tid 文章分类ID.
- * param string $tag 以字符串方式传入,例："order:post_date desc,listorder desc;"
- * 		field:调用post指定字段,如(id,post_title...) 默认全部
- * 		limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * 		order:推荐方式(post_date) (desc/asc/rand())
- * param int $pagesize 分页数字.
- * param string $pagetpl 以字符串方式传入,例："{first}{prev}{liststart}{list}{listend}{next}{last}"
+ * 实现多种字符编码方式
+ * @param $input 需要编码的字符串
+ * @param $_output_charset 输出的编码格式
+ * @param $_input_charset 输入的编码格式
+ * return 编码后的字符串
  */
-
-function sp_sql_posts_paged_bycatid($cid,$tag,$pagesize=20,$pagetpl='{first}{prev}{liststart}{list}{listend}{next}{last}'){
-	$cid=intval($cid);
-	$catIDS=array();
-	$terms=M("Terms")->field("term_id")->where("status=1 and ( term_id=$cid OR path like '%-$cid-%' )")->order('term_id asc')->select();
-	
-	foreach($terms as $item){
-		$catIDS[]=$item['term_id'];
-	}
-	if(!empty($catIDS)){
-		$catIDS=implode(",", $catIDS);
-		$catIDS="cid:$catIDS;";
-	}else{
-		$catIDS="";
-	}
-	$content= sp_sql_posts_paged($catIDS.$tag,$pagesize,$pagetpl);
-	return $content;
-
+function charsetEncode($input,$_output_charset ,$_input_charset) {
+	$output = "";
+	if(!isset($_output_charset) )$_output_charset  = $_input_charset;
+	if($_input_charset == $_output_charset || $input ==null ) {
+		$output = $input;
+	} elseif (function_exists("mb_convert_encoding")) {
+		$output = mb_convert_encoding($input,$_output_charset,$_input_charset);
+	} elseif(function_exists("iconv")) {
+		$output = iconv($_input_charset,$_output_charset,$input);
+	} else die("sorry, you have no libs support for charset change.");
+	return $output;
+}
+/**
+ * 实现多种字符解码方式
+ * @param $input 需要解码的字符串
+ * @param $_output_charset 输出的解码格式
+ * @param $_input_charset 输入的解码格式
+ * return 解码后的字符串
+ */
+function charsetDecode($input,$_input_charset ,$_output_charset) {
+	$output = "";
+	if(!isset($_input_charset) )$_input_charset  = $_input_charset ;
+	if($_input_charset == $_output_charset || $input ==null ) {
+		$output = $input;
+	} elseif (function_exists("mb_convert_encoding")) {
+		$output = mb_convert_encoding($input,$_output_charset,$_input_charset);
+	} elseif(function_exists("iconv")) {
+		$output = iconv($_input_charset,$_output_charset,$input);
+	} else die("sorry, you have no libs support for charset changes.");
+	return $output;
 }
 
 
-/**
- * @param int $tid 分类表下的tid.
- * @param string $tag 
- * @处理标签函数
- * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * 如：field:post_title;
- * @return array 返回指定id所有页面
+/* *
+ * MD5
+ * 详细：MD5加密
+ * 版本：3.3
+ * 日期：2012-07-19
+ * 说明：
+ * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
+ * 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
  */
-function sp_sql_post($tid,$tag){
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-
-
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	$where['tid'] = array('eq',$tid);
-
-
-	$join = "".C('DB_PREFIX').'posts as b on a.object_id =b.id';
-	$join2= "".C('DB_PREFIX').'users as c on b.post_author = c.id';
-	$rs= M("TermRelationships");
-
-	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->find();
-	return $posts;
-}
 
 /**
- * @处理标签函数
- * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
- * 返回符合条件的所有页面
- * ids:调用指定id的一个或多个数据,如 1,2,3
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * order:推荐使用方式(post_date) (desc/asc/rand())
- * 使用：ids:1,2;field:post_date,post_content;limit:10;order:post_date DESC,id;
+ * 签名字符串
+ * @param $prestr 需要签名的字符串
+ * @param $key 私钥
+ * return 签名结果
  */
-function sp_sql_pages($tag){
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
-	$order = !empty($tag['order']) ? $tag['order'] : 'post_date';
-
-
-	//根据参数生成查询条件
-	$where['post_status'] = array('eq',1);
-	$where['post_type'] = array('eq',2);
-
-	$rs= M("Posts");
-
-	$posts=$rs->field($field)->where($where)->order($order)->limit($limit)->select();
-	return $posts;
+function md5Sign($prestr, $key) {
+	$prestr = $prestr . $key;
+	return md5($prestr);
 }
 
 /**
- * @处理标签函数
- * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
- * 返回指定id=$id的页面
+ * 验证签名
+ * @param $prestr 需要签名的字符串
+ * @param $sign 签名结果
+ * @param $key 私钥
+ * return 签名结果
  */
-function sp_sql_page($id){
-	$where=array();
-	$where['id'] = array('eq',$id);
+function md5Verify($prestr, $sign, $key) {
+	$prestr = $prestr . $key;
+	$mysgin = md5($prestr);
 
-	$rs= M("Posts");
-	$post=$rs->where($where)->find();
-	return $post;
-}
-
-
-/**
- * 返回指定分类
- */
-function sp_get_term($term_id){
-	
-	$terms=F('all_terms');
-	if(empty($terms)){
-		$term_obj= M("Terms");
-		$terms=$term_obj->where("status=1")->select();
-		$mterms=array();
-		
-		foreach ($terms as $t){
-			$tid=$t['term_id'];
-			$mterms["t$tid"]=$t;
-		}
-		
-		F('all_terms',$mterms);
-		return $mterms["t$term_id"];
-	}else{
-		return $terms["t$term_id"];
+	if($mysgin == $sign) {
+		return true;
+	}
+	else {
+		return false;
 	}
 }
-/**
- * 返回指定分类下的子分类
- */
-function sp_get_child_terms($term_id){
 
-	$term_id=intval($term_id);
-	$term_obj = M("Terms");
-	$terms=$term_obj->where("status=1 and parent=$term_id")->order("listorder asc")->select();
-	
-	return $terms;
-}
-/**
- * 9
- * @处理标签函数
- * @以字符串方式传入,通过sp_param_lable函数解析为以下变量
- * 返回符合条件的所有分类
- * ids:调用指定id的一个或多个数据,如 1,2,3
- * field:调用post指定字段,如(id,post_title...) 默认全部
- * limit:数据条数,默认值为10,可以指定从第几条开始,如3,8(表示共调用8条,从第3条开始)
- * order:path (desc/asc/rand())
- * 使用：ids:1,2;field:post_date,post_content;limit:10;order:post_date DESC,id;
- */
-function sp_get_terms($tag){
-	
-	$where=array();
-	$tag=sp_param_lable($tag);
-	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
-	$order = !empty($tag['order']) ? $tag['order'] : 'term_id';
-	
-	//根据参数生成查询条件
-	$where['status'] = array('eq',1);
-	
-	if (isset($tag['ids'])) {
-		$where['term_id'] = array('in',$tag['ids']);
-	}
-	
-	$term_obj= M("Terms");
-	$terms=$term_obj->field($field)->where($where)->order($order)->limit($limit)->select();
-	return $terms;
-}
 
-function sp_admin_get_tpl_file_list(){
-	$template_path=C("SP_TMPL_PATH").C("SP_DEFAULT_THEME")."/Portal/";
-	$files=sp_scan_dir($template_path."*");
-	$tpl_files=array();
-	foreach ($files as $f){
-		if($f!="." || $f!=".."){
-			if(is_file($template_path.$f)){
-				$suffix=C("TMPL_TEMPLATE_SUFFIX");
-				$result=preg_match("/$suffix$/", $f);
-				if($result){
-					$tpl=str_replace($suffix, "", $f);
-					$tpl_files[$tpl]=$tpl;
-				}
-			}
-		}
-	}
-	return $tpl_files;
-}
-function goodsList($order_id){
-	$result = M('Package') -> where("order_id=$order_id") -> select();
-	foreach($result as $v){
-		echo $v['goods_name'].'x'.$v['goods_num'].',<br>';
-	}
-}
+
+?>
