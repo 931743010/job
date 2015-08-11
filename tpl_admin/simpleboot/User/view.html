@@ -73,22 +73,30 @@
 	              </p>
 	              <p class="zhengjian">
 	              	<span>身份证正面：</span>
-	              
+	                 <a href="{$site_host}{$account.identify_z}">
 	              	<img src="{$account.identify_z}">
+                  </a>
 	              </p>
 	              <p class="zhengjian">
 	              	<span>身份证反面：</span>
-	             
+	             <a href="{$site_host}{$account.identify_f}">
 	              	<img src="{$account.identify_f}">
+                  </a>
 	              </p>
               	<else />
 
-					<p >
+					        <p >
 	              		<span>营业执照号：{$account.company_id}</span>	              	
 	              	</p>
+                  <p >
+                    <span>营业执名称：{$account.company_name}</span>                  
+                  </p>
 		              <p class="zhengjian">
 		              	<span>营业执照：</span>
+                   <a href="{$site_host}{$account.license}">
+
 		              	<img src="{$account.license}">
+                    </a>
 		              </p>
 	              
 

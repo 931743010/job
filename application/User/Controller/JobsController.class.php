@@ -62,6 +62,9 @@ class JobsController extends HomeBaseController
             $data['person_num'] = intval($_POST['person_num']);
             $data['work_start_time'] = I('post.work_start_time');
             $data['work_end_time'] = I('post.work_end_time');
+            $data['work_start_time1'] = I('post.work_start_time1');
+            $data['work_end_time1'] = I('post.work_end_time1');
+            
             $data['work_start_date'] = I('post.work_start_date');
             $data['work_end_date'] = I('post.work_end_date');
             $data['work_total_date'] = I('post.work_total_date');
@@ -95,6 +98,12 @@ class JobsController extends HomeBaseController
             if(!Utils::isInt($data['work_start_time']) || !Utils::isInt($data['work_end_time'])){
                 Utils::resOut(-1,'工作时间必须是正整数');
                 exit();
+            }
+            if($data['work_start_time1']!='' && $data['work_end_time1']!=''){
+                if(!Utils::isInt($data['work_start_time1']) || !Utils::isInt($data['work_end_time1'])){
+                    Utils::resOut(-1,'工作时间必须是正整数');
+                    exit();
+                }
             }
             if($data['work_start_date']>$data['work_end_date']){
                 Utils::resOut(-1,'开始工作日期不能大于结束日期');
@@ -147,6 +156,8 @@ class JobsController extends HomeBaseController
                 $data['uid'] = $this->user['id'];
                 $up = 0;
             }
+            $data['work_start_time'] = $data['work_start_time'].'-'.$data['work_end_time'];
+            $data['work_end_time'] = $data['work_start_time1'].'-'.$data['work_end_time1'];
             if($_POST['catname']){
                 $data['catname'] = I('post.catname');
                 $data['catid'] = 0;
@@ -158,7 +169,7 @@ class JobsController extends HomeBaseController
             if($up){
                 $msg = "更新";
             }else{
-                $msg = "新增";
+                $msg = "发布";
             }
             if(!$res){
                 Utils::resOut('-1',$msg.'失败');

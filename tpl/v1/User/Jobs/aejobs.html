@@ -101,16 +101,32 @@
                                     </dd>
                                     <dt style="margin-left: 10px;">工作时间：</dt>
                                     <dd>
-                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$job.work_start_time}" style="width: 70px"/>
+                                        <php>
+                                            if($edit){
+                                                $timeArr = explode('-',$jobs['work_start_time']);
+                                                $start = $timeArr[0];
+                                                $end = $timeArr[1];
+                                                if($jobs['work_end_time']!='-'){
+                                                    $timeArr1 = explode('-',$job['work_end_time']);
+                                                    $start1 = $timeArr1[0];
+                                                    $end1 = $timeArr1[1];
+                                                }else{
+                                                    $start1 = '';
+                                                    $end1 = '';
+                                                }
+                                            }
+                                        </php>
+                                        
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$start}" style="width: 70px"/>
                                         <span> 至</span>
-                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$job.work_end_time}" style="width: 70px;"/>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$end}" style="width: 70px;"/>
                                         <img src="__TMPL__Public/zp/images/add-icon.png" style="margin:4px;" id='addicon'>
                                     </dd>
                                     
                                      <dd style="position:relative;top:4px;left:431px;display:none" class='more-icon'>
-                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$job.work_start_time}" style="width: 70px"/>
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$start1}" style="width: 70px"/>
                                         <span> 至</span>
-                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$job.work_end_time}" style="width: 70px;"/>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$end1}" style="width: 70px;"/>
 
                                     </dd>
                                 </dl>
@@ -294,6 +310,8 @@
             catid:$("select[name=catid]").val(),
             work_start_time:$("input[name=work_start_time]").val(),
             work_end_time:$("input[name=work_end_time]").val(),
+            work_start_time1:$("input[name=work_start_time1]").val(),
+            work_end_time1:$("input[name=work_end_time1]").val(),
             work_start_date:$("input[name=work_start_date]").val(),
             work_end_date:$("input[name=work_end_date]").val(),
             work_total_date:$("input[name=work_total_date]").val(),
@@ -349,7 +367,7 @@
             return false;
         }
         if(!Util.isNum(job.work_pay) || job.work_pay<=0){
-            layer.alert("价钱必须为大于0的数字");
+            layer.alert("工作报酬必须为大于0的数字");
             return false;
         }
         if(!job.province || !job.city || !job.area){
