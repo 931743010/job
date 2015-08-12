@@ -64,10 +64,10 @@ class OrderController extends HomeBaseController {
         }
         //付款金额
         $total_fee = $_POST['WIDtotal_fee'];
-        // if(!is_numeric($total_fee) || $total_fee<10){
-        // 	$this->error("充值金额必须是大于10元",U("Order/order/pay"));
-        // 	exit();
-        // }
+        if(!is_numeric($total_fee) || $total_fee<10){
+        	$this->error("充值金额必须是大于10元",U("Order/order/pay"));
+        	exit();
+        }
 
 		$data['money'] = $total_fee;
         //商户订单号
@@ -128,7 +128,9 @@ class OrderController extends HomeBaseController {
 
 
 	function pay1(){
-		$this->display();
+		//dump($_SERVER);
+		// $this->display();
+		//$this->success("sss","http://www.hmv.com/index.php/?g=portal");
 	}
 	/*
 	*支付回调
@@ -202,7 +204,7 @@ class OrderController extends HomeBaseController {
 				// $trade_no
 				$data = $order->where($where)->find();
 				if(!$data){
-					$this->error("验证失败，请重新支付",U('Order/order/pay'));
+					$this->error("验证失败，请重新支付",$_SERVER['HTTP_HOST']."/index.php/?g=Order&m=order&a=pay");
 					exit();
 				}
 				if($data['pay_status!=0']){
@@ -214,7 +216,7 @@ class OrderController extends HomeBaseController {
 				//新增金额
 				$uid = $_SESSION['user']['id'];
 				M("Account")->where("uid=$uid")->setInc("money",$data['money']);
-				$this->success("付款成功",U('Order/order/pay'));
+				$this->success("付款成功",$_SERVER['HTTP_HOST']."/index.php/?g=user&m=account&a=index");
 				exit();
 
 		    }
@@ -227,7 +229,7 @@ class OrderController extends HomeBaseController {
 		}
 		else {
 		    //验证失败
-		    $this->error("验证失败，请重新支付",U('Order/order/pay'));
+		    $this->error("验证失败，请重新支付",$_SERVER['HTTP_HOST']."/index.php/?g=Order&m=order&a=pay");
 		    exit();
 
 		    //调试用，写文本函数记录程序运行情况是否正常
@@ -316,7 +318,7 @@ class OrderController extends HomeBaseController {
 				//新增金额
 				$uid = $_SESSION['user']['id'];
 				M("Account")->where("uid=$uid")->setInc("money",$data['money']);
-				$this->success("付款成功",U('Order/order/pay'));
+				$this->success("付款成功",$_SERVER['HTTP_HOST']."/index.php/?g=user&m=account&a=index");
 				exit();
 		    }
 
@@ -328,7 +330,7 @@ class OrderController extends HomeBaseController {
 		}
 		else {
 		    //验证失败
-		    $this->error("验证失败，请重新支付ssss",U('Order/order/pay'));
+		    $this->error("验证失败，请重新支付",$_SERVER['HTTP_HOST']."/index.php/?g=Order&m=order&a=pay");
 		    dump($_REQUEST);
 		    exit();
 
