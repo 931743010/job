@@ -6,12 +6,37 @@
 namespace Order\Controller;
 use Common\Controller\HomeBaseController;
 use Order\Controller\AlipayController as Alipay;
+use Order\Controller\AlipayNotifyController as AlipayNotify;
 class OrderController extends HomeBaseController {
 	private $user;
+	protected $alipay_config = array(
+		'partner'	=> '2088021359866822',
+
+		//收款支付宝账号
+		'seller_email'	=> '3270910200@qq.com',
+
+		//安全检验码，以数字和字母组成的32位字符
+		'key'			=> 'mn9ru925i35st9ug4xy4jhlko7ksg7uz',
+
+		//↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+		//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
+		'transport'    => 'http',
+	);
+
+
+
 	public function _initialize(){
 		if( !$_SESSION['user']['id'] ) $this->redirect(U('User/login/index'));
 		$this->user = $_SESSION['user'];
 		parent::_initialize();
+		//签名
+		$this->alipay_config['sign_type'] = strtoupper('MD5');
+		//字符
+		$this->alipay_config['input_charset'] = strtolower('utf-8');
+		//证书
+		$this->alipay_config['cacert'] = getcwd().'\\cacert.pem';
+
 	}
 	
 	function pay(){
@@ -25,11 +50,11 @@ class OrderController extends HomeBaseController {
         $payment_type = "1";
         //必填，不能修改
         //服务器异步通知页面路径
-        $notify_url = "http://www.rengongonline.com/pay/notify_url.php";
+        $notify_url = "http://www.rengongonline.com/index.php/Order/order/notify_url";
         //需http://格式的完整路径，不能加?id=123这类自定义参数
 
         //页面跳转同步通知页面路径
-        $return_url = "http://www.rengongonline.com/pay/return_url.php";
+        $return_url = "http://www.rengongonline.com/index.php/Order/order/return_url";
         //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
 
@@ -39,10 +64,10 @@ class OrderController extends HomeBaseController {
         }
         //付款金额
         $total_fee = $_POST['WIDtotal_fee'];
-        if(!is_numeric($total_fee) || $total_fee<10){
-        	$this->error("充值金额必须是大于10元",U("Order/order/pay"));
-        	exit();
-        }
+        // if(!is_numeric($total_fee) || $total_fee<10){
+        // 	$this->error("充值金额必须是大于10元",U("Order/order/pay"));
+        // 	exit();
+        // }
 
 		$data['money'] = $total_fee;
         //商户订单号
@@ -76,38 +101,12 @@ class OrderController extends HomeBaseController {
 
 /************************************************************/
 
-		
-		//合作身份者id，以2088开头的16位纯数字
-		$alipay_config['partner']		= '2088021359866822';
-
-		//收款支付宝账号
-		$alipay_config['seller_email']	= '3270910200@qq.com';
-
-		//安全检验码，以数字和字母组成的32位字符
-		$alipay_config['key']			= 'mn9ru925i35st9ug4xy4jhlko7ksg7uz';
-
-
-		//↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-
-
-		//签名方式 不需修改
-		$alipay_config['sign_type']    = strtoupper('MD5');
-
-		//字符编码格式 目前支持 gbk 或 utf-8
-		$alipay_config['input_charset']= strtolower('utf-8');
-
-		//ca证书路径地址，用于curl中ssl校验
-		//请保证cacert.pem文件在当前文件夹目录中
-		$alipay_config['cacert']    = getcwd().'\\cacert.pem';
-
-		//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
-		$alipay_config['transport']    = 'http';
 
 		//构造要请求的参数数组，无需改动
 		$parameter = array(
 				"service" => "create_direct_pay_by_user",
-				"partner" => trim($alipay_config['partner']),
-				"seller_email" => trim($alipay_config['seller_email']),
+				"partner" => trim($this->alipay_config['partner']),
+				"seller_email" => trim($this->alipay_config['seller_email']),
 				"payment_type"	=> $payment_type,
 				"notify_url"	=> $notify_url,
 				"return_url"	=> $return_url,
@@ -118,11 +117,11 @@ class OrderController extends HomeBaseController {
 				"show_url"	=> $show_url,
 				"anti_phishing_key"	=> $anti_phishing_key,
 				"exter_invoke_ip"	=> $exter_invoke_ip,
-				"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+				"_input_charset"	=> trim(strtolower($this->alipay_config['input_charset']))
 		);
 
 		//建立请求
-		$alipaySubmit = new Alipay($alipay_config);
+		$alipaySubmit = new Alipay($this->alipay_config);
 		$html_text = $alipaySubmit->buildRequestForm($parameter,"get", "没跳转点此");
 		echo $html_text;
 	}
@@ -131,4 +130,233 @@ class OrderController extends HomeBaseController {
 	function pay1(){
 		$this->display();
 	}
+	/*
+	*支付回调
+	*/
+	function notify_url(){
+
+		//计算得出通知验证结果
+		$alipayNotify = new AlipayNotify($this->alipay_config);
+		$verify_result = $alipayNotify->verifyNotify();
+		if($verify_result) {//验证成功
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//请在这里加上商户的业务逻辑程序代
+
+			
+			//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+			
+		    //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
+			
+			//商户订单号
+
+			$out_trade_no = I('post.out_trade_no');
+
+			//支付宝交易号
+
+			$trade_no = $_POST['trade_no'];
+
+			//交易状态
+			$trade_status = $_POST['trade_status'];
+
+			$where['order_sn'] = $out_trade_no;
+			$order = M("Order");
+
+		    if($_POST['trade_status'] == 'TRADE_FINISHED') {
+				//判断该笔订单是否在商户网站中已经做过处理
+					//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+					//如果有做过处理，不执行商户的业务程序
+						
+				//注意：
+				//退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
+
+		        //调试用，写文本函数记录程序运行情况是否正常
+		        //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+		    	$up['pay_status']=2;
+		    	
+		    	$data = $order->where($where)->find();
+		    	if(!$data){
+		    		$this->error("订单号不存在");
+		    		exit();
+		    	}
+		    	if($data['pay_status'] ==2){
+		    		exit();
+		    	} 
+		    	$up['order_status'] = 2 ;
+		    	$order->where($where)->save($up);
+
+		    	exit();
+
+
+		    }
+		    else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
+				//判断该笔订单是否在商户网站中已经做过处理
+					//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+					//如果有做过处理，不执行商户的业务程序
+						
+				//注意：
+				//付款完成后，支付宝系统发送该交易状态通知
+
+		        //调试用，写文本函数记录程序运行情况是否正常
+		        //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+
+				// $trade_no
+				$data = $order->where($where)->find();
+				if(!$data){
+					$this->error("验证失败，请重新支付",U('Order/order/pay'));
+					exit();
+				}
+				if($data['pay_status!=0']){
+					exit();
+				}
+				$up['pay_status']=1;
+				$up['pay_time'] = time();
+				$order->where($where)->save($up);
+				//新增金额
+				$uid = $_SESSION['user']['id'];
+				M("Account")->where("uid=$uid")->setInc("money",$data['money']);
+				$this->success("付款成功",U('Order/order/pay'));
+				exit();
+
+		    }
+
+			//——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
+		        
+			// echo "success";		//请不要修改或删除
+			
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		}
+		else {
+		    //验证失败
+		    $this->error("验证失败，请重新支付",U('Order/order/pay'));
+		    exit();
+
+		    //调试用，写文本函数记录程序运行情况是否正常
+		    //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+		}
+	}
+
+	function return_url(){
+
+	
+		//计算得出通知验证结果
+		$alipayNotify = new AlipayNotify($this->alipay_config);
+		$verify_result = $alipayNotify->verifyReturn();
+		if($verify_result) {//验证成功
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//请在这里加上商户的业务逻辑程序代
+
+			
+			//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+			
+		    //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
+			
+			//商户订单号
+
+			$out_trade_no = I('get.out_trade_no');
+
+			//支付宝交易号
+
+			$trade_no = $_GET['trade_no'];
+
+			//交易状态
+			$trade_status = $_GET['trade_status'];
+
+			$where['order_sn'] = $out_trade_no;
+			$order = M("Order");
+
+		    if($_GET['trade_status'] == 'TRADE_FINISHED') {
+				//判断该笔订单是否在商户网站中已经做过处理
+					//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+					//如果有做过处理，不执行商户的业务程序
+						
+				//注意：
+				//退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
+
+		        //调试用，写文本函数记录程序运行情况是否正常
+		        //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+		    	$up['pay_status']=2;
+		    	
+		    	$data = $order->where($where)->find();
+		    	if(!$data){
+		    		$this->error("订单号不存在");
+		    		exit();
+		    	}
+		    	if($data['pay_status'] ==2){
+		    		exit();
+		    	} 
+		    	$up['order_status'] = 2 ;
+		    	$order->where($where)->save($up);
+		    	exit();
+
+
+		    }
+		    else if ($_GET['trade_status'] == 'TRADE_SUCCESS') {
+				//判断该笔订单是否在商户网站中已经做过处理
+					//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+					//如果有做过处理，不执行商户的业务程序
+						
+				//注意：
+				//付款完成后，支付宝系统发送该交易状态通知
+
+		        //调试用，写文本函数记录程序运行情况是否正常
+		        //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+
+				// $trade_no
+				$data = $order->where($where)->find();
+				if(!$data){
+					$this->error("验证失败，请重新支付",U('Order/order/pay'));
+					exit();
+				}
+				if($data['pay_status!=0']){
+					exit();
+				}
+				$up['pay_status']=1;
+				$up['pay_time'] = time();
+				$order->where($where)->save($up);
+				//新增金额
+				$uid = $_SESSION['user']['id'];
+				M("Account")->where("uid=$uid")->setInc("money",$data['money']);
+				$this->success("付款成功",U('Order/order/pay'));
+				exit();
+		    }
+
+			//——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
+		        
+			// echo "success";		//请不要修改或删除
+			
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		}
+		else {
+		    //验证失败
+		    $this->error("验证失败，请重新支付ssss",U('Order/order/pay'));
+		    dump($_REQUEST);
+		    exit();
+
+		    //调试用，写文本函数记录程序运行情况是否正常
+		    //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
