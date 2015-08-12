@@ -10,23 +10,19 @@ use User\Model\MemberModel;
 
 class MyController extends HomeBaseController {
 	private $user;
-	private $order_obj;
+	
 	public function _initialize(){
 		parent::_initialize();
 		if( !$_SESSION['user']['id'] ) $this->redirect(U('User/login/index'));
-		$this->order_obj = D('Common/Order');
+	
 		$this->user = M('Member')->where( array("id"=>$_SESSION['user']['id']) )->find();
 		$this->assign('user' , $this->user);
 	}
 	public function index(){
-		$map = array(
-			'user_id' => $this->user['id'],
-			'user_status' => 0,
-		);
-		$result = $this->order_obj->getOrders(1 , $map);
+		
 		//我的账户
         $uid = $this->user['id'];
-        $ac = M("Account");
+        $ac = M("Account");die();
         $acData = $ac->where("uid=$uid")->select();
         $this->assign("account",$acData[0]);
         //职位
