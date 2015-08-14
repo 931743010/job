@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>充值历史</title>
+
+    <tc_include file='Public:head'/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/order.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>
+
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/js/layer/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/js/layer/skin/layer.ext.css"/>
+
+    <script src="__TMPL__Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        #jobPos {padding: 20px;}
+        #jobPos .desc{}
+    </style>
+
+</head>
+<body class="theme foot-white-bg">
+<tc_include file='Public:header'/>
+
+<div class="wrapper order-wrap">
+    <div class="wrap">
+        <div class="grid address-page">
+            <tc_include file='User:My:leftside'/>
+            <div class="grid-r">
+                <div class="order-main">
+                    <div class="hd">
+                        <div class="tips">
+                            充值历史
+                        </div>
+                    </div>
+                    <div class="bd">
+                        <div class="margin-out">
+
+                            <table class="f-table">
+                                <thead>
+                                <tr>
+                                    <td>时间</td>
+                                    <td>充值金额</td>
+                                    <td>订单号</td>
+                                    <td>付款时间</td>
+                                    <td>交易状态</td>
+                                </tr>
+                                </thead>
+                                <tbody class="dot-line">
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                                </tbody>
+                                <volist name='list' id='vo'>
+                                    <tbody>
+                                    <tr>
+                                        <td>{$vo.add_time|date="Y-m-d H:i",###}</td>
+                                        <td>
+                                            <p>{$vo.money}</p>
+                                        </td>
+                                        <td class="text-center">
+                                            {$vo.order_sn}
+                                        </td>
+                                        <td>
+                                        <if condition="$vo.pay_time neq ''">
+                                            {$vo.pay_time|date="Y-m-d H:i",###}
+                                            <else />
+                                            -
+                                            </if>
+                                        </td>
+                                        <td>
+                                        <if condition="$vo['pay_status'] eq 0 ">
+                                            待付款
+
+                                            <else/>
+                                            已付款
+
+                                        </if>
+                                        </td>
+                                        
+
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="dot-line">
+                                    <tr>
+                                        <td colspan="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6"></td>
+                                    </tr>
+                                    </tbody>
+                                </volist>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <div class="search bd">
+                            <label>选择付款状态：</label>
+                            <select name="status" id="pay_status">
+                                <option value="-1">全部</option>
+                                <option value="0">未付款</option>
+                                <option value="1">已付款</option>
+                            </select>
+                        </div>
+                    <div class="bd">
+                        {$show}
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<tc_include file='Public:footer'/>
+<script>
+
+    var pay_status = "{$Think.get.status}";
+    if(!pay_status){
+        pay_status = -1;
+    }
+    $("#pay_status option").each(function(){
+        if($(this).val()==pay_status){
+            $(this).attr("selected","selected");
+        }
+    });
+    $("#pay_status").change(function(){
+
+        var status = $(this).val();
+        if(status==-1){
+            var url = "{:U('Order/Order/pay_log')}";
+        }else{
+            var url = "{:U('Order/Order/pay_log')}&status="+status;
+        }
+        window.location.href = url;
+
+    });
+</script>
+</body>
+</html>

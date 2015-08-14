@@ -341,6 +341,30 @@ class OrderController extends HomeBaseController {
 
 
 
+	//充值记录
+	function pay_log(){
+		$order = M("Order");
+		if(isset($_GET['status'])){
+			$status = intval($_GET['status']);
+			if($status!=1 && $status!=0){
+				$this->error("页面不存在");
+				exit();
+			}
+			$where = " and pay_status=$status";
+		}else{
+			$where = '';
+		}
+		
+		$count = $order->where("user_id=".$this->user['id'].$where)->count();
+		$page = page($count,10);
+		$data = $order->where("user_id=".$this->user['id'].$where)->limit($page->firstRow,$page->listRows)->select();
+		$this->assign("list",$data);
+		$this->assign("show",$page->show('default'));//home
+		$this->display();
+	}
+
+
+
 
 
 
