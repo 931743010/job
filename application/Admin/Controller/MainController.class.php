@@ -29,10 +29,34 @@ class MainController extends AdminbaseController {
 		if($gdinfo['JPEG Support']) $info['gd'] .= ' | jpg';
 		if($gdinfo['PNG Support']) $info['gd'] .= ' | png';
     	$this->assign('server_info', $info);
-		$orderInfo = D('Order')->field("sum(case when (pay_status=1 && shipping_status=0) then 1 else 0 end) as toBeShippinged,sum(case when order_status=0 then 1 else 0 end) as toBeConfirmed,sum(case when pay_status=0 then 1 else 0 end) as toBePaid,sum(case when order_status>4 then 1 else 0 end) as finishedOrder,sum(case when order_status=6 then 1 else 0 end) as parialShippinged,sum(case when order_status=4 then 1 else 0 end) as refundorder") -> find();
-		$this->assign('orderInfo' , $orderInfo);
-		$goodsInfo = D('Goods')->field("count(id) as total,sum(case when isnew=1 then 1 else 0 end) as new,sum(case when ishot=1 then 1 else 0 end) as hot,sum(case when isrec=1 then 1 else 0 end) as recommend,sum(case when isprice=1 then 1 else 0 end) as speprice")->find();
-		$this->assign('goodsInfo' , $goodsInfo);
+		//订单
+    	$order = M("Order");
+    	$prefix = C("DB_PREFIX");
+    	$order_info['total'] = $order->count();
+    	$order_info['pay_success_total'] = $order->where("pay_status = 1")->count();
+
+    	$order_info['pay_fail_total'] = $order->where("pay_status = 0")->count();
+    	$total_money = $order->field("sum(money) as total_money")->select();
+    
+    	$order_info['total_money'] = $total_money[0]['total_money'];
+ 
+    	//职位
+    	$job = M("Jobs");
+    	$job_info['total'] = $job->count();
+    	$job_info['total_success'] = $job->where('status=2')->count();
+    	$job_info['total_fail'] = $job->where('status=3')->count();
+    	$job_info['total_wait'] = $job->where('status=0')->count();
+
+    	//会员
+    	$member = M("Member");
+    	$member_info['total'] = $member->count();
+    	$member_info['total_company'] = $member->where("utype=2")->count();
+    	$member_info['total_person'] = $member->where("utype=1")->count();
+
+    	$this->assign("order",$order_info);
+    	$this->assign("job",$job_info);
+    	$this->assign("member",$member_info);
+
     	$this->display();
     }
 }

@@ -5,51 +5,52 @@
   <h4 class="well">订单统计信息</h4>
   <div class="home_info">
     <table class='table table-bordered'>
+	
 		<tr>
-			<td width="20%">待发货订单</td>
-			<td width="30%">{$orderInfo.tobeshippinged}</td>
-			<td width="20%">未确认订单</td>
-			<td width="30%">{$orderInfo.tobeconfirmed}</td>
+			<td>订单总数</td>
+			<td>{$order.toal}</td>
+			<td>已付款订单</td>
+			<td>{$order.pay_success_total}</td>
 		</tr>
 		<tr>
-			<td>待支付订单</td>
-			<td>{$orderInfo.tobepaid}</td>
-			<td>已成交订单</td>
-			<td>{$orderInfo.finishedorder}</td>
+			<td>未付款订单</td>
+			<td>{$order.pay_fail_total}</td>
+			<td>总充值金额</td>
+			<td>{$order.total_money}</td>
 		</tr>
-		<tr>
-			<td>新缺货登记</td>
-			<td>1</td>
-			<td>退款申请</td>
-			<td>{$orderInfo.refundorder}</td>
-		</tr>
-		<tr>
-			<td>部分发货订单</td>
-			<td>{$orderInfo.parialshippinged}</td>
-			<td></td>
-			<td></td>
-		</tr>
+		
 	</table>
   </div>
-  <h4 class="well">商品统计数</h4>
+  <h4 class="well">职位统计数</h4>
   <div class="home_info">
     <table class='table table-bordered'>
 		<tr>
-			<td width="20%">商品总数</td>
-			<td width="30%">{$goodsInfo.total}</td>
-			<td width="20%">库存警告商品数</td>
-			<td width="30%"></td>
+			<td width="20%">职位总数</td>
+			<td width="30%">{$job.total}</td>
+			<td width="20%">已发布职位</td>
+			<td width="30%">{$job.total_success}</td>
 		</tr>
 		<tr>
-			<td>新品推荐数</td>
-			<td>{$goodsInfo.new}</td>
-			<td>精品推荐数</td>
-			<td>{$goodsInfo.recommend}</td>
+			<td>待审核职位</td>
+			<td>{$job.total_wait}</td>
+			<td>审核不通过职位</td>
+			<td>{$job.total_fail}</td>
+		</tr>
+	</table>
+  </div>
+  <h4 class="well">会员统计数</h4>
+  <div class="home_info">
+    <table class='table table-bordered'>
+		<tr>
+			<td width="20%">会员总数</td>
+			<td width="30%">{$member.total}</td>
+			<td width="20%">企业会员</td>
+			<td width="30%">{$member.total_company}</td>
 		</tr>
 		<tr>
-			<td>热销商品数</td>
-			<td>{$goodsInfo.hot}</td>
-			<td>促销商品数</td>
+			<td>个人会员</td>
+			<td>{$member.total_person}</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
@@ -63,12 +64,7 @@
 			<td width="20%">在线人数</td>
 			<td width="30%">2</td>
 		</tr>
-		<tr>
-			<td>最新留言</td>
-			<td>1</td>
-			<td>未审核评论</td>
-			<td>2</td>
-		</tr>
+		
 	</table>
   </div>
   <h4 class="well">系统信息</h4>
