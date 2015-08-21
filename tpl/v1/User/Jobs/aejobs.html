@@ -544,12 +544,15 @@
 
         setPlace();
     });
+    function tt(pp){
+        return pp;
+    }
 
     function setPlace(){
         map.clearOverlays();    //清除地图上所有覆盖物
         function myFun(){
             var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
-            console.log(pp);
+            tt(pp);  //麻痹百度，这边一定要允许代码才能生效下面代码
             map.centerAndZoom(pp, 18);
             map.addOverlay(new BMap.Marker(pp));    //添加标注
         }
