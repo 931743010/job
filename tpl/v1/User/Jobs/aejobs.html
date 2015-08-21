@@ -301,10 +301,10 @@
     $("select[name=city]").change(function () {
         $obj = $(".work_place_obj");
         Util.regionChange(3,$(this).val(),$obj);
-        var city = $(this).val();
-        var map = new BMap.Map("allmap");
-        var city=Util.getArea(_city,city)
-        map.centerAndZoom(city,11);
+        // var city = $(this).val();
+        // var map = new BMap.Map("allmap");
+        // var city=Util.getArea(_city,city)
+        // map.centerAndZoom(city,11);
     });
 
 
@@ -544,15 +544,13 @@
 
         setPlace();
     });
-    function tt(pp){
-        return pp;
-    }
+    
 
     function setPlace(){
         map.clearOverlays();    //清除地图上所有覆盖物
         function myFun(){
             var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
-            tt(pp);  //麻痹百度，这边一定要允许代码才能生效下面代码
+           
             map.centerAndZoom(pp, 18);
             map.addOverlay(new BMap.Marker(pp));    //添加标注
         }
