@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>发布职位</title>
+
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/bootstrap-theme.min.css"/>
+
+	
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/css/top.css"/>
+		
+	<script src="/statics/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<script src="/statics/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="__TMPL__Public/js/lib/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__TMPL__Public/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__TMPL__Public/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="__TMPL__Public/js/skin/layer.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/js/skin/layer.ext.css"/>
+    <script src="__TMPL__Public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/order.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/datepicker.css"/>
+
+    <script src="__ROOT__/statics/js/cache/region.js"></script>
+    <script src="__ROOT__/statics/js/Util.js"></script>
+    <script src="__TMPL__Public/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/zp/js/kindeditor.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pOjKwgwxn0nlutaU2ppwIk8p"></script>
+    <style type="text/css">
+        #province,#city,#area{width:75px;}
+        .ke-container{border: 0!important;background: none!important;}
+    </style>
+    <script type="text/javascript">
+
+    KE.show({
+        id : 'job_content',
+        resizeMode : 1,
+        cssPath : '__TMPL__Public/zp/css/editer.css',
+        items : []
+    });
+
+    </script>
+</head>
+<body class="theme foot-white-bg">
+
+
+<div class="wrapper order-wrap">
+    <div class="wrap">
+        <div class="grid address-page">
+            <tc_include file='User:My:leftside'/>
+            <div class="grid-r">
+                <div class="order-main">
+                    <div class="hd">
+                        <div class="tips">
+                            <if condition="$edit">
+                                修改职位
+                                <else/>
+                                发布职位
+                            </if>
+                        </div>
+                    </div>
+                    <div class="bd">
+                        <div class="margin-out">
+                            <div class="add-address data-item">
+                                <dl>
+                                    <dt>标题：</dt>
+                                    <dd>
+                                        <input type="text" name='job_name' placeholder="" value="{$jobs['job_name']}" />
+                                        <label>
+                                            （输入少于12个字！）
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <dl>
+
+                                    <dd>
+                                        <label>兼职类型：</label>
+                                        <select name="cate-1" id="cate-1">
+                                        <option value="0">请选择</option>
+                                            <volist name="cate" id="vo">
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </volist>
+                                        </select>
+                                        <label>兼职行业：</label>
+                                        <select name="cate-2" id="cate-2">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                        <label>岗位名称：</label>
+                                        <select name="cate-3" id="cate-3">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>招聘人数：</dt>
+                                    <dd>
+                                        <input type="text" name='person_num' placeholder="招聘人数" value="{$jobs['person_num']}"/>
+
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>工作内容：</dt>
+                                    <dd>
+                                        <input type="text" name='job_desc' placeholder="简要说明，如清理房间" value="{$jobs['job_desc']}"/>
+                                        <label>（输入少于10个字！） </label>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>详细工作内容（要求）：</dt>
+                                    <dd style="height: 190px;width: 600px;" class="f">
+                                        <textarea name="job_content" id='job_content' placeholder="字数限制在400字以内！" style="width: 600px;height: 190px;visibility:hidden;">{$jobs['job_content']}</textarea>
+                                    </dd>
+                                </dl>
+                                <div class="c"></div>
+                                <dl>
+                                    <dt>工作日期：</dt>
+                                    <dd style="float: left;">
+                                        <input type="text" id="work_start_date" name='work_start_date' placeholder="请选择日期" value="{$jobs['work_start_date']}" style="width: 130px" />
+                                        <span> 至 </span>
+                                        <input type="text" id="work_end_date" name='work_end_date' placeholder="请选择日期" value="{$jobs['work_end_date']}" style="width: 130px" />
+
+                                    </dd>
+                                    <dt style="margin-left: 10px;">工作时间：</dt>
+                                    <dd>
+                                        <php>
+                                            if($edit){
+                                                $timeArr = explode('-',$jobs['work_start_time']);
+                                                $start = $timeArr[0];
+                                                $end = $timeArr[1];
+                                                if($jobs['work_end_time']!='-'){
+                                                    $timeArr1 = explode('-',$job['work_end_time']);
+                                                    $start1 = $timeArr1[0];
+                                                    $end1 = $timeArr1[1];
+                                                }else{
+                                                    $start1 = '';
+                                                    $end1 = '';
+                                                }
+                                            }
+                                        </php>
+                                        
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$start}" style="width: 70px"/>
+                                        <span> 至</span>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$end}" style="width: 70px;"/>
+                                        <img src="__TMPL__Public/zp/images/add-icon.png" style="margin:4px;" id='addicon'>
+                                    </dd>
+                                    
+                                     <dd style="position:relative;top:4px;left:431px;display:none" class='more-icon'>
+                                        <input type="text" placeholder="手动输入" name="work_start_time" id="work_start_time" value="{$start1}" style="width: 70px"/>
+                                        <span> 至</span>
+                                        <input type="text" placeholder="手动输入" name="work_end_time" id="work_end_time" value="{$end1}" style="width: 70px;"/>
+
+                                    </dd>
+                                </dl>
+                                <dl>
+
+                                </dl>
+
+                                <dl>
+                                    <dt>工作时长：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
+                                        <input name='work_total_date' type="text" value="{$jobs['work_total_date']}" style="width:70px" /> 小时
+                                    </dd>
+                                    <dt>兼职待遇：</dt>
+                                    <dd>
+                                        <input name='work_pay' type="text" value="{$jobs['work_pay']}"  style="width:70px" />元/小时
+                                    </dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>结算方式：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
+                                        <select name="pay_method" id="pay_method">
+                                            <option value="0">现金</option>
+                                            <option value="1">转账</option>
+                                        </select>
+                                    </dd>
+                                    <dt>结算时间：</dt>
+                                    <dd class='fl' style='margin-right:20px'>
+                                        <select name="pay_date" id="pay_date">
+                                            <option value="0">日结</option>
+                                            <option value="1">定期结算</option>
+                                        </select>
+                                    </dd>
+                                    <dt>岗位性质：</dt>
+                                    <dd>
+                                        <select name="work_nature" id="work_nature">
+                                           <volist name="nature" id="vo">
+                                               <option value="{$vo.id}">{$vo.nature_name}</option>
+                                           </volist>
+                                        </select>
+                                    </dd>
+                                </dl>
+                                
+                                <dl>
+                                    <dt style='float:none;display:block'>详细地址：</dt>
+                                    <dd class="work_place_obj" style='margin-left:27px;'>
+                                    <label>省：</label>
+                                        <select name="province" id="province">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                    <label>市：</label>
+                                        <select name="city" id="city">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                    <label>区（县）：</label>
+                                        <select name="area" id="area">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                
+                                         <input name='work_address' id="suggestId" type="text" placeholder="请输入路或巷、门牌号" value="{$jobs['work_address']}" />
+                                        
+                                        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+                                    </dd>
+                                </dl>
+                                
+                                <dl>
+                                    <dt>请在下面地图标注具体所在的地点：</dt>
+                                    <dd style="height: 360px;width: 700px;overflow:hidden;position:relative;border:1px solid #ccc;padding:10px" class="f">
+                                        <input type="hidden" id="work_map_x" name="work_map_x" value="{$jobs.work_map_x}"/>
+                                        <input type="hidden" id="work_map_y" name="work_map_y" value="{$jobs.work_map_y}" />
+                                        <div id="allmap" style="height:300px"></div>
+                                        <p class="red" style="margin-top:15px;">温馨提示：鼠标点击地图上所在地点就可以实现定位！</p>
+                                    </dd>
+                                    
+                                </dl>
+
+                                <if condition='$edit eq 1'>
+                                    <input type="hidden" id="jid" name="jid" value="{$jobs['id']}"/>
+                                </if>
+                                <input type="hidden" id='agree_cx' value="0">   
+                                <input type="hidden" id="cate_url" value="{:U('portal/jobs/get_son_cate')}"/>
+                                <div class="c"></div>
+                                <div class="" style="margin-top: 25px;text-align:center">
+                                    <button id='aejobs'>&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    // 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom("深圳",12);                   // 初始化地图,设置城市和地图级别。
+
+	var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+		{"input" : "suggestId"
+		,"location" : map
+	});
+
+	ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	var str = "";
+		var _value = e.fromitem.value;
+		var value = "";
+		if (e.fromitem.index > -1) {
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+		
+		value = "";
+		if (e.toitem.index > -1) {
+			_value = e.toitem.value;
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		G("searchResultPanel").innerHTML = str;
+	});
+
+	var myValue;
+	ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+	var _value = e.item.value;
+		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+		
+		setPlace();
+	});
+
+	function setPlace(){
+		map.clearOverlays();    //清除地图上所有覆盖物
+		function myFun(){
+			var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+			map.centerAndZoom(pp, 18);
+			map.addOverlay(new BMap.Marker(pp));    //添加标注
+		}
+		var local = new BMap.LocalSearch(map, { //智能搜索
+		  onSearchComplete: myFun
+		});
+		local.search(myValue);
+	}
+    
+    //城市定位
+   
+
+</script>
+</body>
+</html>

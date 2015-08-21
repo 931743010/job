@@ -262,6 +262,15 @@ input[type=text]{
 input[type=text].l-text{
 	width:560px
 }
+
+
+
+
+
+
+
+
+
 .btn,
 .btn:hover,
 .btn:focus{
@@ -296,11 +305,11 @@ button,button:focus{
 		width: 1180px;
 	}
 	
-.wrapper{
+/*.wrapper{
 	padding: 18px 0;
 	position: relative;
 	z-index: 100;
-}
+}*/
 .wrap{
 	width: 980px;
 	margin: 0 auto;
@@ -341,6 +350,26 @@ section{
 	margin-left: 40%;
 	padding-left:10px ;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .wrap:after,
 .item-list .item-grid:after,

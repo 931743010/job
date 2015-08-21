@@ -14,11 +14,22 @@
     <script src="__ROOT__/statics/js/cache/region.js"></script>
     <script src="__ROOT__/statics/js/Util.js"></script>
     <script src="__TMPL__Public/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/zp/js/kindeditor.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pOjKwgwxn0nlutaU2ppwIk8p"></script>
     <style type="text/css">
         #province,#city,#area{width:75px;}
+        .ke-container{border: 0!important;background: none!important;}
     </style>
+    <script type="text/javascript">
 
+    KE.show({
+        id : 'job_content',
+        resizeMode : 1,
+        cssPath : '__TMPL__Public/zp/css/editer.css',
+        items : []
+    });
+
+    </script>
 </head>
 <body class="theme foot-white-bg">
 <tc_include file='Public:header'/>
@@ -85,9 +96,9 @@
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>详细工作内容（要求）：</dt>
+                                    <dt>详细工作内容（要求）：（字数限制在400字以内）</dt>
                                     <dd style="height: 190px;width: 600px;" class="f">
-                                        <textarea name="job_content" placeholder="字数限制在200字以内！" id="job_content" style="width: 600px;height: 190px;">{$jobs['job_content']}</textarea>
+                                        <textarea name="job_content" id='job_content' placeholder="字数限制在400字以内！" style="width: 600px;height: 190px;visibility:hidden;">{$jobs['job_content']}</textarea>
                                     </dd>
                                 </dl>
                                 <div class="c"></div>
@@ -185,7 +196,9 @@
                                         <select name="area" id="area">
                                             <option value="0">请选择</option>
                                         </select>
+                                
                                          <input name='work_address' id="suggestId" type="text" placeholder="请输入路或巷、门牌号" value="{$jobs['work_address']}" />
+                                        
                                         <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
                                     </dd>
                                 </dl>
@@ -198,6 +211,7 @@
                                         <div id="allmap" style="height:300px"></div>
                                         <p class="red" style="margin-top:15px;">温馨提示：鼠标点击地图上所在地点就可以实现定位！</p>
                                     </dd>
+                                    
                                 </dl>
 
                                 <if condition='$edit eq 1'>
@@ -285,9 +299,12 @@
         Util.regionChange(2,$(this).val(),$obj);
     });
     $("select[name=city]").change(function () {
-
         $obj = $(".work_place_obj");
         Util.regionChange(3,$(this).val(),$obj);
+        var city = $(this).val();
+        var map = new BMap.Map("allmap");
+        var city=Util.getArea(_city,city)
+        map.centerAndZoom(city,11);
     });
 
 
@@ -306,7 +323,7 @@
             job_desc:$("input[name=job_desc]").val(),
             catname :$("input[name=catname]").val(),
             person_num:$("input[name=person_num]").val(),
-            job_content:$("textarea[name=job_content]").val(),
+            job_content:KE.util.getData('job_content'),
             catid:$("select[name=catid]").val(),
             work_start_time:$("input[name=work_start_time]").val(),
             work_end_time:$("input[name=work_end_time]").val(),
@@ -459,28 +476,7 @@
                 }
             })
         }
-    })
-
-
-
-// 百度地图API功能
-    // var map = new BMap.Map("allmap");
-    // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-    // function showInfo(e){
-    //     layer.alert(e.point.lng + ", " + e.point.lat);
-    // }
-    // map.addEventListener("click", showInfo);
-
-// 百度地图API功能
-//    function theLocation(){
-//        var city = document.getElementById("cityName").value;
-//        if(city != ""){
-//            map.centerAndZoom(city,11);      // 用城市名设置地图中心点
-//        }
-//    }
-
-
-
+    });
     var map = new BMap.Map("allmap");
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 //    var map = new BMap.Map("allmap");
@@ -509,8 +505,6 @@
     }
     map.addEventListener("click", showInfo);
 
-
-
     // 百度地图API功能
     function G(id) {
         return document.getElementById(id);
@@ -523,9 +517,8 @@
         {"input" : "suggestId"
         ,"location" : map
     });
-
     ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
-    var str = "";
+        var str = "";
         var _value = e.fromitem.value;
         var value = "";
         if (e.fromitem.index > -1) {
@@ -544,7 +537,8 @@
 
     var myValue;
     ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
-    var _value = e.item.value;
+        var _value = e.item.value;
+
         myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
         G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
 
@@ -555,14 +549,20 @@
         map.clearOverlays();    //清除地图上所有覆盖物
         function myFun(){
             var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+            console.log(pp);
             map.centerAndZoom(pp, 18);
             map.addOverlay(new BMap.Marker(pp));    //添加标注
         }
         var local = new BMap.LocalSearch(map, { //智能搜索
           onSearchComplete: myFun
         });
+
         local.search(myValue);
     }
+
+    
+    //城市定位
+   
 
 </script>
 </body>
