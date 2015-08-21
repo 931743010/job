@@ -98,7 +98,7 @@
                                 <dl>
                                     <dt>详细工作内容（要求）：（字数限制在400字以内）</dt>
                                     <dd style="height: 190px;width: 600px;" class="f">
-                                        <textarea name="job_content" id='job_content' placeholder="字数限制在400字以内！" style="width: 600px;height: 190px;visibility:hidden;">{$jobs['job_content']}</textarea>
+                                        <textarea name="job_content" id='job_content' placeholder="字数限制在400字以内！" style="width: 600px;height: 190px;visibility:hidden;">{$jobs.job_content|htmlspecialchars_decode}</textarea>
                                     </dd>
                                 </dl>
                                 <div class="c"></div>
