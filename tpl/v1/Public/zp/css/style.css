@@ -21,9 +21,7 @@
 .job-list .item .item-bottom{padding: 5px;margin-top: 15px;height: 30px;line-height: 30px;}
 .job-list .item .item-body li{height: 30px;line-height: 30px;overflow: hidden}
 .job-list .item .item-bottom li{margin-right: 5px;}
-
 .job-list .item .item-bottom li.chat a{display: block;width: 22px;height: 22px;background: url(../images/chat_03.png) no-repeat;text-indent: -9999px;}
-
 .footer{padding: 10px 0;border-top: 5px solid #ef1410 }
 .footer a{color:#000; }
 .footer .f-nav{margin:10px 0;}
