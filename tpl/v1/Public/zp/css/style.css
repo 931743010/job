@@ -3,7 +3,7 @@
 .header .top,.header .top a{color: #ef1410;}
 .header .top ul li{margin-left: 20px;}
 .h-center,.nav{width: 980px;margin: 0 auto;}
-.header .publish a{display: inline-block;width: 146px;height: 40px;background: url("../images/publish.png") no-repeat;text-indent: -9999px;margin-top: 24px;}
+.header .publish a{display: block;width: 146px;height: 40px;background: url("../images/publish.png") no-repeat;text-indent: -9999px;margin-top: 24px;}
 .h-center .search{width: 600px;height: 50px;margin: 24px 0 0 20px;}
 .h-center .search .search-control{width:460px;height: 32px;border: 2px solid #ef1410;border-radius: 6px;margin-right: 10px;padding-left:5px; }
 .h-center .search  .btn-search{background: url("../images/btn-serach.gif") no-repeat;width: 113px;height: 39px;border: none;text-indent: -9999px;}
@@ -22,7 +22,7 @@
 .job-list .item .item-body li{height: 30px;line-height: 30px;overflow: hidden}
 .job-list .item .item-bottom li{margin-right: 5px;}
 
-.job-list .item .item-bottom li.chat a{display: inline-block;width: 22px;height: 22px;background: url(../images/chat_03.png) no-repeat;text-indent: -9999px;}
+.job-list .item .item-bottom li.chat a{display: block;width: 22px;height: 22px;background: url(../images/chat_03.png) no-repeat;text-indent: -9999px;}
 
 .footer{padding: 10px 0;border-top: 5px solid #ef1410 }
 .footer a{color:#000; }
