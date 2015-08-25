@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <title>发布职位</title>
 
@@ -18,22 +18,22 @@
 
     <script type="text/javascript" src="__TMPL__Public/zp/js/jquery-ui.js"></script>
 
-    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/zp/js/kindeditor.js"></script>
+    
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pOjKwgwxn0nlutaU2ppwIk8p"></script>
     <style type="text/css">
         #province,#city,#area{width:75px;}
         .ke-container{border: 0!important;background: none!important;}
     </style>
-    <script type="text/javascript">
 
-    KE.show({
-        id : 'job_content',
-        resizeMode : 1,
-        cssPath : '__TMPL__Public/zp/css/editer.css',
-        items : []
-    });
 
-    </script>
+    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/Uediter/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/Uediter/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="__TMPL__Public/Uediter/lang/zh-cn/zh-cn.js"></script>
+
+
+
 </head>
 <body class="theme foot-white-bg">
 <tc_include file='Public:header'/>
@@ -102,7 +102,8 @@
                                 <dl>
                                     <dt>详细工作内容（要求）：（字数限制在400字以内）</dt>
                                     <dd style="height: 190px;width: 600px;" class="f">
-                                        <textarea name="job_content" id='job_content' placeholder="字数限制在400字以内！" style="width: 600px;height: 190px;visibility:hidden;">{$jobs.job_content|htmlspecialchars_decode}</textarea>
+
+                                     <script id="job_content" type="text/plain" style="width: 600px;height: 190px;"></script>
                                     </dd>
                                 </dl>
                                 <div class="c"></div>
@@ -247,31 +248,50 @@
 
 <tc_include file='Public:footer'/>
 <script>
+      
+       var ue = UE.getEditor('job_content');
 
         layer.confirm($('.chengxinshu').html(), {
             area: '800px',
             title:'诚信信息发布协议',
             btn: ['我同意', '我不同意'], //可以无限个按钮
         }, function(index, layero){
-
+            var edit = "{$edit}";
             $("#agree_cx").val(1);
+            if(edit==1){
+                UE.getEditor('job_content').execCommand('insertHtml', '{$jobs.job_content|htmlspecialchars_decode}');
+                $("#suggestId").val("{$jobs.work_address}");
+            }
             layer.close(index);
+
         
         }, function(index){
        
             window.location.href = "{:U('user/my/index')}";
 
         });
+    // function setContent(isAppendTo) {
+    //     var arr = [];
+    //     arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+    //     UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+    //     alert(arr.join("\n"));
+    // }
+    // setContent(1);
 
-
-    <if condition='$edit'>
+    <if condition='$edit eq 1'>
         var gender = "{$resume['gender']}";
-    $("select[name=gender]").val(gender);
-    var degree = "{$resume['degree']}";
-    $("select[name=degree]").val(degree);
+        $("select[name=gender]").val(gender);
+        var degree = "{$resume['degree']}";
+        $("select[name=degree]").val(degree);
+        //ue.execCommand('insertHtml', "{$job.job_content}");
+        // ue.setContent('{$job.job_content}', 1);
 
     </if>
+
+
+
     $(function(){
+
         $('#work_start_date').datepicker({
             format: 'yyyy-mm-dd'
         });
@@ -322,12 +342,16 @@
                 })
             }
         }
+
+       
+        var job_content = UE.getEditor('job_content').getContent();
+     //alert(job_content);
         var job = {
             job_name: $('input[name=job_name]').val(),
             job_desc:$("input[name=job_desc]").val(),
             catname :$("input[name=catname]").val(),
             person_num:$("input[name=person_num]").val(),
-            job_content:KE.util.getData('job_content'),
+            job_content:job_content,
             catid:$("select[name=catid]").val(),
             work_start_time:$("input[name=work_start_time]").val(),
             work_end_time:$("input[name=work_end_time]").val(),
